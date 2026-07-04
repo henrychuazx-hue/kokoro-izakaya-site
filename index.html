@@ -2,362 +2,48 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Kokoro Izakaya · Joo Koon | Charcoal Skewers, Wagyu Dons & Live Band Nights</title>
-<meta name="description" content="A hidden Japanese izakaya next to Joo Koon MRT. Charcoal skewers, wagyu rice bowls under $20, unagi don, sake & highballs — plus live band nights, karaoke and a private tatami room for groups. 4.6★ from 392 Google reviews. Book a table." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0b0f14" />
+<title>Genki 元気</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AB%80%3C/text%3E%3C/svg%3E" />
+<meta name="description" content="Genki 元気 — a private, offline-first health tracker for meals, hydration, fitness, sleep and mood. Log a day, snap a food photo, and let Claude help you understand it." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<style>
-  :root{
-    --ink:#0e0c0b; --ink-2:#171311; --panel:#1d1815; --line:rgba(233,213,184,.14);
-    --paper:#f3ead9; --muted:#b3a492; --ember:#d9442c; --ember-2:#ef5a3c; --gold:#d7a44a;
-    --maxw:1140px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--ink); color:var(--paper); font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden}
-  h1,h2,h3,.disp{font-family:"Shippori Mincho",Georgia,serif; line-height:1.12; font-weight:700}
-  a{color:inherit; text-decoration:none}
-  img{display:block; max-width:100%}
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
-  .eyebrow{font-size:12.5px; letter-spacing:.34em; text-transform:uppercase; color:var(--gold); font-weight:600}
-  .btn{display:inline-flex; align-items:center; justify-content:center; gap:9px; font-weight:600; font-size:15px; padding:14px 22px; border-radius:999px; transition:.2s; cursor:pointer; border:1px solid transparent; text-align:center}
-  .btn-primary{background:var(--ember); color:#fff; box-shadow:0 10px 30px -10px rgba(217,68,44,.7)}
-  .btn-primary:hover{background:var(--ember-2); transform:translateY(-1px)}
-  .btn-ghost{border-color:var(--line); color:var(--paper); background:rgba(255,255,255,.02)}
-  .btn-ghost:hover{border-color:var(--gold); color:#fff}
-  .btn-lg{padding:16px 28px; font-size:16px}
-
-  header{position:sticky; top:0; z-index:50; backdrop-filter:blur(10px); background:rgba(14,12,11,.74); border-bottom:1px solid var(--line)}
-  .nav{display:flex; align-items:center; justify-content:space-between; height:66px}
-  .brand{display:flex; align-items:center; gap:11px; font-family:"Shippori Mincho"; font-weight:800; letter-spacing:.02em; font-size:19px}
-  .seal{width:34px;height:34px;border-radius:50%; background:radial-gradient(circle at 50% 38%,var(--ember-2),var(--ember) 60%,#8f2a18); display:grid;place-items:center; color:#fff; font-family:"Shippori Mincho"; font-weight:800; font-size:17px; box-shadow:0 0 0 1px rgba(255,255,255,.12) inset}
-  .nav .links{display:flex; gap:26px; align-items:center; font-size:14.5px; color:var(--muted)}
-  .nav .links a:hover{color:#fff}
-  @media(max-width:860px){ .nav .links{display:none} }
-
-  .hero{position:relative; min-height:94vh; display:flex; align-items:flex-end; padding-bottom:52px; overflow:hidden}
-  .hero-bg{position:absolute; inset:0; z-index:0}
-  .hero-bg img{width:100%; height:100%; object-fit:cover; opacity:.62}
-  .hero-bg::after{content:""; position:absolute; inset:0; background:
-      radial-gradient(120% 90% at 78% 8%, rgba(217,68,44,.20), transparent 55%),
-      linear-gradient(180deg, rgba(14,12,11,.45) 0%, rgba(14,12,11,.30) 30%, rgba(14,12,11,.93) 86%, var(--ink) 100%);}
-  .hero-inner{position:relative; z-index:2; max-width:800px}
-  .hero h1{font-size:clamp(38px,6.6vw,74px); font-weight:800; letter-spacing:-.01em}
-  .hero h1 .accent{color:var(--gold)}
-  .hero p.lead{margin-top:18px; font-size:clamp(16px,2.1vw,20px); color:#ece2d1; max-width:620px}
-  .hero .cta-row{margin-top:30px; display:flex; gap:13px; flex-wrap:wrap}
-  .ratingbar{margin-top:26px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-size:13px; color:var(--muted)}
-  .stars{color:var(--gold); letter-spacing:2px; font-size:15px}
-  .pill{display:inline-flex; align-items:center; gap:7px; padding:7px 13px; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.03); color:#ece2d1}
-
-  section{position:relative}
-  .band{padding:80px 0}
-  .band.alt{background:linear-gradient(180deg,var(--ink-2),var(--ink))}
-  .sec-head{max-width:700px; margin-bottom:38px}
-  .sec-head h2{font-size:clamp(28px,4vw,44px); margin-top:12px}
-  .sec-head p{color:var(--muted); margin-top:14px; font-size:16.5px}
-
-  /* value pillars */
-  .pillars{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
-  @media(max-width:860px){ .pillars{grid-template-columns:repeat(2,1fr)} }
-  @media(max-width:520px){ .pillars{grid-template-columns:1fr} }
-  .pillar{border:1px solid var(--line); border-radius:14px; padding:22px; background:linear-gradient(180deg,rgba(255,255,255,.035),transparent)}
-  .pillar .n{font-family:"Shippori Mincho"; color:var(--gold); font-size:13px; letter-spacing:.2em; text-transform:uppercase}
-  .pillar h3{font-size:18px; margin-top:10px}
-  .pillar p{color:var(--muted); font-size:14px; margin-top:8px}
-
-  /* signature feature dishes */
-  .dishes{display:grid; grid-template-columns:1fr 1fr; gap:18px}
-  @media(max-width:760px){ .dishes{grid-template-columns:1fr} }
-  .dish{position:relative; border-radius:18px; overflow:hidden; border:1px solid var(--line); min-height:340px; display:flex; align-items:flex-end}
-  .dish img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; transition:.4s}
-  .dish:hover img{transform:scale(1.04)}
-  .dish::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 35%,rgba(8,7,6,.9)); z-index:1}
-  .dish .cap{position:relative; z-index:2; padding:24px}
-  .dish .cap .jp{color:var(--gold); font-size:12px; letter-spacing:.22em; text-transform:uppercase}
-  .dish .cap h3{font-size:24px; margin-top:6px}
-  .dish .cap p{color:#d9ccb8; font-size:14.5px; margin-top:8px; max-width:420px}
-  .menu-strip{margin-top:18px; display:flex; flex-wrap:wrap; gap:10px}
-  .mtag{border:1px solid var(--line); border-radius:999px; padding:9px 15px; font-size:14px; color:#ece2d1; background:rgba(255,255,255,.03)}
-  .mtag b{color:var(--gold); font-weight:600}
-
-  /* experience / groups */
-  .exp{display:grid; grid-template-columns:1.02fr .98fr; gap:36px; align-items:center}
-  @media(max-width:860px){ .exp{grid-template-columns:1fr; gap:24px} }
-  .exp .art{border-radius:20px; overflow:hidden; border:1px solid var(--line); min-height:360px; position:relative}
-  .exp .art img{width:100%; height:100%; object-fit:cover; min-height:360px}
-  .exp h2{font-size:clamp(28px,4vw,42px)}
-  .exp p{color:#d9ccb8; margin-top:15px; font-size:16.5px}
-  .checks{margin-top:18px; display:flex; flex-direction:column; gap:11px}
-  .checks div{display:flex; gap:11px; align-items:flex-start; color:#ece2d1; font-size:15px}
-  .tick{color:var(--ember-2); margin-top:2px; flex:none; font-weight:700}
-
-  /* booking paths */
-  .book{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-  @media(max-width:760px){ .book{grid-template-columns:1fr} }
-  .bcard{border:1px solid var(--line); border-radius:16px; padding:26px; background:linear-gradient(180deg,rgba(255,255,255,.035),transparent); display:flex; flex-direction:column; gap:12px}
-  .bcard h3{font-size:20px}
-  .bcard p{color:var(--muted); font-size:14px; flex:1}
-  .bcard .btn{width:100%}
-
-  /* proof */
-  .proof{display:grid; grid-template-columns:auto 1fr; gap:38px; align-items:center}
-  @media(max-width:720px){ .proof{grid-template-columns:1fr; gap:22px} }
-  .score{text-align:center; border:1px solid var(--line); border-radius:20px; padding:28px 36px; background:linear-gradient(180deg,rgba(215,164,74,.08),transparent)}
-  .score .num{font-family:"Shippori Mincho"; font-size:60px; font-weight:800; line-height:1; color:#fff}
-  .score .st{color:var(--gold); letter-spacing:3px; font-size:17px; margin-top:6px}
-  .score .rc{color:var(--muted); font-size:13px; margin-top:8px}
-  .chips{display:flex; flex-wrap:wrap; gap:9px}
-  .chip{border:1px solid var(--line); border-radius:999px; padding:8px 14px; font-size:13.5px; color:#ece2d1; background:rgba(255,255,255,.03)}
-  .chip b{color:var(--gold); font-weight:600}
-
-  .visit{display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:stretch}
-  @media(max-width:820px){ .visit{grid-template-columns:1fr} }
-  .map{border-radius:18px; overflow:hidden; border:1px solid var(--line); min-height:330px}
-  .map iframe{width:100%; height:100%; min-height:330px; border:0; filter:grayscale(.25) contrast(1.05)}
-  .info{border:1px solid var(--line); border-radius:18px; padding:28px; background:linear-gradient(180deg,rgba(255,255,255,.03),transparent)}
-  .info h3{font-size:23px}
-  .info .row{display:flex; gap:13px; padding:14px 0; border-bottom:1px solid var(--line); font-size:14.5px}
-  .info .row:last-child{border-bottom:0}
-  .info .row .lbl{color:var(--muted); width:90px; flex:none; font-size:12.5px; letter-spacing:.05em; text-transform:uppercase}
-  .info .row a{color:#fff; border-bottom:1px solid var(--ember)}
-
-  .final{padding:92px 0; text-align:center; background:radial-gradient(70% 120% at 50% 0%, rgba(217,68,44,.16), transparent 60%), var(--ink-2)}
-  .final h2{font-size:clamp(30px,5vw,52px)}
-  .final p{color:var(--muted); margin:16px auto 26px; max-width:540px; font-size:17px}
-
-  footer{border-top:1px solid var(--line); padding:32px 0 110px; color:var(--muted); font-size:13.5px}
-  .foot{display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; align-items:center}
-  .foot .cred b{color:var(--paper); font-weight:600}
-  .social{display:flex; gap:12px; margin-top:10px}
-  .social a{color:var(--muted)} .social a:hover{color:#fff}
-
-  .dock{position:fixed; left:0; right:0; bottom:0; z-index:60; display:none; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border-top:1px solid var(--line)}
-  .dock a{background:var(--ink-2); color:var(--paper); display:flex; flex-direction:column; align-items:center; gap:3px; padding:10px 4px; font-size:11px; letter-spacing:.02em}
-  .dock a.primary{background:var(--ember); color:#fff}
-  .dock svg{width:18px;height:18px}
-  @media(max-width:860px){ .dock{display:grid} body{padding-bottom:62px} }
-  .reveal{opacity:0; transform:translateY(18px); transition:.7s cubic-bezier(.2,.7,.2,1)}
-  .reveal.in{opacity:1; transform:none}
-</style>
+<link rel="stylesheet" href="css/app.css" />
 </head>
 <body>
-
-<header>
-  <div class="wrap nav">
-    <div class="brand"><span class="seal">心</span> Kokoro Izakaya</div>
-    <nav class="links">
-      <a href="#menu">Menu</a>
-      <a href="#experience">Live &amp; Groups</a>
-      <a href="#book">Book</a>
-      <a href="#visit">Visit</a>
-    </nav>
-    <a class="btn btn-primary" href="https://www.chope.co/singapore-restaurants/restaurant/kokoro-izakaya" target="_blank" rel="noopener">Book a table</a>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg">
-    <img src="https://d8j0ntlcm91z4.cloudfront.net/user_30QXFTYEU6z23eLpqKuPai8S0W7/hf_20260609_143947_5ce9347e-33f7-49a0-bf8e-9a8829307e04.png" alt="Kokoro Izakaya interior with live band" />
-  </div>
-  <div class="wrap hero-inner">
-    <span class="eyebrow">Japanese Izakaya · next to Joo Koon MRT</span>
-    <h1>Charcoal skewers, wagyu dons &amp; <span class="accent">live band</span> nights.</h1>
-    <p class="lead">The west's hidden izakaya — 20+ skewers off the binchotan grill, wagyu rice bowls under $20, sake and highballs, and a room that comes alive with live music. Worth the trip out.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary btn-lg" href="https://www.chope.co/singapore-restaurants/restaurant/kokoro-izakaya" target="_blank" rel="noopener">Book a table</a>
-      <a class="btn btn-ghost btn-lg" href="#experience">Groups &amp; private room</a>
-    </div>
-    <div class="ratingbar">
-      <span class="pill"><span class="stars">★★★★★</span> 4.6 · 392 Google reviews</span>
-      <span class="pill">Live band &amp; karaoke</span>
-      <span class="pill">Open daily 11am–10pm</span>
-      <span class="pill">Free parking</span>
-    </div>
-  </div>
-</section>
-
-<!-- WHY MAKE THE TRIP -->
-<section class="band">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Why make the trip west</span>
-      <h2>More than a meal — a night out</h2>
-      <p>Four reasons Joo Koon regulars keep coming back, and why groups travel across the island for it.</p>
-    </div>
-    <div class="pillars">
-      <div class="pillar reveal"><div class="n">01</div><h3>Live band nights</h3><p>The reason guests mention most. Live music that turns dinner into a proper evening.</p></div>
-      <div class="pillar reveal"><div class="n">02</div><h3>Private room + karaoke</h3><p>A tatami room with a Mt Fuji mural and karaoke — built for birthdays, teams and gatherings.</p></div>
-      <div class="pillar reveal"><div class="n">03</div><h3>Wagyu dons under $20</h3><p>A4 wagyu steak don, kurobuta katsu kare and hearty ramen at honest prices.</p></div>
-      <div class="pillar reveal"><div class="n">04</div><h3>Skewers &amp; sake bar</h3><p>20+ charcoal skewers, highballs, beer and sake — with happy hour to start the night.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- SIGNATURE DISHES -->
-<section class="band alt" id="menu">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Most ordered</span>
-      <h2>The plates that built the 4.6★</h2>
-      <p>Pulled from what guests rave about most — fresh off the grill and the rice counter.</p>
-    </div>
-    <div class="dishes">
-      <div class="dish reveal">
-        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_30QXFTYEU6z23eLpqKuPai8S0W7/hf_20260609_143950_0dc68c10-3c2c-4e99-b905-afa4dc58bfa3_min.webp" alt="Unagi don" loading="lazy" />
-        <div class="cap"><div class="jp">うなぎ · signature</div><h3>Unagi Don</h3><p>Grilled freshwater eel glazed in sweet-savoury tare over warm rice — the single most-mentioned dish on the menu.</p></div>
-      </div>
-      <div class="dish reveal">
-        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_30QXFTYEU6z23eLpqKuPai8S0W7/hf_20260609_143952_c67feace-1bf6-4c67-902b-c099612baa16_min.webp" alt="Charcoal skewers" loading="lazy" />
-        <div class="cap"><div class="jp">串焼き · off the grill</div><h3>Charcoal Skewers</h3><p>Over 20 kinds of kushiyaki and wagyu skewers off the binchotan — the small-plate ritual that pairs with a cold highball.</p></div>
-      </div>
-    </div>
-    <div class="menu-strip reveal">
-      <span class="mtag"><b>·</b> A4 Wagyu Steak Don</span>
-      <span class="mtag"><b>·</b> Tonkotsu Chashu Ramen</span>
-      <span class="mtag"><b>·</b> Kurobuta Katsu Kare</span>
-      <span class="mtag"><b>·</b> Chirashi Don</span>
-      <span class="mtag"><b>·</b> Seafood Ramen</span>
-      <span class="mtag"><b>·</b> Chawanmushi</span>
-      <span class="mtag"><b>·</b> Shima Hokke</span>
-      <span class="mtag"><b>·</b> Hamachi Kama Shioyaki</span>
-      <span class="mtag"><b>·</b> Sake · Beer · Highballs</span>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE / GROUPS -->
-<section class="band" id="experience">
-  <div class="wrap exp">
-    <div class="art reveal"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_30QXFTYEU6z23eLpqKuPai8S0W7/hf_20260609_143954_84b1b07c-111b-40e8-ae44-16903f3ed2cf_min.webp" alt="Private tatami room with Mt Fuji mural and karaoke" loading="lazy" /></div>
-    <div class="reveal">
-      <span class="eyebrow">Live nights &amp; group bookings</span>
-      <h2>The best seat for the whole group</h2>
-      <p>Book the private tatami room with its Mt Fuji mural and karaoke, catch a live band on the floor, and let the kitchen send out skewers and sake. The easiest yes for birthdays, team dinners and after-work crews.</p>
-      <div class="checks">
-        <div><span class="tick">—</span> Private tatami room with karaoke for groups</div>
-        <div><span class="tick">—</span> Live band nights — follow Instagram for the line-up</div>
-        <div><span class="tick">—</span> Group set menus, sake &amp; highball towers on request</div>
-      </div>
-      <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap">
-        <a class="btn btn-primary" href="https://wa.me/6587587024?text=Hi%20Kokoro%20Izakaya%2C%20I%27d%20like%20to%20enquire%20about%20group%20bookings%20and%20the%20private%20room." target="_blank" rel="noopener">Enquire about group bookings</a>
-        <a class="btn btn-ghost" href="https://www.instagram.com/kokoroizakaya/" target="_blank" rel="noopener">See live nights on Instagram</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BOOK -->
-<section class="band alt" id="book">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Reserve in seconds</span>
-      <h2>Three easy ways to book</h2>
-      <p>Pick whatever's quickest — your table's confirmed either way.</p>
-    </div>
-    <div class="book">
-      <div class="bcard reveal"><h3>Book online</h3><p>Instant confirmation through Chope or Quandoo — choose your date, time and party size.</p>
-        <a class="btn btn-primary" href="https://www.chope.co/singapore-restaurants/restaurant/kokoro-izakaya" target="_blank" rel="noopener">Reserve on Chope</a>
-        <a class="btn btn-ghost" href="https://www.quandoo.sg/place/kokoro-izakaya-105473" target="_blank" rel="noopener">Reserve on Quandoo</a>
-      </div>
-      <div class="bcard reveal"><h3>WhatsApp us</h3><p>Message the team directly for tables, the private room or a big group — fastest for special requests.</p>
-        <a class="btn btn-primary" href="https://wa.me/6587587024?text=Hi%20Kokoro%20Izakaya%2C%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener">Message on WhatsApp</a>
-      </div>
-      <div class="bcard reveal"><h3>Call the restaurant</h3><p>Prefer to talk? Give us a ring during opening hours, every day 11am to 10pm.</p>
-        <a class="btn btn-primary" href="tel:+6587587024">Call +65 8758 7024</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section class="band">
-  <div class="wrap proof">
-    <div class="score reveal">
-      <div class="num">4.6</div><div class="st">★★★★★</div><div class="rc">392 Google reviews</div>
-    </div>
-    <div class="reveal">
-      <div class="sec-head" style="margin-bottom:20px">
-        <span class="eyebrow">What guests talk about</span>
-        <h2 style="font-size:clamp(24px,3.4vw,34px)">Loved for the food and the feeling</h2>
-      </div>
-      <div class="chips">
-        <span class="chip"><b>53×</b> live band</span>
-        <span class="chip"><b>12×</b> unagi</span>
-        <span class="chip"><b>6×</b> highballs</span>
-        <span class="chip"><b>6×</b> skewers</span>
-        <span class="chip"><b>4×</b> wagyu don</span>
-        <span class="chip"><b>4×</b> happy hour</span>
-        <span class="chip"><b>3×</b> chirashi don</span>
-        <span class="chip"><b>3×</b> chawanmushi</span>
-      </div>
-      <p style="color:var(--muted); margin-top:16px; font-size:13.5px">Themes most frequently mentioned across Kokoro's Google reviews. Follow <a href="https://www.instagram.com/kokoroizakaya/" target="_blank" rel="noopener" style="color:var(--gold)">@kokoroizakaya</a> for the live band schedule.</p>
-    </div>
-  </div>
-</section>
-
-<!-- VISIT -->
-<section class="band alt" id="visit">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">Find us</span><h2>Visit Kokoro Izakaya</h2></div>
-    <div class="visit">
-      <div class="map reveal"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Kokoro%20Izakaya%20Joo%20Koon%20FairPrice%20Hub&output=embed"></iframe></div>
-      <div class="info reveal">
-        <h3>Plan your visit</h3>
-        <div class="row"><span class="lbl">Address</span><span>FairPrice Hub, 1 Joo Koon Circle, #01-51, Singapore 629117 · right beside Joo Koon MRT</span></div>
-        <div class="row"><span class="lbl">Hours</span><span>Open daily · 11:00am – 10:00pm</span></div>
-        <div class="row"><span class="lbl">Parking</span><span>Free &amp; paid parking on site — usually plenty</span></div>
-        <div class="row"><span class="lbl">Reserve</span><span><a href="https://www.chope.co/singapore-restaurants/restaurant/kokoro-izakaya" target="_blank" rel="noopener">Chope</a> · <a href="https://www.quandoo.sg/place/kokoro-izakaya-105473" target="_blank" rel="noopener">Quandoo</a> · <a href="https://wa.me/6587587024" target="_blank" rel="noopener">WhatsApp</a></span></div>
-        <div class="row"><span class="lbl">Call</span><span><a href="tel:+6587587024">+65 8758 7024</a></span></div>
-        <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap">
-          <a class="btn btn-primary" href="https://www.chope.co/singapore-restaurants/restaurant/kokoro-izakaya" target="_blank" rel="noopener">Book a table</a>
-          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Kokoro%20Izakaya&query_place_id=ChIJJ12oOwAF2jER1c9sOEh17uE" target="_blank" rel="noopener">Get directions</a>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="seal">気</div>
+        <div class="brand-tx">
+          <span class="brand-name">Genki</span>
+          <span class="brand-sub">Health</span>
         </div>
       </div>
-    </div>
+      <nav class="nav-list" id="navList"><!-- built by app.js --></nav>
+      <div class="side-foot">Private &amp; offline · stored only in this browser<br />&copy; <span id="year">2026</span> Genki 元気</div>
+    </aside>
+
+    <main class="main">
+      <div id="view"><!-- rendered by app.js --></div>
+    </main>
   </div>
-</section>
 
-<!-- FINAL CTA -->
-<section class="final">
-  <div class="wrap">
-    <span class="eyebrow">Tonight at Joo Koon</span>
-    <h2>A table, a highball, a live set.</h2>
-    <p>Book in seconds — or message us to lock in the private room for your group.</p>
-    <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap">
-      <a class="btn btn-primary btn-lg" href="https://www.chope.co/singapore-restaurants/restaurant/kokoro-izakaya" target="_blank" rel="noopener">Book a table</a>
-      <a class="btn btn-ghost btn-lg" href="https://wa.me/6587587024?text=Hi%20Kokoro%20Izakaya%2C%20I%27d%20like%20to%20enquire%20about%20a%20group%20booking." target="_blank" rel="noopener">Plan a group</a>
-    </div>
-  </div>
-</section>
+  <nav class="tabbar" id="tabList"><!-- built by app.js --></nav>
 
-<footer>
-  <div class="wrap foot">
-    <div>
-      <div class="brand" style="font-size:17px"><span class="seal" style="width:28px;height:28px;font-size:14px">心</span> Kokoro Izakaya</div>
-      <div style="margin-top:8px">FairPrice Hub, Joo Koon · Open daily 11am–10pm · +65 8758 7024</div>
-      <div class="social">
-        <a href="https://www.instagram.com/kokoroizakaya/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.facebook.com/people/Kokoro-Izakaya/61567172162332/" target="_blank" rel="noopener">Facebook</a>
-      </div>
-    </div>
-    <div class="cred">Concept site by <b>Tristeps Studios</b> · Demo</div>
-  </div>
-</footer>
+  <div id="toastWrap" class="toast-wrap"></div>
+  <div id="modalRoot"></div>
 
-<nav class="dock">
-  <a class="primary" href="https://www.chope.co/singapore-restaurants/restaurant/kokoro-izakaya" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Book</a>
-  <a href="https://wa.me/6587587024?text=Hi%20Kokoro%20Izakaya%2C%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.06c-.24.68-1.42 1.31-1.95 1.36-.5.05-.97.24-3.27-.68-2.76-1.09-4.52-3.92-4.66-4.1-.14-.18-1.12-1.49-1.12-2.84s.71-2.02.96-2.29c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.04.88 2.19.07.15.12.32.02.5-.09.18-.14.29-.27.45-.14.15-.29.34-.41.46-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.93 1.94 1.22 2.22 1.36.27.14.43.12.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>WhatsApp</a>
-  <a href="tel:+6587587024"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
-  <a href="https://www.google.com/maps/search/?api=1&query=Kokoro%20Izakaya&query_place_id=ChIJJ12oOwAF2jER1c9sOEh17uE" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Map</a>
-</nav>
-
-<script>
-  const io = new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);}}),{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
+  <!-- Script load order is a contract (SPEC §"Script load order") -->
+  <script src="js/app.js"></script>
+  <script src="js/food-db.js"></script>
+  <script src="js/exercise-db.js"></script>
+  <script src="js/diet.js"></script>
+  <script src="js/fitness.js"></script>
+  <script src="js/sleep.js"></script>
+  <script src="js/mood.js"></script>
+  <script src="js/records.js"></script>
 </body>
 </html>
