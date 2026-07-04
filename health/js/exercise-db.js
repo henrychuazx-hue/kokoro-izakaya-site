@@ -1,4 +1,4 @@
-// Kokoro Health Tracker — Exercise / MET Database + Workout Templates
+// Genki 元気 Tracker — Exercise / MET Database + Workout Templates
 // Owner: data agent. Plain script (no imports/exports) — assigns to window.
 // Schema: { key, name, category: 'cardio'|'strength'|'flexibility'|'sports'|'daily',
 //           met, isStrength, muscleGroups: [] }  (muscleGroups only ever uses:

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Kokoro Health — core runtime (app.js)  OWNER: shell agent
+   Genki 元気 — core runtime (app.js)  OWNER: shell agent
    Provides window.Health: store, router, helpers, SVG charts, Claude client,
    the Dashboard view and the Settings view. Loaded first; all module files
    call Health.registerModule(...) at top level.
@@ -7,7 +7,7 @@
 (function () {
   'use strict';
 
-  var LS_KEY = 'kokoroHealth.v1';
+  var LS_KEY = 'genki.v1';
 
   /* ---- default schema ---------------------------------------------------- */
   function defaultData() {
@@ -625,7 +625,7 @@
       toast('Settings saved', 'ok');
     });
     document.getElementById('wipeBtn').addEventListener('click', function () {
-      confirmModal('Erase ALL Kokoro Health data from this browser? This is permanent.').then(function (ok) {
+      confirmModal('Erase ALL Genki 元気 data from this browser? This is permanent.').then(function (ok) {
         if (!ok) return;
         try { localStorage.removeItem(LS_KEY); } catch (e) {}
         _data = load();

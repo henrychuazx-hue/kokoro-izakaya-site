@@ -16,7 +16,7 @@
   var STORAGE_WARN_BYTES = 4 * 1024 * 1024; // 4MB warn threshold
   var STORAGE_BUDGET_BYTES = 5 * 1024 * 1024; // assumed rough quota for the progress bar
   var XML_MAX_BYTES = 50 * 1024 * 1024; // 50MB cap for Apple Health export.xml
-  var STORAGE_KEY = 'kokoroHealth.v1';
+  var STORAGE_KEY = 'genki.v1';
 
   var selectedFile = null; // transient, reset each render
 
@@ -302,7 +302,7 @@
         var url = URL.createObjectURL(blob);
         var a = document.createElement('a');
         a.href = url;
-        a.download = 'kokoro-health-export-' + Health.today() + '.json';
+        a.download = 'genki-export-' + Health.today() + '.json';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);

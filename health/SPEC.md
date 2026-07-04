@@ -1,4 +1,4 @@
-# Kokoro Health Tracker — Architecture Spec
+# Genki 元気 Health Tracker — Architecture Spec
 
 A self-contained, static, client-side health tracking platform. No build step, no framework,
 no external JS libraries. Vanilla ES6+, inline SVG for charts. Only external resource allowed:
@@ -31,7 +31,7 @@ Script load order in index.html:
 `app.js` → `food-db.js` → `exercise-db.js` → `diet.js` → `fitness.js` → `sleep.js` → `mood.js` → `records.js`
 then `Health.init()` on DOMContentLoaded.
 
-## Data schema (single object, localStorage key `kokoroHealth.v1`)
+## Data schema (single object, localStorage key `genki.v1`)
 
 ```js
 {

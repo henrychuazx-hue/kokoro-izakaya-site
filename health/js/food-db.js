@@ -1,4 +1,4 @@
-// Kokoro Health Tracker — Food Nutrition Database
+// Genki 元気 Tracker — Food Nutrition Database
 // Owner: data agent. Plain script (no imports/exports) — assigns to window.
 // Schema: { key, name, category, serving, servingG, calories, proteinG, carbsG, fatG, sodiumMg, sugarG, fiberG }
 // Sodium values are prioritised for accuracy (many hawker/Asian dishes are very high-sodium).
