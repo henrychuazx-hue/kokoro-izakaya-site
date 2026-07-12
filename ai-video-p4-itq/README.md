@@ -24,6 +24,9 @@ ai-video-p4-itq/
 │   └── character-book.md         ← hero + zebra guardian design notes
 ├── 04-for-creative/
 │   └── HANDOVER_INSTRUCTIONS.md  ← ★ brief for the creative (deck outline, checklist)
+├── reviews/
+│   ├── creative-review.md        ← creative-director agent's review (integrated)
+│   └── compliance-audit.md       ← bid-compliance agent's audit (integrated)
 └── old/
     └── README.md                 ← archive for superseded drafts
 ```
@@ -35,6 +38,7 @@ ai-video-p4-itq/
 - Client brief + EN/CN script extracted and summarized.
 - **Finalized proposal** (`01-proposal/ITQ_Proposal_v1.md`): covers all 4 evaluation criteria + every submission requirement; keeps the "zebra guardian" concept; **maps the concept to all 3 WSHC scenes + ending**; corrects terminology to the client's **一看、二想、三行动**.
 - Handover pack for the creative (deck outline mapped to scoring; pre-submission checklist).
+- **Two review passes run and integrated** (see `reviews/`): a creative-director review (story fidelity, curriculum-vocab coverage §5.2, age arc, the ~100-word write-up) and a bid-compliance audit (all criteria/requirements, review-rounds scope, runtime, Tripartite Standards).
 
 **⚠️ Needs you (Henry) — blockers for a compliant submission**
 - Company **registered name & UEN**; **ACRA Bizfile** (< 3 months).
