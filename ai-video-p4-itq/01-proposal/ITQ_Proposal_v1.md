@@ -44,7 +44,7 @@ The narrative device is a **freeze-frame reveal**, carried by a recurring **zebr
 
 The film is built as **three escalating everyday vignettes plus a warm closing beat**, following the WSHC script exactly:
 
-1. **Car-park blind spot** — a child, crouched to pick something up, is invisible to a reversing driver; a peer notices and acts. *(The film's first act of **见义勇为**.)*
+1. **Car-park blind spot** — a boy, crouched to pick something up, is invisible to a reversing driver; an adult passer-by (the **Uncle** in our cast) stops the driver. *(The film's first act of **见义勇为**.)*
 2. **Phone at the crossing** — our hero warns a phone-distracted teen to wait; a motorcyclist rushes past the moment they'd have stepped out.
 3. **Dash against the light** — a runner beats the countdown; a turning car brakes hard; everyone is shaken but safe.
 4. **Care for one another** — the guardian's distant **wink** closes on the dual lesson: protect yourself, look out for others, and in an emergency **拨打995** for the **民防部队 (SCDF)**.
@@ -53,7 +53,7 @@ The pacing is built for an **eleven-to-twelve-year-old**: relatable everyday goa
 
 Language stays anchored to the provided WSHC CN script, kept P4-appropriate, and deliberately exercises the target **curriculum vocabulary and the sentence pattern 「一个人⋯⋯，另一个人⋯⋯」** — placed explicitly, scene by scene, in §5.2. On-screen Chinese text (e.g. 「马路如虎口，你一定要小心！」) is reserved for moments that reinforce reading. The guardian is designed to be **reusable for future WSHC/MOE safety topics** (all IP vesting in TAL) — value for money, not a franchise.
 
-> **Casting note:** the WSHC Scene 1 script reads 女孩 (CN) but "a boy" (EN); our sample scene animates one casting. Final gender casting for Scene 1 will be confirmed with WSHC at storyboard round 1 and kept continuous with the sample.
+> **Casting note:** the WSHC Scene 1 script reads 女孩 (CN) but "a boy" (EN); **our completed sample scene animates the boy** (with an adult "Uncle" passer-by and the zebra guardian). Final gender casting will be confirmed with WSHC at storyboard round 1 and kept continuous with the sample.
 
 ### 5.1 Fidelity to the WSHC script — how the guardian threads the three scenes + ending
 
@@ -61,7 +61,7 @@ Language stays anchored to the provided WSHC CN script, kept P4-appropriate, and
 
 | WSHC scene | What happens (per client script) | Guardian beat / how AI animation adds interest | Message |
 |---|---|---|---|
-| **1 · 注意盲点** Beware of Blind Spots | A child crosses a car park, drops something, crouches; a driver reverses out; neither can see the other; **a peer notices and stops the driver in time**. | Guardian **freezes** the moment and traces the **blind-spot sightline** the driver cannot see. | 在盲区先**停下、确认、再移动**；**保护自己是自己的责任** — and the peer's act is the film's first **见义勇为**. |
+| **1 · 注意盲点** Beware of Blind Spots | A boy crosses a car park, drops something, crouches; a driver reverses out; neither can see the other; **an adult passer-by ("Uncle") stops the driver in time**. | Guardian **freezes** the moment and traces the **blind-spot sightline** the driver cannot see. | 在盲区先**停下、确认、再移动**；**保护自己是自己的责任** — the Uncle's act is the film's first **见义勇为**. |
 | **2 · 安全第一，过马路不使用手机** Stop the Mobile | Our hero waits at the zebra crossing and checks both ways; **he calls out to warn** a phone-distracted secondary student to wait until cars stop; a **摩托车骑士** rushes past the moment the teen would have stepped out; the teen looks up, shocked. | Guardian freezes the near-miss; the frozen rider and the teen's blind phone-screen show what distraction hides. | 过马路先确认车辆停下；看手机 = 不知道周围发生什么。互相提醒 = 互相关心。 |
 | **3 · 一看、二想、三行动** LOOK · THINK · DO | Signalised crossing, 3 seconds left; someone runs for it; a **turning car** brakes hard; the driver's face: shock → anger → relief; the runner, shaken, safe on the kerb. | Guardian freezes at the brake; the **一看 / 二想 / 三行动** beats appear as he walks the audience through the safe decision. | 遵守交通规则；先**了解情况**再行动。 |
 | **Ending · 互相关心** Care for One Another | VO summary: observe, then act safely; protect yourself **and** others; if an accident occurs, be courageous and call 995 for the SCDF. | Guardian's **wink-from-a-distance** closes the film on a warm community beat. | **一看、二想、三行动**；**见义勇为**；拨打 **995** 启动**民防部队**。 |
@@ -111,12 +111,12 @@ Those disciplines are this team's core work — production management, storyboar
 
 Our pipeline is a **locked, ordered workflow**. A visual breakdown (script → finished motion) is provided as the process diagram in the deck.
 
-1. **Anchor everything to a Master Plate.** Before any character is placed, we establish one definitive "world" frame — location, vehicle layout, light direction, geography — so the world never re-invents itself between cuts.
-2. **Build a Cast & Asset Bible.** Every recurring element (hero, zebra guardian, vehicles, interiors) is designed once as a reference sheet and reused, defined down to wardrobe and palette.
+1. **Anchor everything to a Master Plate.** Before any character is placed, we fix the core environment as **Photoshop-anchored plates** — in our demo, **side, street-level and overhead** exteriors plus in-vehicle **dashboard and cargo** views — so the world never re-invents itself between cuts and corrections stay cheap.
+2. **Build a Cast & Asset Bible.** Every recurring element is locked as a reference sheet and reused — in our demo, character sheets for the **Boy, Uncle and Zebra Mascot** (with **expression sheets** for the human characters) and a **van prop sheet** used across the scene, defined down to wardrobe and palette.
 3. **Structured shot specification.** Each shot is authored as a structured build spec (style, lighting, camera, subjects, continuity rules). World/style/axis blocks are held identical across shots; only camera and action change — the single biggest reason the shots cut together.
 4. **Generate & QA shot frames.** Every frame is checked against written continuity laws: screen direction, camera side, light direction, prop states, character consistency, and **Chinese text accuracy**. A failed frame is re-specified and regenerated — we do not patch, because a patched flaw propagates into every later revision.
 5. **Motion conversion.** Each locked frame drives its animated shot; freeze beats are camera-only motion with the world held still.
-6. **Assembly & post.** Clips are cut in shot order, scored, and laid against the **human child Mandarin voice-over** and designed sound beats, then graded and mastered to the required delivery formats.
+6. **Assembly & post.** Sequences are edited, stitched and colour-corrected (mixing the best of multiple takes); **audio is kept on separate stems** so the human child Mandarin voice-over and sound beats can be tuned independently, then graded and mastered to the required delivery formats.
 
 Because the plate, bible and style spec are reusable, later scenes — and future curriculum topics — come **faster and cheaper** than the first.
 
@@ -136,7 +136,7 @@ Because revisions regenerate **from specification**, a later note cannot silentl
 - **All Foreground IP vests in TAL** (Annex A cl. 24). Deliverables include the required master formats **plus editable project assets**; all character and world designs are original work created for this project.
 - **AI-tool copyright & licensing managed by us** — generation tools tracked and output usage rights cleared for a government educational asset; any additional footage/images sourced and cleared.
 - **Script fidelity.** Language stays faithful to the WSHC CN script; edits are proposed for approval, never made unilaterally, and always keep meaning coherent.
-- **Delivery formats.** High/clear resolution for **large projector screens**; **MOE-platform** and **WSHC-website** compatible; **YouTube/social**-compatible master. `[TBC: confirm exact resolution/codec/container against Annex B.]`
+- **Delivery formats.** High/clear resolution for **large projector screens**; **MOE-platform** and **WSHC-website** compatible; **YouTube/social**-compatible master. The demo sample is 720p; **final masters are delivered at ≥1080p (targeting up to 4K)** for large-screen projection. `[TBC: confirm exact resolution/codec/container against Annex B.]`
 - **Delivery confidence.** We commit to the **8 December 2026** performance date and are aware of the S$150/day liquidated-damages term (Annex A cl. 8); our regenerate-from-spec pipeline is built to hold that schedule across the review rounds.
 - **Confidentiality/PDPA.** We will sign the Undertaking to Safeguard Official Information (Schedule B) and comply with the PDPA schedule.
 
@@ -157,8 +157,8 @@ Because revisions regenerate **from specification**, a later note cannot silentl
 ## 12. Company involvement in similar projects (requirement iii · 20% & requirement v)
 
 **Sample video — produced end-to-end by this team for this tender, in the specified 3D AI-animation style:**
-- **Scene — "Beware of Blind Spots" (注意盲点)** — our AI-animated sample scene: `[TBC: public link — Vimeo/YouTube; test viewability in an incognito window before submission]` *(file: `02-source-materials/sample-video/Sample_Scene_Blind_Spots.mov`)*
-- **Process breakdown (script → storyboard → motion)** showing methodology & character consistency: `[TBC: link / annex]`
+- **Scene — "Beware of Blind Spots" (注意盲点)** — our completed AI-animated sample scene (**~29s, 1280×720**), cast: Boy, Uncle, Zebra guardian: `[TBC: public link — Vimeo/YouTube; test viewability in an incognito window before submission]` *(file: `02-source-materials/sample-video/Sample_Scene_Blind_Spots.mov`)*
+- **Process breakdown** — our "How we produced the demo" deck (character sheets → Photoshop-anchored environment plates → prompt sequences → post): view at https://www.canva.com/d/BCKD826KYIhcsYN *(pages also in `03-reference/character-book-pages/`)*.
 
 > This self-produced, in-style sample is the primary evidence for criterion iii — the commercial portfolio below is largely live-action and does **not** by itself demonstrate 3D AI animation. Lysander's AI/animation reel `[TBC]` is the second key proof; please add it.
 

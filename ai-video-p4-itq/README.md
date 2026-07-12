@@ -39,6 +39,8 @@ ai-video-p4-itq/
 - **Finalized proposal** (`01-proposal/ITQ_Proposal_v1.md`): covers all 4 evaluation criteria + every submission requirement; keeps the "zebra guardian" concept; **maps the concept to all 3 WSHC scenes + ending**; corrects terminology to the client's **一看、二想、三行动**.
 - Handover pack for the creative (deck outline mapped to scoring; pre-submission checklist).
 - **Two review passes run and integrated** (see `reviews/`): a creative-director review (story fidelity, curriculum-vocab coverage §5.2, age arc, the ~100-word write-up) and a bid-compliance audit (all criteria/requirements, review-rounds scope, runtime, Tripartite Standards).
+- **Checked your Canva "How we produced the demo" book** (via your connected Canva account): confirmed cast — **Boy, Uncle, Zebra Mascot** — plus van prop + environment plates and the 4-step pipeline; folded into the proposal (§8, §12) and `03-reference/character-book.md`. Process-breakdown link added.
+- **Verified the sample video**: **~29s, 1280×720 (720p)**; flagged that final masters should be **≥1080p** for large-screen projection.
 
 **⚠️ Needs you (Henry) — blockers for a compliant submission**
 - Company **registered name & UEN**; **ACRA Bizfile** (< 3 months).
@@ -51,7 +53,7 @@ ai-video-p4-itq/
 - The **"James Cook" reference deck** (needed for house style + Lysander photo-crop match).
 - Any **old proposals** to archive into `old/`.
 - Your custom **proposal agent** from your Claude folder.
-- Live fetch of the **Canva character book** and **Lysander's IG/LinkedIn** (login-walled / restricted).
+- **Lysander's IG/LinkedIn** bio & photo (login-walled) — please paste his bio and share a photo to crop.
 
 ## How this was produced
 A project-organization agent drafted the handover; research was attempted for portfolio/character/bio enrichment (web fetch was restricted, so those are flagged as `[TBC]`). The proposal and packaging were done in-house; creative + compliance review agents check the finalized proposal against the brief.
