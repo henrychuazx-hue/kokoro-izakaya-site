@@ -1,0 +1,446 @@
+3 July 2026
+Dear Sir / Madam,
+ITQ-FY26-WS-008
+INVITATION TO QUOTE : TO DEVELOP AN ANIMATION VIDEO USING AI TOOLS -
+INFUSING SAFETY MESSAGES WHILE LEARNING CHINESE LANGUAGE
+1.	We would like to invite you to quote for the provision of Videography Services to develop an Animation Video in Mandarin using AI Tools from 1 August 2026 to 16 October 2026 with an option to extend the contract to 31 January 2028 for the exercise of optional item.
+2.	All quotations should be submitted via the Tender Board platform by 3.00pm on 13 July 2026. The Tripartite Alliance Limited (TAL) will not accept any hard copies or late submissions after the deadline.
+3.	The quotation sum including all rates and prices, inclusive of any Goods and Services Tax (herein referred to as “GST”), submitted by your company (to complete Annex C) shall be nett and final.
+4.	The validity period of your offer is THREE CALENDAR MONTHS from the submission deadline. TAL does not bind itself to accept the lowest or any quotation received and reserves the right to accept the quotation in whole or in part.
+5.	The annexes to this letter describe the terms and conditions of the contract and requirement specifications of the Services required:
+Annex A	: General Terms and Conditions of Contract
+Annex B	: Requirement Specifications
+Annex C	: Pricing Template
+ITQ-FY26-WS-008
+ANNEX A – GENERAL TERMS AND CONDITIONS OF CONTRACT
+CONDITIONS OF CONTRACT (GOODS AND SERVICES)
+DEFINITIONS
+In this Contract, unless the context otherwise requires:
+"Applicant" means a person or his permitted assigns offering to supply the Goods and/or perform the Services and refers to either the tenderer (in the case of a tender) or the applicant (in the case of an invitation to quote).
+"Background IP" means IP which is created prior to or independently of this Contract.
+"Contract" includes the Instructions to Contractors, the Contractor's Invitation to Quote, Conditions of Contract, Personal Data Protection Schedule, the specifications and samples, Letter of Acceptance, and any Purchase Orders and/or Work Orders issued by TAL to the Contractor for the supply of the Goods and/or performance of the Services.
+"Contractor" means the successful Applicant who has been awarded this Contract by TAL.
+"Foreground IP" means IP which results from or is generated pursuant to or for the purpose of this Contract, including, but not limited to, all drafts and materials produced pursuant to or for the purpose of this Contract.
+"Goods" means all goods, including parts or units thereof, which the Contractor is required to supply under this Contract.
+"IP" means intellectual property, including registered and unregistered trademarks (including service marks), trade names, trade secrets, patents, copyright, industrial design, integrated circuit topography and other intellectual property rights, including, but not limited to, all rights in relation to inventions, registered and unregistered designs, circuit layouts, know-how and any other rights resulting from intellectual activity in the industrial, scientific, literary and artistic fields.
+"Parties" refers to TAL and the Contractor.
+"person" includes a corporation, an unincorporated association, a sole proprietorship and a natural person (including, but not limited to, a free-lancer).
+"Services" means the work which the Contractor is required to perform under this Contract.
+"TAL" means Tripartite Alliance Limited (UEN No.: 201606688Z) with its registered address at 80 Jurong East St 21, #05-05/06, Devan Nair Institute for Employment and Employability, Singapore 609607.
+In this Contract, unless the context otherwise requires:
+Words importing the singular shall, where applicable, include the plural and vice versa, and words importing a gender include every gender.
+The headings are for convenience only and not for the purpose of interpretation.
+References in this Contract to statutory provisions shall be construed as references to those provisions as respectively replaced, amended or re-enacted from time to time and shall include any provisions of which they are re-enactments (whether with or without modification) and any subordinate legislation made under such provisions.
+References to Clauses and Schedules are to clauses and schedules of these Conditions of Contract.
+1.3	All schedules attached hereto are hereby incorporated in and made a part of this Contract as if set forth in full herein. Capitalised terms used in the schedules hereto but not otherwise defined therein shall have the respective meanings assigned to such terms in this Contract.
+SCOPE OF CONTRACT AND APPOINTMENT OF CONTRACTOR
+The Contractor shall:
+carry out and complete the supply of all items of Goods; and
+perform the Services,
+in accordance with this Contract.
+Unless otherwise stated in this Contract, all Goods shall be new and unused.
+TAL reserves the right to make award(s) in full or in part in respect of the proposal(s) submitted to TAL (to the extent applicable in TAL’s sole view). TAL also reserves the right to appoint more than one party or agency based on the strength and merit of the submitted proposal(s) (to the extent applicable in TAL’s sole view).
+DELIVERY AND PERFORMANCE
+The Contractor shall deliver the Goods at his own cost at the place(s) and in the manner specified in this Contract.
+The Contractor shall perform the Services by 8 December 2026 and in the manner specified in this Contract.
+In respect of the Goods, the Contractor shall obtain a certifying signature from TAL’s authorised representative on the Contractor’s invoice to indicate TAL’s receipt of the Goods. The provision of such certifying signature shall in no way relieve the Contractor from his responsibility for replacing defective or damaged Goods under Clause 4.
+Any acknowledgement by TAL of the Services performed shall in no way relieve the Contractor from his obligation to re-perform deficient Services or any other obligations which the Contractor has assumed whether under this Contract or otherwise.
+REMOVAL AND REPLACEMENT
+The Contractor shall, at his own cost and when notified in writing by TAL, remove and replace the Goods that are found on delivery to be damaged, defective or in any way inferior to approved samples, or not in accordance with this Contract, failing which TAL shall have the right in its absolute discretion to purchase replacements from person(s) and/or party(ies) other than the Contractor or to make good any damage in any manner it deems necessary and all costs thereby incurred shall be recoverable from the Contractor by deduction from any money due to the Contractor under this Contract.
+PAYMENT
+Within thirty (30) days of performance of any Services in accordance with Clause 3.2 to TAL’s satisfaction or delivery of any Goods in accordance with Clause 3.1 to TAL’s satisfaction, TAL will make payment to the Contractor of the full value of all Goods so delivered and the Services so performed provided that no payment shall be considered as evidence of the quality of the Goods and Services to which such payment relates nor shall it relieve the Contractor from his responsibilities under Clause 4 hereof.
+Where delivery of the Goods is by consignments, payment will be made to the Contractor within thirty (30) days after delivery of each consignment and the receipt of the Contractor’s invoice for such consignment.
+The payments under this clause shall not prejudice TAL's right to reject deficient Services or the Contractor's obligation to re-perform deficient Services.
+Without limitation to TAL's rights under this Contract, the amount of any payment or debt owed by the Contractor to TAL under this Contract may be deducted by TAL from any monies payable by TAL to the Contractor pursuant to this Contract.
+RIGHTS OF THIRD PARTIES
+A person who is not a party to this Contract shall have no right under the Contracts (Rights of Third Parties) Act to enforce any of its terms.
+GIFTS, INDUCEMENTS AND REWARDS
+TAL may terminate this Contract and recover from the Contractor the amount of any loss resulting from such termination, if the Contractor shall have offered or given or agreed to give to any person any gift or consideration of any kind as an inducement or reward for doing or forbearing to do or for having done or forborne to do any action in relation to the obtaining or execution of this Contract with TAL or for showing or forbearing to show favour to any person in relation to any Contract with TAL, or if the like acts shall have been done by any person employed by the Contractor or acting on his behalf (whether with or without the knowledge of the Contractor) or if in relation to any Contract with TAL the Contractor or any person employed by him or acting on his behalf shall have committed any offence under the Prevention of Corruption Act or Chapter IX of the Penal Code or shall have abetted or attempted to commit such an offence or shall have given any fee or reward the receipt of which is an offence under the Prevention of Corruption Act or Chapter IX of the Penal Code.
+DELAY IN PERFORMANCE AND IN SUPPLY AND DELIVERY
+Time shall be of the essence in this Contract, and the Contractor shall deliver the Goods and perform the Services in accordance with the timelines set out in this Contract or as otherwise agreed between the Parties in writing.
+The Contractor shall immediately notify TAL if the Contractor’s timely performance is delayed or is likely to be delayed. TAL’s acceptance of the Contractor’s notice will not constitute TAL’s waiver of any of the Contractor’s obligations.
+The Contractor shall not be entitled to claim any extra costs for any variation in the time for delivery of the Goods.
+Subject to Clauses 8.1 and 8.2, if there is delay in the delivery of any item of Goods under this Contract due to any of the following circumstances, namely, acts of God, force majeure, riots and civil commotions, strikes, lock-outs or other causes or perils beyond the Contractor's control, then in any such case the Contractor shall, for the duration of any such circumstance aforesaid, be relieved of his obligation to deliver any such Goods thereby affected but the provisions of this Contract shall remain in full force in regard to any Goods not affected by such circumstances aforesaid.
+Subject to Clause 8.4, if the Contractor fails to deliver any item of Goods by the date specified in this Contract, TAL shall have the right:
+to cancel all or any such items of Goods from this Contract without compensation and obtain them from other sources and all increased costs thereby incurred shall be deducted from any moneys due or to become due to the Contractor or shall be recoverable as damages; or
+to deduct from any moneys due or to become due to the Contractor, or require the Contractor to pay a sum calculated at the rate of Singapore Dollars $150.00 per day (including Saturdays, Sundays and public holidays), as liquidated damages for every day of delay until the Goods are delivered.
+Provided that the recovery of such increased costs aforesaid shall be limited to the quantity of such Goods as is purchased or obtained, not exceeding the quantity stated in this Contract, from other sources after the Contractor's failure as aforesaid but within three (3) months of the expiry of this Contract.
+The Contractor shall not be entitled to claim any extra costs for any variation in the time for performance of the Services.
+Subject to Clauses 8.1 and 8.2, if there is delay in the performance of the Services under this Contract due to any of the following circumstances, namely, acts of God, force majeure, riots and civil commotions, strikes, lock-outs or other causes or perils beyond the Contractor's control, then in any such case the Contractor shall for the duration of any such circumstance aforesaid, be relieved of his obligation to perform such Services thereby affected but the provisions of this Contract shall remain in full force in regard to any Services not affected by such circumstances aforesaid.
+Subject to Clause 8.7, if the Contractor fails to complete the performance of Services by the date specified in this Contract, TAL shall have the right —
+to cancel all or any such items of Services from this Contract without compensation and obtain them from other sources and all increased costs thereby incurred shall be deducted from any moneys due or to become due to the Contractor or shall be recoverable as damages; or
+to deduct from any moneys due or to become due to the Contractor or require the Contractor to pay, a sum calculated at the rate of Singapore Dollars $150.00 per day (including Saturdays, Sundays and public holidays), as liquidated damages for every day of delay until the Services are performed.
+Provided that the recovery of such increased costs aforesaid shall be limited to such Services as is purchased or obtained, not exceeding the scope stated in this Contract, from other sources after the Contractor's failure as aforesaid but within three (3) months of the expiry of this Contract.
+SUB-CONTRACTING AND ASSIGNING
+The Contractor shall not sub-contract or assign this Contract without the prior written consent of TAL.
+In the event that any sub-contract or assignment is made by the Contractor in connection with this Contract, the Contractor shall be responsible for the acts, defaults, negligence or omissions of any assignee or sub-contractor (as the case may be) and/or their agents, servants or workmen as fully as if they were the acts, defaults, negligence or omissions of the Contractor. Any costs incurred by either Party due to such sub-contract or assignment of this Contract or any part thereof shall be borne by the Contractor, unless otherwise agreed by the Parties in writing.
+APPLICABLE LAW
+This Contract shall be subject to, governed by and interpreted in accordance with the laws of the Republic of Singapore for every purpose.
+COMMENCEMENT AND DURATION OF CONTRACT
+This Contract shall commence on 1 August 2026 and shall remain in force until 31 January 2028 unless earlier terminated in accordance with Clause 12.
+SUSPENSION OR TERMINATION
+TAL shall have the right to suspend or terminate this Contract by giving 7 days prior written notice to the Contractor if:
+the Contractor has breached any of the terms and conditions hereof and, in the case of a breach capable of being remedied, has failed to remedy the breach within 14 days of the date of being notified of such breach by TAL;
+the Contractor is unable to pay his debts when due;
+the Contractor enters into liquidation, receivership, judicial management or otherwise compounds with his creditors or takes or suffers any similar action or occurrence in any jurisdiction;
+the Contractor becomes insolvent or stops payment or ceases or threatens to cease to carry on his business or any part of his business;
+any resolution is passed or steps taken by the Contractor or any other person to apply for judicial composition proceedings with the Contractor’s creditors or an order is made by any competent court for such proceedings or a receiver, judicial manager, administrator or other similar official is appointed in relation to the Contractor or any part of the assets or undertakings of the Contractor, or an encumbrancer taking possession of any part of the assets or undertakings of the Contractor or a distress or execution or other process is being levied or enforced upon or sued out against any part of the assets or undertakings of the Contractor;
+the Contractor or any of his shareholders (if applicable), partners, proprietors, directors, officers, employees, agents or sub-contractors is involved in any fraudulent or unlawful activity;
+in the reasonable opinion of TAL, there is any change or threatened change of circumstances which would materially and adversely affect the business or financial condition of the Contractor or his ability to perform his obligations under this Contract;
+TAL is affected by any state of war, Act of God or other circumstances seriously disrupting public safety, peace or good order of the Republic of Singapore; or
+the Contractor fails to comply with any written direction of any governmental or regulatory authority applicable to him or any applicable laws.
+Without limitation to Clause 12.1, TAL shall have the right to terminate this Contract at its absolute discretion by giving one (1) month’s prior written notice to the Contractor. For the avoidance of doubt, TAL shall not be required to provide any reason or explanation whatsoever for such termination.
+Without limitation to Clause 12.1, TAL shall have the right to suspend this Contract at its absolute discretion by giving one (1) month’s prior written notice to the Contractor. For the avoidance of doubt, TAL shall not be required to provide any reason or explanation whatsoever for such suspension.
+TAL shall not be liable to the Contractor by reason of such suspension or termination save that TAL shall pay the Contractor the price of: (a) the Goods delivered and accepted by TAL; and (b) the Services performed and accepted by TAL. TAL shall have title to the Goods delivered and accepted by TAL. The Contractor shall refund to TAL the balance of any payments or deposits made after deducting any outstanding sums owing by TAL to the Contractor by reason of this clause.
+Where this Contract has been suspended, TAL may, by notice in writing, require the Contractor to resume the performance of his obligations under this Contract, and upon the issuance of such notice by TAL, the Contractor shall resume the performance of his obligations under this Contract.
+WARRANTY
+The warranty period in respect of the Goods shall be twelve (12) months commencing on the date of receipt of the Goods by TAL, or such other period as may be agreed in writing between the Parties (the “Goods Warranty Period”).
+Where during the Goods Warranty Period, any Goods are found to be:
+defective in design, materials or workmanship;
+not in accordance with this Contract or any specifications incorporated therein by reference or otherwise; or
+having been installed, operated, stored and maintained in accordance with the written instructions of the Contractor, failing to function properly or failing to meet any performance guarantees set forth in this Contract or specifications published by the Contractor as applicable to the Goods;
+then unless it is shown that the foregoing is caused solely by improper use or mishandling of the Goods by TAL, without prejudice to the other rights and remedies of TAL, the Contractor shall, at his own expense (including transportation costs), at the written notification of TAL, replace, rectify or completely repair the damaged or defective Goods.
+The warranty period in respect of the Services shall be twelve (12) months or such other period as may be agreed in writing between the Parties (the “Services Warranty Period”).
+If any Service performed is found during the Services Warranty Period to be deficient, without prejudice to the other rights and remedies of TAL, the Contractor shall, at the written notification of TAL, re-perform the same, at the expense of the Contractor within one month, which shall commence from the said notification and end upon the satisfactory completion of the re-performed Service.
+TITLE AND RISK
+Title to the Goods shall pass from the Contractor to TAL upon successful completion of the Acceptance Test (or upon delivery if there is no Acceptance Test).
+The risk of loss or damage to the Goods shall pass from the Contractor to TAL upon successful completion of the Acceptance Test (or upon delivery if there is no Acceptance Test). If the Goods are sent to the Contractor for the purpose of modification, replacement, repair or rectification, the risk of loss or damage to the Goods shall be borne by the Contractor from the time the Goods are sent to the Contractor for the purpose of modification, replacement, repair or rectification until the completed Goods are delivered to TAL.
+OPTION TO PURCHASE
+15.1 	The Contractor grants TAL the options to purchase the item(s) specified in Annex C of this Contract (the "Option to Purchase"). The Option to Purchase shall be exercisable by written notice given by TAL to the Contractor before the date specified in Annex C of this Contract.  If TAL exercises the Option to Purchase, the item(s) purchased shall form part of the Goods defined in this Contract and be subject to the same terms and conditions (inclusive of any amendments).
+15.2 	The Option to Purchase shall be exercisable in whole or in part but if in part then in respect of not less than the minimum quantity specified in Annex C of this Contract.
+15.3 	TAL may exercise the Option to Purchase in as many phases as it deems fit as long as TAL exercises any phase before the Option Validity Date and the cumulative quantity of the item(s) purchased do not exceed the maximum quantity specified in Annex C of this Contract.
+OPTION TO EXTEND
+The Contractor grants TAL the option to extend this Contract for a further period  and by the date stated in this Contract. This option shall be exercisable by written notice given by TAL to the Contractor before contract expiry. Unless otherwise specifically agreed between the Parties, any purchase made during the extended period shall be subject to the same terms and conditions (inclusive of any amendments) of this Contract, and the items purchased shall form part of the Goods and Services defined in this Contract.]
+PURCHASE ORDERS
+All orders for items of Goods to be supplied under this Contract shall be given from time to time, in writing, by TAL on the appropriate order form (hereinafter referred to as the "Purchase Order"). All such Purchase Orders (which can take the form of TAL’s email confirmation; signed Contractor’s quotation; Contractors’ order form; and signed contract etc.) shall clearly state the details and nature of the Goods to be supplied and shall also state the amount, calculated at the rates in this Contract, that shall become due to the Contractor on the satisfactory completion of supply of all Goods specified on such Purchase Order. On satisfactory completion of such supply, the Contractor shall submit his invoice to TAL.
+On receipt of any Purchase Order, the Contractor shall commence delivery of the Goods referred to therein and complete the same as soon as promised in his tender or otherwise as expeditiously as possible.
+WORKS ORDERS
+18.1 	All orders for Services to be supplied under this Contract shall be given from time to time, in writing, by TAL on the appropriate order form (hereinafter referred to as the “Works Order"). All such Works Orders (which can take the form of TAL’s email confirmation; signed Contractor’s quotation; Contractors’ order form; and signed contract etc.) shall clearly state the details and nature of the Services to be supplied and shall also state the amount, calculated at the rates in this Contract, that shall become due to the Contractor on the satisfactory completion of all the Services specified on such Works Order. On satisfactory completion of such supply the Contractor shall submit his invoice to TAL.
+18.2 	On receipt of any Works Order the Contractor shall commence performance of the Services referred to therein and complete the same as soon as promised in his tender or otherwise as expeditiously as possible.
+SUPPLY OF GOODS AS AND WHEN REQUIRED BY TAL
+19.1 	Where TAL has entered into a Contract with the Contractor for the supply of Goods as and when required by TAL during the period of time specified in this Contract, this Contract shall be deemed to be a period contract for the duration of the period of time specified (the “Period Contract”). Where the Contractor receives, during the period of time specified in this Contract, any Purchase Order for specific quantities of the Goods specified in this Contract, the Contractor shall proceed to supply the Goods in accordance with this Contract. TAL shall be under no obligation to purchase the Goods specified in this Contract except to the extent of the Purchase Order for those Goods issued by TAL
+SUPPLY OF SERVICES AS AND WHEN REQUIRED BY TAL
+20.1 	Where TAL has entered into a Contract with the Contractor for the supply of Services as and when required by TAL during the period of time specified in this Contract, this Contract shall be deemed to be a Period Contract for the duration of the period of time specified. Where the Contractor receives, during the period of time specified in this Contract, any Works Order for specific Services specified in this Contract, the Contractor shall proceed to perform the Services in accordance with this Contract. TAL shall be under no obligation to purchase the Services specified in this Contract except to the extent of the Works Order for those Services issued by TAL
+OBSOLETE MODE
+21.1	In the event that the model of the product offered by the Contractor in the [Tender Offer/Invitation to Quote] has become obsolete and cannot be supplied if a Purchase Order is issued for it, the Contractor shall make available an improved model to TAL at the same or lower price than that of the obsolete model, provided that the Contractor must obtain the written approval of TAL at least 14 days before supplying the improved model. If the written approval is granted, the obsolete model shall be replaced by the improved model thereafter. The Contractor shall not supply the obsolete model thereafter.
+RIGHTS OF TAL IN THE EVENT OF DEFAULT BY THE CONTRACTOR
+22.1 	If the Contractor defaults in his performance of, or breaches any of his obligations under, this Contract, TAL may issue a notice of default to the Contractor informing the Contractor of his default or breach. The Contractor shall, within 14 days of the date of the notice of default, remedy the default or breach. If the Contractor fails to do so in a manner satisfactory to TAL, the Contractor shall be taken to have repudiated this Contract and TAL shall have the right to terminate this Contract or cancel any part thereof by way of a notice of termination without TAL being liable therefor in damages or compensation. The said termination shall take effect from the date of the notice of termination.
+22.2	In the event of termination under Clause 22.1 above:
+TAL shall have the right to purchase from other sources all the Goods which remain undelivered by the Contractor or similar Goods, and all increased costs incurred by TAL arising in connection with the foregoing shall be recoverable from the Contractor; and
+TAL shall have the right to purchase from other sources all the Services which remain unperformed at the time of termination or similar Services, and all increased costs incurred by TAL arising in connection with the foregoing shall be recoverable from the Contractor.
+22.3	Notwithstanding anything contained herein, the Contractor shall not be entitled to claim for any loss or damages, including, but not limited to, any loss of profit for any of the Goods not delivered to or the Services not performed for TAL, prior to the termination of this Contract.
+VARIATION OF CONTRACT
+23.1	No variation whether oral or otherwise in the terms of this Contract shall apply thereto unless such variation shall have first been expressly accepted in writing by the Contractor and the authorised contract signatory of TAL.
+23.2	In the event any variation under Clause 23.1 is requested by TAL, the Contractor shall state in writing the effect such variation will have (if any) on the total cost payable under this Contract upon TAL’s [written] request for such variation. Such details shall be furnished by the Contractor to TAL within [seven (7) days] of receipt of TAL’s request or such other period as may be agreed. Without prejudice to the generality of Clause 23.1, the Contractor shall not make any variation to the delivery of Goods in any respect unless instructed in writing to do so by TAL.
+INTELLECTUAL PROPERTY RIGHTS
+24.1	The Contractor warrants that: (a) the Goods; and (b) the performance of the Services, do not infringe any IP. Notwithstanding the above, the Contractor shall indemnify TAL and its officers or departments against all IP infringement claims including any costs, charges and expenses in respect thereof.
+24.2 	Nothing in this Contract shall affect TAL’s right to own or license Background IP.
+24.3	All Foreground IP, including, but not limited to, all Foreground IP created by the Contractor, his subcontractor or his supplier, shall vest in TAL. The Contractor shall, by way of present assignment of future IP, do all things necessary to ensure that all Foreground IP is assigned to TAL absolutely. The Contractor shall do all such things and sign and execute all such documents as may reasonably be required in order to perfect, protect or enforce any of the Foreground IP assigned and granted to TAL.
+24.4 	The Contractor shall obtain for and grant to TAL and its agent, free of any additional charge, a Singapore or/and international perpetual, non-exclusive license to use all Background IP owned by or licensed to the Contractor, his subcontractor or his supplier.
+24.5 	For the avoidance of doubt, any IP in any results, report, data or information generated or produced by TAL or another person on behalf of TAL as a result of this Contract shall be owned by TAL.
+24.6 	If the Contractor, his subcontractor or his supplier intends to sell or transfer their Background IP, the Contractor shall ensure that the purchaser of the Background IP and every successor in title to the interest in the Background IP has prior written notice of the license that the Contractor, his subcontractor or his supplier has granted to TAL.
+24.7 	If any license granted or obtained for Background IP under Clause 24.4 is registrable under any IP registration system in Singapore, the Contractor shall:
+register the license under the IP registration system in Singapore; and
+deliver copies of documentary proof of such license registration to TAL as soon as possible.
+GOVERNMENT REGULATIONS
+25.1	The Contractor shall, at his own costs, obtain and maintain all licenses and authorisations, including export licenses and permits and other governmental authorisations or certification required, without any restrictions or qualifications whatsoever so as to enable the Contractor to fulfil all his obligations under this Contract.
+25.2	The Contractor shall comply in all respects with the provisions of all laws of Singapore, including, but not limited to, (without prejudice to the generality of Clause 25.1) giving all notices and paying all fees as may be required to be given or paid under or in connection with any law or regulation in force in Singapore, and shall keep TAL, its officers and agents indemnified against all penalties and liabilities of any kind for the breach of any such laws in respect of the supply of Goods and Services pursuant to this Contract.
+INDEMNITY
+26.1	The Contractor shall keep TAL fully indemnified against all actions, claims, proceedings, costs and damages and all legal costs or other expenses and losses incurred or suffered by TAL arising directly or indirectly out of or in relation to:
+the breach of any terms of this Contract (including, but not limited to, any claim or action by a third party); or
+any claim (including without limitation claims by any workman, employee or agent of the Contractor or the general public) for any damage, injury, loss or accident sustained in relation to the Contractor’s performance of this Contract, provided such damage, injury, loss or accident is not caused by the gross negligence or wilful default of TAL, its officers or its agents.
+MEDIATION
+27.1	Any dispute arising out of or in connection with this Contract, save for any dispute arising out of or in connection with Clause 30 (Personal Data) and/or the Personal Data Protection Schedule, shall first be submitted for mediation at the Singapore Mediation Centre (“SMC”) in accordance with SMC’s Mediation Procedure in force for the time being. Either Party may submit a request to mediate to SMC upon which the other Party will be bound to participate in the mediation within [45 days] thereof. Every Party to the mediation must be represented by senior executive personnel, of at least the seniority of a Head of Department or its equivalent, with authority to negotiate and settle the dispute. Unless otherwise agreed by the Parties, the Mediator(s) will be appointed by SMC. The mediation will take place in Singapore in the English language and the Parties agree to be bound by any settlement agreement reached.
+27.2		Failure to comply with Clause 27.1 shall be deemed to be a breach of this Contract.
+In the event the Parties are unable to resolve the dispute during mediation, the Parties agree that the dispute shall be resolved before the courts of Singapore.
+GOVERNING JURISDICTION
+28.1	The Parties hereby irrevocably submit to the exclusive jurisdiction of the courts of Singapore.
+CONFIDENTIALITY AND SECURITY
+29.1 	Except with the written consent of TAL, the Contractor shall not disclose: (a) this Contract; (b) any purchases made in this Contract; (c) any provisions of this Contract; (d) any communications made between TAL and the Contractor or any other party in connection with this Contract; or (e) any information and/or material provided by or on behalf of TAL in connection therewith to any person.
+29.2 	In addition to the foregoing, the Contractor shall not make use of any information and/or material obtained directly or indirectly from TAL or compiled or generated by the Contractor in the course of this Contract which pertains to or is derived from such information, other than use for the purposes of this Contract, without the prior written consent of TAL.
+29.3	The Contractor shall not publish or release, nor shall he allow or suffer the publication or release of, any news item, article, publication, advertisement, prepared speech or any other information or material pertaining to any part of the obligations to be performed under this Contract in any media without the prior written consent of TAL.
+29.4	The Contractor also hereby agrees to be bound by the terms and conditions set out in the Undertaking to Safeguard Official Information annexed as Schedule B.
+29.5	This Clause 29 shall survive the termination or expiry (where applicable) of this Contract.
+PERSONAL DATA
+30.1	The Contractor hereby agrees to be bound by the terms and conditions set out in the Personal Data Protection Schedule annexed as Schedule A.
+“Intentionally Left Blank”
+TAXES, FEES AND DUTIES
+32.1	The Contractor shall be responsible for all corporate and personal income taxes, customs fees, duties, fines, levies, assessments and other taxes payable under the laws of Singapore, by the Contractor or his employees, including the Contractor's resident engineers and inspectors (if applicable), in carrying out his obligations under this Contract.
+32.2	If TAL receives a request from the tax authorities to pay on behalf of the Contractor and/or the Contractor's employees, or to withhold payments from the Contractor in order that TAL may subsequently so pay, any of the abovementioned taxes, fees, duties, fines, levies and assessments, the Contractor hereby authorises TAL to comply with the terms of the said request.
+32.3	Any invoice or other request for payment of monies due to the Contractor under this Contract shall comply with the Goods and Services Tax Act, Cap. 117A (2005 Rev. Ed.) and all relevant regulations as applicable.
+INFORMATION PROVIDED TO TAL
+33.1	The Contractor shall ensure that information provided to TAL in connection with this Contract shall be full, complete and accurate in all respects.
+WAIVER
+34.1	No waiver of any breach of this Contract shall be deemed to be a waiver of any other breach or of any subsequent breach. The failure of either Party to enforce at any time any of the provisions of this Contract shall in no way be interpreted as a waiver of such provision.
+SURVIVING PROVISIONS
+35.1	All rights and obligations of the Parties shall cease to have effect immediately upon the 	termination of this Contract save that:
+(a) 	clauses which are expressed to survive their termination or expiry or which from their nature or context it is contemplated that they are to survive termination (including, without limitation, Clauses 1 (Definitions), 4 (Removal and Replacement), 6 (Rights of Third Parties), 10 (Applicable Law), 12 (Suspension or Termination), 13 (Warranty), 22 (Rights of TAL in the Event of Default by the Contractor), 25 (Government Regulations), 26 (Indemnity), 27 (Mediation), 28 (Governing Jurisdiction), 29 (Confidentiality and Security), 30 (Personal Data) and 35 (Surviving Provisions); and
+(b) 	any provision of this Contract necessary for its interpretation or enforcement,
+shall continue in force following termination of this Contract (for whatever reason), and 	further save that the termination shall be without prejudice to the respective rights and 	liabilities of each of the Parties accrued prior to such termination.
+TRIPARTITE STANDARDS
+36.1	The Tripartite Standards (TS) is a Tripartite initiative to allow progressive employers to differentiate themselves in specific areas of employment and workplace practices, thereby enhancing employers’ manpower attraction and retention. TS adoption demonstrates an employer’s commitment to building progressive workplaces, by implementing verifiable and actionable good practices at the workplace.
+36.2    Suppliers are encouraged to sign up for, i.e. adopt any of the following 3 Tripartite Standards on:
+Recruitment Practices
+Grievance Handling
+Age-Friendly Workplace Practices
+36.3	We will give due consideration to suppliers who have signed up for at least one of the TS in our evaluation. More information about the Tripartite Standards and sign-up can be found at https://www.tafep.sg/adopt-tripartite-standards.
+36.4	Suppliers who are awarded projects above $1 million, are required to have signed up for at least 2 of the Tripartite Standards stated in para 36.2.
+”INTENTIONALLY LEFT BLANK”
+COMPENDIUM OF ADDITIONAL CLAUSES (COAC) – SPECIFICALLY RELATING TO GOODS
+A1.	 “Intentionally Left Blank”
+COMPENDIUM OF ADDITIONAL CLAUSES (COAC) – SPECIFICALLY RELATING TO SERVICES
+B1.	REPLACEMENT OF PERSONNEL
+B1.1	 The Contractor shall replace his personnel within 14 days from the date of written notice from   TAL that the said personnel:
+Is technically incompetent in carrying out the Services and all efforts by the Contractor have failed to resolve the issue within the said period; or
+Has made statements, assertions or representations in connection with the Contract or the Services which are not supported by verifiable information or contemporaneous records when requested; and/or has communicated, recorded, or relayed TAL’s instructions, directions, approvals, decisions, or requirements inaccurately, incompletely, or in a manner inconsistent with TAL’s written or documented instructions; or
+Whose conduct is found to be detrimental to the national security.
+COMPENDIUM OF ADDITIONAL CLAUSES (COAC) – GENERAL
+C1.	“Intentionally Left Blank”
+C2. 	“Intentionally Left Blank”
+C3. 	LIMITATION OF LIABILITY
+C3.1	In the event of any breach or default of a term of this Contract, the Contractor's cumulative liability shall not exceed the sum of Singapore Dollars 1 million or the contract value, whichever is lower.
+C3.2	In the event of any breach or default of a term of this Contract, TAL’s cumulative liability shall not exceed the sum of Singapore Dollars 1 million or the contract value, whichever is lower.
+C3.3	 For the avoidance of doubt, Clauses C3.1 and C3.2 shall not apply to any claim relating to any:
+(a)	death or personal injury;
+patent, copyright or other intellectual property right infringement;
+indemnity provided under this Contract; or
+liquidated damages recoverable under this Contract.
+SCHEDULE A
+PERSONAL DATA PROTECTION SCHEDULE
+The Contractor acknowledges that in performing its obligations pursuant to or as contemplated under the Contract, it will come into contact with data, whether true or not, about an individual who can be identified – (a) from that data; or (b) from that data and other information to which the Contractor, its employees, representatives, agents and/or sub-contractors, has or is likely to have access (“Personal Data”).
+The Contractor agrees, warrants and undertakes, and shall procure that its employees, representatives, agents and sub-contractors agree, warrant and undertake to TAL as follows:
+the Contractor is able to fulfil the statutory requirement of complying with the Personal Data Protection Act 2012 (“PDPA”) and that, in the event of any change of circumstance which is likely to have a substantial adverse effect on it being able to maintain the standard of protection comparable to that of the PDPA, it will promptly notify such change to TAL, in which case TAL is entitled to suspend the transfer of Personal Data to the Contractor and require the return or destruction of any Personal Data transferred to it;
+the Contractor shall cooperate with TAL and/or the Commission (as defined in the PDPA) in the course of all of its inquiries and abide by the decision and/or advice of the Commission with regard to the Personal Data transferred to it;
+if the Contractor collects Personal Data from any persons, the Contractor shall inform such persons of the collection of their Personal Data and the use for which their Personal Data has been collected, and obtain their written consent in relation thereto;
+the Contractor, and its employees, representatives, agents and sub-contractors, shall access, process, collect, use and/or disclose Personal Data strictly for the performance of its obligations pursuant to or as contemplated under the Contract in accordance with the terms and conditions of this Contract ("Permitted Purposes") and shall not without TAL's prior written consent independently access, process, collect, use and/or disclose or permit the access, processing, collection, use and/or disclosure of Personal Data whether for the Permitted Purposes or otherwise, and shall further ensure and procure that any such access, processing, collection, use and/or disclosure must not in any event exceed any consents provided by any person in connection therewith to whom the Personal Data relates, unless otherwise permitted by law;
+to the extent that the Contractor accesses, processes, collects, uses and/or discloses Personal Data where the consent therefor has not been obtained directly from the individuals to whom the Personal Data relates, the Contractor agrees and acknowledges that it does so at its own risk, and the Contractor shall at its own expense ensure that all necessary consents in accordance with all applicable laws, including without limitation the PDPA, have been obtained from the individuals;
+the Contractor shall keep all Personal Data confidential and not disclose Personal Data to any person unless:
+the Contractor has obtained TAL's prior written consent, which consent may be subject to such reasonable conditions that TAL may impose; or
+such disclosure is made in response to a valid court order, to the extent legally required in response to a request from a law enforcement, agency or in order to comply with applicable laws, in which case the Contractor shall notify TAL immediately after becoming aware that such disclosure of Personal Data may be required;
+the Contractor shall have, use and employ administrative, physical, technical and other safeguards (including safeguards against worms, Trojan horses, and other disabling or damaging codes) to ensure that Personal Data is afforded protection in accordance with the PDPA;
+the Contractor shall immediately notify TAL of any breaches of security that may result in the unauthorised collection, access, use, disclosure, copying, modification, and/or disposal of Personal Data. The Contractor shall make all reasonable efforts to assist TAL in relation to the investigation and remedy of such breach of security and any claim, allegation, action, proceeding or litigation with respect to this unauthorised collection, access, use, processing and/or disclosure of Personal Data;
+the Contractor shall, in respect of any Personal Data collected, used, disclosed, accessed and/or processed by it in connection with this Contract, comply with the relevant data protection legislation (including but not limited to the PDPA), regulations, guidelines and practice notes which may be applicable from time to time and with any requests, directions or guidelines which TAL may provide to the Contractor from time to time;
+the Contractor shall have appropriate technical and organisational measures in place against unauthorised or unlawful access to or collection, use, disclosure and/or processing of Personal Data and other similar risks and against accidental loss or destruction of, or damage to, Personal Data held, accessed, collected, used, disclosed and/or processed by it, and the Contractor shall take all reasonable steps to ensure the reliability of any of its employees, representatives, agents or sub-contractors who have access to Personal Data collected, used, disclosed and/or processed in connection with this Contract;
+the Contractor shall, and shall ensure that all of its employees, representatives, agents and sub-contractors shall, respond to (and provide reasonable assistance to TAL in responding to) any request or query by individuals whose Personal Data the Contractor has accessed, collected, used, disclosed and/or processed for information as to their Personal Data or how it may have been used and/or for the correction of such Personal Data;
+the Contractor shall appoint an officer to address all requirements of Section 11 of the PDPA, and ensure that all of its employees, representatives, agents and sub-contractors are fully trained to ensure compliance with the requirements herein and at law relating to Personal Data; and
+when the use for which Personal Data had been collected has expired, and in any event no later than upon the termination or expiry of this Contract, the Contractor shall deliver to TAL or as TAL may direct in writing and in a form specified by TAL all records relating to any Personal Data which it has accessed, collected, used, disclosed and/or processed in connection with this Contract, together with all documentation, books, records and evidence of any and all consents or agreements with third parties relating to such Personal Data. The Contractor shall thereafter at its own cost and expense and in accordance with TAL's requirements and specified methods, return, delete or destroy any such copies of such Personal Data and all records thereof which may be in the Contractor’s possession or under its control and provide upon TAL's request such evidence of deletion or destruction as TAL may require. For the avoidance of doubt, the Contractor shall thereafter cease to retain its documents containing personal data and remove the means by which the personal data can be associated with particular individuals.
+The Contractor shall keep complete and proper books, records and documentation relating to all access, collection, use, disclosure and/or processing of Personal Data and relating to its compliance with the terms of this Contract and with the requirements under relevant data protection legislation (including but not limited to the PDPA), regulations, guidelines and practice notes which may be applicable from time to time, as well as all consents relating thereto, and shall upon reasonable notice by TAL provide unrestricted access to such books, records and documentation (including information stored in computerised form) to TAL, TAL’s employees, agents, contractors, sub-contractors, advisers and/or representatives, and allow TAL, TAL's employees, agents, contractors, sub-contractors, advisers and/or representatives to make copies thereof. The Contractor shall further provide such information as TAL may from time to time require in order for TAL to verify the Contractor's compliance with its obligations under this Contract or at law.
+The Contractor shall not transfer any Personal Data to a country or territory outside Singapore without TAL's prior written consent. Where TAL has given prior written consent, any transfer of Personal Data by the Contractor shall be in accordance with requirements prescribed in the PDPA and the Contractor shall ensure that it provides a standard of protection to Personal Data so transferred that is comparable to the protection under the PDPA.
+In the event that the Contractor provides TAL with the Personal Data of its employees, representatives, agents, advisers, contractors and/or sub-contractors ("Contractor Personal Data") as requested by TAL from time to time in connection with the performance of its obligations pursuant to or as contemplated under the Contract, TAL may access, process, collect, use and/or disclose Contractor Personal Data for the purposes of identity verification, authorising access, ensuring the continuing safety and security of TAL's premises and such other purposes which are reasonably related to these purposes ("Customer Purposes").
+The Contractor represents, warrants and undertakes that:
+the necessary and appropriate consents will have been obtained from the relevant parties for the access, processing, collection, use and/or disclosure of Contractor Personal Data by TAL for Customer Purposes in accordance with the PDPA and any other relevant applicable data protection legislation from time to time; and
+the Contractor shall keep and maintain complete and proper records of the consents obtained in accordance with the terms herein and shall upon request by TAL provide copies of such consents to TAL.
+The Contractor agrees to fully defend, indemnify and hold harmless TAL, and TAL's respective directors, employees, representatives, agents, advisers, contractors, and/or sub-contractors (collectively "Data Indemnified Persons") from and against any claim, action, demand or complaint, as well as all liabilities, judgments, fines, penalties, compounds, losses, costs, damages and expenses that the Data Indemnified Persons may suffer or incur in connection with any claim, allegation, proceeding or action brought against the Data Indemnified Persons in relation to any breach of this Schedule, and any failure to comply with any data protection or privacy laws in any relevant jurisdictions, whether arising on account of the actions of the Contractor, the Contractor's employees, representatives, agents, advisers, and/or sub-contractors or otherwise howsoever.
+The Contractor shall bear all costs in relation to its compliance with this Schedule.
+SCHEDULE B
+ITQ-FY26-WS-008
+UNDERTAKING TO SAFEGUARD OFFICIAL INFORMATION
+I understand and agree that all official information acquired by me in the course of my service in connection with the work commissioned by the Tripartite Alliance Limited (TAL) and its agencies, Tripartite Alliance for Fair and Progressive Employment Practices (TAFEP), Tripartite Alliance for Dispute management (TADM) and Workplace Safety and Health Council (WSHC) is of a strictly secret and confidential nature, and is not to be published or communicated by me to any other person in any form whatsoever except in the course of my official duties on a strictly “need-to-know” basis.
+I shall ensure that any other person who is authorised by me to have access to any official information shall similarly sign an undertaking to safeguard official information.
+I undertake to return any document received from Tripartite Alliance Limited (TAL) and its agencies, Tripartite Alliance for Fair and Progressive Employment Practices (TAFEP), Tripartite Alliance for Dispute management (TADM) and Workplace Safety and Health Council (WSHC), any other copies made or reproduced from such document or part thereof whenever required by Tripartite Alliance Limited (TAL) and its agencies, Tripartite Alliance for Fair and Progressive Employment Practices (TAFEP), Tripartite Alliance for Dispute management (TADM) and Workplace Safety and Health Council (WSHC).
+I further understand and agree that any breach or neglect of this undertaking would be considered a breach of contract and may be grounds for legal action.
+|
+|
+|
+Full Name
+| Company Name
+| Designation
+|
+|
+|
+|
+Company Stamp
+| Signature
+| Date
+|
+|
+|
+|
+Witness Full Name
+| Signature
+| Date
+|
+ITQ-FY26-WS-008
+ANNEX B - REQUIREMENT SPECIFICATIONS
+BACKGROUND
+WSH Council is collaborating with the Ministry of Education (MOE) to infuse safety messages such as “Beware of Blind Spots”, “Observe Your Surroundings”, “Care for One Another”, and “Be Courageous and Save Lives” for MOE’s Primary Four Chinese language curriculum. The resource will be used as a supplementary material to generate students’ awareness on observing personal safety while learning the Chinese language.
+OBJECTIVES
+The aim of this project is to develop a video using AI tools to generate students’ safety awareness, specifically the Primary Four students on observing personal safety while learning the Chinese language. The draft script shall be provided by WSH Council in the Chinese language, and the video shall be voice-over in Mandarin.
+The video must engage the audience and captivate their attention through appropriate, interesting, and relevant voice-overs, visuals, sound effects, pauses, music, etc. The intent is to evoke positive emotions to create an impact at appropriate moments to captivate the audience’s attention, and to allow the audience to follow the message through and retain the key safety lessons from the video.
+SCOPE OF WORK
+ITEM
+| DESCRIPTION
+|
+Target Audience
+| Primary Four students, but to peg the content maturity for students aged 11 to 12.
+|
+Language
+| Chinese Language (Mandarin) that is used for education purpose across the Singapore MOE schools,
+|
+Voice-over (human talent)
+| The video developed is to be voice-over in Chinese Language (Mandarin) that is used across Singapore MOE schools. The talent for the voice-over is to articulate and pronounce the words in Mandarin clearly, fluently and confidently.
+|
+Duration of Video
+| Up to 3 minutes, including:
+Up to 2.5 minutes for the video contents
+Optional scope:
+A segment on Question and Answer (Q&A) to capture key learning points. The draft questions will be provided by WSH Council.
+Note: There is no need for any interactive learning for this segment.
+|
+Style of Video and mode of video development
+|   The video is to be in 3D AI animation developed from the most appropriate and suitable AI tools/software for AI video production and editing.
+|
+Job scope
+| The scope of work to be covered by the contractor shall include: -
+Developing a storyboard in English and accompanying the storyboard with the relating script in Chinese for voice-over. The draft scripts in both English and Chinese will be provided by WSH Council.
+The storyboard developed is to conceptualise the concept of the entire video, depicting clearly on the proposal to the look of the main animated character, the main animated character movement, the animated character and scenes, the flow of the main animated character from one scene to the next, the use of appropriate or relevant visuals, sounds, pauses, music, and any visuals, sounds, pauses, music to evoke positive emotions to create an impact at the appropriate point.
+Attaching the relating storyboard in Chinese to the storyboard drafted. If there is any suggestion to edit the script, it must ensure that the meaning is coherent and retained accordingly. All amendments to the script must be approved by WSH Council.
+The storyboard must be endorsed by WSH Council before proceeding with the actual production. There may be up to three separate reviews on the storyboard before endorsement by WSH Council.
+Developing the characters in 3D AI animation using AI tools/software, developing the 3D AI animated moving scenes, other AI animated objects targeted for children aged 11 to 12. The 3D AI animation is to be in the style mentioned in “E” and more sophisticated than the 2D sample provided.
+Modifying the script where necessary with approval from WSH Council if the modification(s) can help to generate interest in the audience, help to maintain the audience’s attention to follow the contents in the video and help to retain the key information better.
+Incorporating all the 3D AI animations, static or moving, relevant voice-overs, appropriate or relevant visuals, sounds, pauses, music, and any visuals, sounds, pauses, music to evoke positive emotions at the appropriate point and to develop the contents into a 3D AI animated video to meet the objective of this project. There may be up to three separate reviews and edits on the video before endorsement by WSH Council.
+|
+Copyright and licensing
+| The contractor shall manage all copyright and licensing matters relating to the use of any AI related tool or software or any other relevant and appropriate AI footages, images, animations.
+|
+Other images/visual content
+| The contractor shall:
+source for relevant and appropriate footages, images, animations to enhance the engagement of the audience and captivate their attention.
+manage all copyright matters relating to the development of the video content /material from relevant sources, where applicable.
+|
+Format of Content
+| The contractor shall produce the video in a format that is:
+compatible for upload onto MOE internal platform and WSH Council website.
+compatible for upload onto social media platform, such as, YouTube, etc.
+of high, good, and clear resolution for screening across a school’s multipurpose hall on large projection screens.
+|
+Review and edit
+| The video shall be accessible to WSH Council and other relevant stakeholders for reviews. Three separate reviews can be expected.
+|
+Ownership and Copyright of Material
+| TAL c/o Workplace Safety & Health Council
+|
+EXPECTATIONS
+The contractor shall carry out the works in a professional and timely manner and in complete accordance with the specifications stated. The contractor is expected to follow the delivery of services, as agreed in this contract. In circumstances where there is any delay which may be due to the cause of any party concerned, the contractor shall immediately carry out appropriate actions to adhere to the timeline.
+4.1	Project Management/Key Contact Persons
+The contractor shall provide the name, designation and mobile of the contact person/s during this contract. TAL must be able to contact the person/s by the next working day when there is any clarification, query or inputs required from TAL. The contact person/s must have the capacity and time to address the clarification, query or inputs from TAL clearly and accordingly within one working day. There should be at least 2 contact persons. In situations where there is only one key contact person, the person must still be able to accede to TAL’s assistance, as stated, regardless of the schedule of the key contact person or his/her involvement in other projects.
+4.2	Timeline
+The duration of the project is 2.5 months, from the date the contractor receives the letter of award.  The completed video is to be delivered to WSH Council and uploaded to Ministry of Education (MOE) intranet.
+EVALUATION CRITERIA
+All valid submissions shall be evaluated based on:
+ITEM
+| Percentage
+| Remarks
+|
+i. Price Competitiveness
+| 35%
+| The price quoted shall be reasonable and provide value for money.
+|
+ii. Company Track Record and Project Team profile
+| 30%
+| The company must have the relevant track record to showcase the relevant capabilities and experience in projects   for 3D AI animation
+The team members must have the academic qualification/certification and/or experience on 3D AI video production, and development of 3D AI animation. They must have the credentials and/or experience in putting all the material together to meet the objective of this project.
+NB: The scoring will be based on the profile of the company and team. Providing a link to the company’s website or any other relevant information to demonstrate these track records would be useful.
+|
+iii. Company involvement in similar projects
+|  20%
+| The company must be able to submit at least one example of 3D animated AI  video production that is relevant for our target audience) or/and a sample production to show that the company is equipped with the ability to produce and meet the objective of this project.
+NB: The scoring will be based on the sample videos or work selected by the company to demonstrate the capability to meet the project’s objective and outcome.Providing a link to the company’s completed video using 3D AI animation that will demonstrate this capability and may potentially be adapted to meet this project’s objective would be useful
+|
+iv. Quality of Proposal: Company’s ability to generate interest for the audience
+| 15%
+| The company’s proposal of about 100 words shall include:
+The brief approach to the story flow and
+The approach to the 3D AI animation in certain highlights of the storyline / storyboard to show how the highlights can add interest to the video to captivate the attention of the young audience and help them to retain the information
+|
+PROPOSAL SUBMISSION REQUIREMENTS
+The proposal should include:
+Company background (corporate philosophy, capabilities, capital resource, manpower resource, staff strength, client list, brief record of significant achievements and awards, key projects, etc.);
+Relevant experience/track record of similar projects handled; curriculum vitae of project team members (including their names, designations, academic qualifications, work experience, involvement in relevant projects) who will be directly involved in this project and the roles they will play;
+ACRA Bizfile (version not older than 3 months from date of submission);
+A project plan/proposal for the deliverables as per the scope of services stated in this ITQ specifications, specifically the company’s proposal of about 100 words including the brief approach to the story flow and the approach to the 3D AI animation in certain highlights of the storyline / storyboard to show how the highlights can add interest to the video to captivate the attention of the young audience and help them to retain the information.
+Description of capabilities and services that the Applicant can provide, including providing sample videos (please provide the links to the videos) produced by the company, for animation style specified in the “Scope of Work”
+A proposed schedule of costs, itemising services (using Annex C)
+Note:
+Prices quoted must be all-inclusive with a clear breakdown. TAL will not accept additional fees or charges (e.g. out of pocket expenses) that are not reflected in the proposal submission.
+Please quote the nett price (service charge and any other charges, including prevailing Goods and Services Tax, if applicable);
+Any other information/optional services that will support the project.
+The Applicant may also propose other value-added ideas and services over and above the requirement specifications but is encouraged to include these as part of the quotation amount under optional items.
+Applicants shall be required to submit the proposal documents via the Tender Board platform by 3.00pm on 13 July 2026.
+Submissions received after the official closing date and time of the ITQ will not be evaluated.
+Applicants who have incomplete document submission by closing of ITQ may be disqualified from the ITQ exercise.
+All items / samples submitted in the proposal will be considered properties of TAL and are non-returnable.
+PAYMENT SCHEDULE AND INVOICING MODE
+The payment schedule will be as follows:
+The payment shall be in full, upon completion of the video and uploaded to the relevant portal of the Ministry of Education, WSH Council and any specified social media platforms.
+The payment will be made within 30 days upon receipt of invoice after the completion of deliverables. The invoice shall be addressed to:
+Tripartite Alliance Limited (c/o WSHC)
+The Workplace Safety and Health Council
+1500 Bendemeer Road #04-01
+Singapore 339946
+ENQUIRIES
+For clarifications on this ITQ document, please contact via email:
+TAL (WSH Council) representative: Ms Agnes Lim
+TAL (WSH Council) email contact: agnes_lim@wshc.sg
+ANNEX C
+PRICING TEMPLATE
+Please provide a comprehensive schedule of costs, detailing items as much as possible:
+S/N
+| Item Description
+| Cost (S$)
+|
+1
+| Development of the 3D AI animation storyboard for the video, with the script in both English and Chinese language, as provided by WSH Council. The material is to be voice-over in Chinese Language (Mandarin) used across Singapore MOE schools.
+|
+|
+2
+| Development of characters in 3D AI animation form, the 3D AI animated scenes, and the 3D AI animated objects.
+|
+|
+3
+| Voice-over the material in Chinese (Mandarin). Only one child talent (can be male or female) is required. The voice-over has to be a “human” talent, not “AI” talent.
+|
+|
+4
+| Producing of the video by integrating all the 3D AI animated character, 3D AI animated objects, 3D AI animated scenes, animations, voice-over, visual, sound, pause, music and any other value-add idea if any to meet the project objective.
+|
+|
+5
+| Additional item: Review and edit the draft video beyond the requirement of 3 times (to quote if this is chargeable beyond 3 times)
+|
+|
+6
+| Optional item: A brief segment on Question and Answer (Q&A). Each question with accompanying answers is to capture key learning points. There is no need for any interactive learning for this segment.
+NB: Indicate the cost of this service or if the service is zero cost.
+|
+|
+7
+| Optional item: Value-added ideas and services over and above the requirement specifications under “Scope of Work”
+NB: Indicate the cost of this value-added service or if the service is zero cost.
+|
+|
+8
+| Optional item which may be activated  during contract period: Adapting the video from Chinese Language (Mandarin) to other Languages (for example, English, Malay or Tamil), including the voice-over in the relevant language, edits to mouthing of the animation to synchronise with the voice-over, and pacing of the video to suit the language selected.
+|
+|
+SUB-TOTAL (BEFORE GST)
+Please include items [1 + 2 + 3 + 4 + 5]
+| S$
+|
+TOTAL (INCLUDE PREVAILING GST <9%>)
+| S$
+|
+OPTIONAL ITEMS:
+|
+TOTAL COST FOR ITEM  6(INCLUDE PREVAILING GST <9%>)
+| S$
+|
+TOTAL COST FOR ITEM  7 (INCLUDE PREVAILING GST <9%>)
+| S$
+|
+TOTAL COST FOR ITEM  8(INCLUDE PREVAILING GST <9%>)
+| S$
+|
+Note:	Please fill in the table (All are compulsory items, unless otherwise stated). An incomplete submission may result in disqualification.
+Prices quoted must be all-inclusive with a clear breakdown. TAL will not accept additional fees or charges (e.g. out of pocket expenses) that are not reflected in the proposal submission.
+|
