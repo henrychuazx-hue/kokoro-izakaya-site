@@ -1,51 +1,125 @@
-# Genki 元気 — Personal Health Tracker
+# RETROTRIGGER™ — Arcade Pre-Order Storefront
 
-A private, offline-first health tracking platform. Everything runs in your browser —
-no account, no server, no tracking. Your data never leaves your device unless you
-export it.
+A fully interactive, arcade-machine-styled dropshipping storefront for the
+**RetroTrigger™ / RetroPistol™** light gun. The whole page behaves like a cabinet:
+CRT boot sequence, crosshair cursor, a **playable light-gun minigame** that pays out
+real discount codes, stage-based product tour, phosphor spec terminal, and a
+Stripe-powered pre-order "final boss" checkout.
 
-**Open `index.html` (or the deployed site root) to use it.**
+**No build step. No framework. No dependencies.** Three files of hand-rolled
+HTML/CSS/JS — host it on any static host (GitHub Pages works out of the box).
 
-## Modules
+---
 
-| Module | What it does |
+## What's on the page
+
+| Stage | What happens |
 |---|---|
-| **Dashboard** | Daily goal rings — calories eaten, calories burned, water, protein, sodium, sleep |
-| **Diet** 🍱 | Meal logging with a 212-food database (hawker & Japanese dishes, sodium-accurate), photo food scanning via Claude vision, hydration tracking, 7-day calorie/sodium charts |
-| **Fitness** 🏋️ | Workout logging with MET-based calorie burn (72 exercises), protein coach, recommended workout plans, muscle-balance & overtraining flags, body metrics (weight/BMI, body fat, resting HR, BP) |
-| **Sleep** 😴 | Night-sky decorated 14-night tracker, sleep debt, bedtime consistency, streaks, tag insights |
-| **Mood** 🙂 | Mood / stress / energy check-ins, tags, 14-day trends, sleep-vs-stress insight, watch-data CSV import |
-| **Records** 🗂️ | Upload lab reports & prescriptions, Apple Health `export.xml` import, full JSON backup/export |
+| **BOOT** | Arcade BIOS types out a system check → INSERT COIN → CRT power-on wipe (skippable, auto-skipped for reduced-motion users and repeat visits in a session) |
+| **STAGE 00 · THE RANGE** | A real 40-second canvas shooting gallery: zombies, ducks, bottles, bonus coins — and civilians you must NOT shoot. 8-round mag, reload on R / right-click, combo multipliers, arcade rank (D→S), local top-5 leaderboard with 3-letter initials. **Score 2,500+ → unlocks `DEADEYE10` (10% off), auto-applied at checkout.** |
+| **STAGE 01 · HARDWARE** | Product photo with 7 pulsing hotspots — tap to inspect the IR muzzle array, light rail, recoil trigger, USB-C grip cell, etc. |
+| **STAGE 02 · TECH** | Animated 4-beacon IR tracking diagram + latency/calibration stat tiles |
+| **STAGE 03 · GAMES** | 600+ pre-loaded library by genre, with an era marquee (Time Crisis, House of the Dead… referenced nominatively, disclaimed in the footer) |
+| **STAGE 04 · 2P START** | Co-op story + 2-Player Set upsell |
+| **SPEC SHEET** | Green-phosphor terminal that types out the diagnostics |
+| **MISSION** | Honest supplier→door pre-order pipeline: order → batch lock → test-fired QC → dispatch (tracking ≤5 days after batch close) → delivery 2–4 weeks |
+| **FINAL BOSS** | The buy box: colorway + loadout selectors, live countdown to batch close, allocation bar, Stripe checkout, guarantees row |
+| **FAQ + footer** | Objection handling and the trademark/IP disclaimer |
 
-## Photo food scanning
+Extras: WebAudio-synthesized gunshots/coins/fanfares (no audio files), bullet-hole
+decals when you shoot dead space, screen-shake, Konami code (`↑↑↓↓←→←→BA`) →
+GOD MODE + secret `GODMODE15` code, sound toggle, full mobile + reduced-motion support.
 
-Two ways:
+---
 
-1. **In the app** — add your own Anthropic API key in *Settings* (stored only in your
-   browser's localStorage). The Diet module's *Photo* tab then analyses food photos
-   directly and pre-fills an editable nutrition estimate.
-2. **In Claude** — send Claude a photo of your meal in chat and ask it to log/estimate
-   it; enter the numbers via the *Manual* tab (or let Claude update your data file).
+## Run it
 
-## Apple Watch / HealthKit
+Open `index.html`, or serve the folder:
 
-Websites cannot read HealthKit directly (Apple only exposes it to native iOS apps).
-Bring your Watch history in via **Records → Import Apple Health export.xml**
-(Health app → profile picture → *Export All Health Data*), which imports sleep and
-resting heart rate. Mood/stress check-ins take about ten seconds to enter manually.
+```bash
+python3 -m http.server 8000    # → http://localhost:8000
+```
 
-## Data & privacy
+---
 
-- All data persists in `localStorage` under the key `genki.v1`, on your device only.
-- **Records → Export all data (JSON)** produces a full backup; import it on any other
-  device to move your history.
-- The optional Anthropic API key is stored only in your browser and sent only to
-  `api.anthropic.com`.
+## Configure the store — edit ONE file: `js/config.js`
 
-## Development
+Everything a store owner touches lives in `js/config.js`:
 
-No build step, no framework, no dependencies. Plain HTML/CSS/ES6 with inline SVG
-charts. See [SPEC.md](SPEC.md) for the architecture, data schema, and module contract.
+```js
+pricing:  { single: { price: 259, msrp: 329 }, double: { price: 469, msrp: 599 } },
+preorder: { batch: "BATCH 01", closesAt: "2026-08-31T23:59:59Z", claimedPct: 72, ... },
+stripe:   { paymentLinks: { "black-single": "", "blue-single": "", "black-double": "", "blue-double": "" } },
+discounts:{ range: { code: "DEADEYE10", pct: 10, minScore: 2500 }, konami: { code: "GODMODE15", pct: 15 } },
+```
 
-The previous site that lived in this repository (Kokoro Izakaya) is preserved at
-[`/izakaya/`](izakaya/).
+Until payment links are pasted in, the buy button shows a friendly
+"checkout offline — setup required" modal instead of a dead link.
+
+### Stripe setup (≈15 minutes)
+
+1. **Create the product** — Stripe Dashboard → Product catalog → *Add product*:
+   "RetroTrigger™ Pistol", price **$259** (one-time). Add a second price or product
+   for the 2-Player Set at **$469**.
+2. **Create 4 Payment Links** — *Payment Links → New* — one per variant
+   (Black/Solo, Blue/Solo, Black/2P, Blue/2P — use the product above; put the
+   colorway in the link's line-item name so it lands on the order):
+   - ✅ Collect customers' **shipping addresses** (set the countries you'll serve)
+   - ✅ **Allow promotion codes**
+   - ✅ Adjustable quantity (optional)
+   - Set a **confirmation message** like: "Order locked into Batch 01 — tracking
+     number lands in your inbox within 5 days of batch close."
+3. **Create the promotion codes** — *Product catalog → Coupons*: a 10% coupon with
+   promotion code `DEADEYE10`, and a 15% coupon with code `GODMODE15`
+   (must match `js/config.js` exactly — the site auto-fills them via the
+   `?prefilled_promo_code=` parameter on the payment link).
+4. **Paste the 4 link URLs** into `stripe.paymentLinks` in `js/config.js`. Done.
+
+Test with Stripe **test mode** links first (card `4242 4242 4242 4242`), then swap
+in live-mode links.
+
+### Dropship runbook (supplier → door)
+
+1. **Order arrives** — Stripe emails you + the customer a receipt with the shipping
+   address. (Optional later: a Zapier/Make hook on `checkout.session.completed`
+   into a Google Sheet.)
+2. **Place the supplier order** for each paid order (or in bulk at batch close)
+   with the customer's address as the shipping address. Keep the supplier order ID
+   next to the Stripe payment ID.
+3. **Batch close** (the site's countdown date): finalize all supplier orders.
+4. **Tracking** — as supplier tracking numbers arrive, forward them from Stripe's
+   receipt thread (or your `orders@` inbox) within the promised 5 days.
+5. **Issues** — refunds/partial refunds happen in the Stripe dashboard; the site
+   promises 30-day returns and a 12-month warranty, so mirror that with your
+   supplier's terms before scaling ad spend.
+6. **Next batch** — bump `preorder.batch`, `closesAt`, `claimedPct` in
+   `js/config.js` and you're re-armed.
+
+### Tuning the game economy
+
+`discounts.range.minScore` (default 2500) controls how hard the 10% code is to earn —
+a decent first run scores ~1,500–3,000. The unlock persists in `localStorage`,
+shows in the nav chip, and auto-applies at checkout.
+
+---
+
+## Repo layout
+
+```
+index.html        the entire page
+css/style.css     design system + CRT/arcade chrome
+js/config.js      ← the only file a store owner edits
+js/arcade.js      boot, audio synth, storefront logic, THE RANGE game engine
+assets/           processed supplier imagery (webp, transparent-cut product shots)
+genki/            previous project preserved (Genki health tracker)
+izakaya/          previous project preserved (Kokoro Izakaya site)
+```
+
+## Legal notes
+
+- Classic titles (Time Crisis®, The House of the Dead®, etc.) are referenced only
+  to describe an era; the footer carries the disclaimer. Don't use their artwork.
+- Product imagery comes from the supplier's own marketing assets (standard
+  dropship practice) — replace with your own photography when you can.
+- Update `contactEmail` in `js/config.js` and put a real business address in your
+  Stripe receipt settings before running traffic.
