@@ -1,9 +1,13 @@
 /* ============================================================
    RETROTRIGGER™ STOREFRONT CONFIG
    ------------------------------------------------------------
-   This is the ONLY file you need to edit to run the store.
-   Prices, pre-order window, Stripe links, discount codes —
-   everything lives here. See README.md for the full setup guide.
+   This is the main file you edit to run the store. Prices,
+   pre-order window, Stripe links, discount codes — everything
+   lives here. See README.md for the full setup guide.
+
+   NOTE: if you change prices here, also update the JSON-LD
+   <script type="application/ld+json"> block in index.html so
+   search engines advertise the same price.
    ============================================================ */
 
 window.RT_CONFIG = {
@@ -13,7 +17,10 @@ window.RT_CONFIG = {
 
   /* ---------- PRICING (numbers only, shown as USD) ----------
      `price` is what the customer pays at pre-order.
-     `msrp` is the crossed-out reference price.               */
+     `msrp` is shown crossed-out as the POST-LAUNCH price —
+     only keep it if you genuinely intend to charge it after
+     the pre-order window (fictitious reference pricing is
+     illegal in most markets).                                */
   currency: "$",
   pricing: {
     single: { label: "SOLO OPERATIVE",  sub: "1× RetroTrigger pistol",      price: 259, msrp: 329 },
@@ -24,16 +31,21 @@ window.RT_CONFIG = {
   preorder: {
     batch: "BATCH 01",
     closesAt: "2026-08-31T23:59:59Z",     // countdown target (ISO, UTC)
-    shipWindow: "Ships late September 2026",
-    claimedPct: 72,                        // % of batch shown as allocated
-    unitsLine: "500-unit allocation",
+    shipWindow: "Ships early September 2026",
+    /* claimedPct: percentage of the batch already ordered.
+       Leave null unless you update it from REAL order counts —
+       a made-up number is a deceptive dark pattern.           */
+    claimedPct: null,
+    unitsLine: "limited 500-unit allocation",
   },
 
   /* ---------- STRIPE ----------
      Create 4 Payment Links in your Stripe dashboard
      (Products → Payment Links) and paste them here.
      Keys are "<color>-<bundle>". Leave "" to show the
-     setup-required notice instead of a dead checkout.       */
+     setup-required notice instead of a dead checkout.
+     In each link: collect shipping address, allow promotion
+     codes, and set your shipping countries/rates.            */
   stripe: {
     paymentLinks: {
       "black-single": "",
@@ -46,11 +58,11 @@ window.RT_CONFIG = {
   /* ---------- DISCOUNT CODES ----------
      Create matching Promotion Codes in Stripe so the codes
      actually work at checkout. The site unlocks them through
-     gameplay and auto-fills them via ?prefilled_promo_code.  */
+     gameplay and pre-fills them via ?prefilled_promo_code.   */
   discounts: {
     range:  { code: "DEADEYE10", pct: 10, minScore: 2500 },   // earned in THE RANGE
     konami: { code: "GODMODE15", pct: 15 },                   // ↑↑↓↓←→←→BA easter egg
   },
 
-  contactEmail: "orders@retrotrigger.example",
+  contactEmail: "henrychua94@gmail.com",
 };

@@ -48,10 +48,17 @@ Everything a store owner touches lives in `js/config.js`:
 
 ```js
 pricing:  { single: { price: 259, msrp: 329 }, double: { price: 469, msrp: 599 } },
-preorder: { batch: "BATCH 01", closesAt: "2026-08-31T23:59:59Z", claimedPct: 72, ... },
+preorder: { batch: "BATCH 01", closesAt: "2026-08-31T23:59:59Z", claimedPct: null, ... },
 stripe:   { paymentLinks: { "black-single": "", "blue-single": "", "black-double": "", "blue-double": "" } },
 discounts:{ range: { code: "DEADEYE10", pct: 10, minScore: 2500 }, konami: { code: "GODMODE15", pct: 15 } },
 ```
+
+Honesty guardrails baked in: `msrp` is displayed as the **post-launch price** (only keep
+it if you'll really charge it later); `claimedPct` stays `null` unless you update it from
+real order counts (a made-up scarcity bar is a deceptive dark pattern); when the countdown
+expires the timer flips to "BATCH CLOSED — NEW ORDERS JOIN THE NEXT BATCH" instead of
+selling under a dead deadline. If you change prices, also update the JSON-LD block in
+`index.html` (it's flagged with a comment).
 
 Until payment links are pasted in, the buy button shows a friendly
 "checkout offline — setup required" modal instead of a dead link.
@@ -107,13 +114,23 @@ shows in the nav chip, and auto-applies at checkout.
 
 ```
 index.html        the entire page
+policies.html     returns / warranty / shipping / terms / privacy (review before launch)
 css/style.css     design system + CRT/arcade chrome
-js/config.js      ← the only file a store owner edits
+js/config.js      ← the main file a store owner edits
 js/arcade.js      boot, audio synth, storefront logic, THE RANGE game engine
 assets/           processed supplier imagery (webp, transparent-cut product shots)
 genki/            previous project preserved (Genki health tracker)
 izakaya/          previous project preserved (Kokoro Izakaya site)
 ```
+
+### Launch checklist
+
+1. Paste the 4 Stripe Payment Link URLs into `js/config.js`
+2. Create the `DEADEYE10` / `GODMODE15` promotion codes in Stripe
+3. Review `policies.html` and fill in your legal entity (delete the red draft notice)
+4. Make `og:image` / JSON-LD image URLs absolute for your live domain (flagged in `index.html`)
+5. Test-buy each variant with Stripe test mode, including an unlocked promo code
+6. Confirm your supplier's current unit price protects your margin at the configured prices
 
 ## Legal notes
 

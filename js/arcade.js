@@ -7,6 +7,14 @@
 "use strict";
 
 var CFG = window.RT_CONFIG || {};
+if (!String.prototype.padStart) {
+  String.prototype.padStart = function (len, pad) {
+    var s = String(this);
+    pad = pad === undefined ? " " : String(pad);
+    while (s.length < len) s = pad + s;
+    return s.slice(-Math.max(len, String(this).length));
+  };
+}
 var $  = function (s, r) { return (r || document).querySelector(s); };
 var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 var clamp = function (v, a, b) { return v < a ? a : v > b ? b : v; };
@@ -14,6 +22,7 @@ var REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 var TOUCH = window.matchMedia("(pointer: coarse)").matches;
 if (REDUCED) document.body.classList.add("reduced");
 if (TOUCH) document.body.classList.add("touch");
+document.body.classList.add("boot-js");   // cancels the CSS boot-failsafe (JS is alive)
 
 /* ---------------- tiny persistent store ---------------- */
 var store = {
@@ -172,12 +181,16 @@ function toast(html, ms) {
 (function boot() {
   var el = $("#boot"), log = $("#bootLog"), coin = $("#bootCoin"), skip = $("#bootSkip");
   var done = false;
+  var pageChrome = $$("header, main, footer");
 
   function finish(playSound) {
     if (done) return; done = true;
     try { sessionStorage.setItem("rt.booted", "1"); } catch (e) {}
     document.body.classList.remove("booting");
     document.body.classList.add("crt-on");
+    pageChrome.forEach(function (n) { n.inert = false; });
+    var main = $("main");
+    if (main && el.contains(document.activeElement)) main.focus({ preventScroll: true });
     if (playSound) { AudioEngine.coin(); AudioEngine.powerOn(); }
     window.removeEventListener("keydown", onKey);
     setTimeout(function () { document.body.classList.remove("crt-on"); }, 700);
@@ -190,9 +203,12 @@ function toast(html, ms) {
   try { skipBoot = skipBoot || sessionStorage.getItem("rt.booted") === "1"; } catch (e) {}
   if (skipBoot) { el.style.transition = "none"; finish(false); return; }
 
+  pageChrome.forEach(function (n) { n.inert = true; });
+  if (skip) skip.focus({ preventScroll: true });
+
   var lines = [
     "RETROTRIGGER ARCADE BIOS v2.6.0",
-    "(c) 1996-2026 RETROTRIGGER CO.",
+    "(c) 2026 RETROTRIGGER CO. - EST. SPIRITUALLY 1996",
     "",
     "MEMORY TEST ........ 64K OK",
     "IR BEACONS ......... 4/4 LOCKED",
@@ -208,6 +224,7 @@ function toast(html, ms) {
     if (done) return;
     if (li >= lines.length) {
       coin.hidden = false;
+      coin.focus({ preventScroll: true });
       return;
     }
     var line = lines[li];
@@ -275,7 +292,7 @@ var Shop = (function () {
     // range-specific unlock panel + chip
     var range = (CFG.discounts || {}).range;
     if (range && state.unlocks.range) {
-      $("#unlockStatus").innerHTML = "TARGET NEUTRALIZED. Code armed — it auto-applies when you hit checkout.";
+      $("#unlockStatus").innerHTML = "TARGET NEUTRALIZED. Code armed — it pre-fills when you hit checkout.";
       $("#unlockReveal").hidden = false;
       $("#unlockCode").textContent = range.code;
     }
@@ -290,18 +307,34 @@ var Shop = (function () {
   function paintBatch() {
     var pre = CFG.preorder || {};
     $$(".cfg-batch").forEach(function (el) { el.textContent = pre.batch || "BATCH 01"; });
-    $("#unitsLine").textContent = pre.unitsLine || "";
-    $("#shipWindow").textContent = pre.shipWindow || "";
-    var pct = clamp(pre.claimedPct || 0, 0, 100);
-    $("#batchPct").textContent = pct + "%";
-    setTimeout(function () { $("#batchFill").style.width = pct + "%"; }, 400);
+    var line = $("#batchLine"), bar = $("#batchBar");
+    var tail = (pre.unitsLine || "") + (pre.shipWindow ? " · " + pre.shipWindow : "");
+    if (typeof pre.claimedPct === "number") {
+      var pct = clamp(pre.claimedPct, 0, 100);
+      bar.hidden = false;
+      line.innerHTML = "<b>" + pct + "%</b> of the " + (pre.unitsLine || "batch") + " claimed" + (pre.shipWindow ? " · " + pre.shipWindow : "");
+      setTimeout(function () { $("#batchFill").style.width = pct + "%"; }, 400);
+    } else {
+      bar.hidden = true;
+      line.innerHTML = "<b>" + (pre.batch || "This batch") + "</b> — " + tail;
+    }
   }
 
+  var cdExpired = false;
   function tickCountdown() {
     var pre = CFG.preorder || {};
     var end = new Date(pre.closesAt || 0).getTime();
     var d = end - Date.now();
-    if (d < 0) d = 0;
+    if (!isFinite(end) || d <= 0) {
+      if (!cdExpired) {
+        cdExpired = true;
+        var row = $(".cd-row");
+        row.querySelector(".opt-label").textContent =
+          (pre.batch || "BATCH") + " CLOSED — NEW ORDERS JOIN THE NEXT BATCH";
+        row.querySelector(".cd").hidden = true;
+      }
+      return;
+    }
     var s = Math.floor(d / 1000);
     $("#cdD").textContent = String(Math.floor(s / 86400)).padStart(2, "0");
     $("#cdH").textContent = String(Math.floor(s % 86400 / 3600)).padStart(2, "0");
@@ -310,19 +343,19 @@ var Shop = (function () {
   }
 
   function bindOptions() {
+    var img = $("#buyImg");
+    img.onload = img.onerror = function () { img.style.opacity = 1; };
     $$(".vbtn").forEach(function (b) {
       b.addEventListener("click", function () {
         state.color = b.getAttribute("data-color");
         $$(".vbtn").forEach(function (x) {
           var on = x === b;
           x.classList.toggle("active", on);
-          x.setAttribute("aria-checked", String(on));
+          x.setAttribute("aria-pressed", String(on));
         });
-        var img = $("#buyImg");
         img.style.opacity = 0;
         setTimeout(function () {
           img.src = "assets/gun-" + state.color + ".webp";
-          img.onload = function () { img.style.opacity = 1; };
         }, 150);
         AudioEngine.uiBlip();
       });
@@ -339,7 +372,7 @@ var Shop = (function () {
     $$(".bbtn").forEach(function (x) {
       var on = x.getAttribute("data-bundle") === k;
       x.classList.toggle("active", on);
-      x.setAttribute("aria-checked", String(on));
+      x.setAttribute("aria-pressed", String(on));
     });
     paintPrices();
     AudioEngine.uiBlip();
@@ -352,12 +385,24 @@ var Shop = (function () {
     AudioEngine.coin();
     if (!url) {
       $("#setupVariant").textContent = key.toUpperCase().replace("-", " / ");
-      $("#setupModal").hidden = false;
+      openModal();
       return;
     }
     var promo = activePromo();
     if (promo) url += (url.indexOf("?") >= 0 ? "&" : "?") + "prefilled_promo_code=" + encodeURIComponent(promo.code);
     setTimeout(function () { window.location.href = url; }, 250);
+  }
+
+  function openModal() {
+    var m = $("#setupModal");
+    m.hidden = false;
+    $("#setupClose").focus({ preventScroll: true });
+  }
+  function closeModal() {
+    var m = $("#setupModal");
+    if (m.hidden) return;
+    m.hidden = true;
+    $("#buyBtn").focus({ preventScroll: true });
   }
 
   function unlock(kind) {
@@ -373,15 +418,31 @@ var Shop = (function () {
     tickCountdown(); setInterval(tickCountdown, 1000);
     bindOptions();
     $("#buyBtn").addEventListener("click", checkout);
-    $("#setupClose").addEventListener("click", function () { $("#setupModal").hidden = true; });
+    $("#setupClose").addEventListener("click", closeModal);
     $("#setupModal").addEventListener("click", function (e) {
-      if (e.target === this) this.hidden = true;
+      if (e.target === this) closeModal();
+    });
+    $("#setupModal").addEventListener("keydown", function (e) {
+      if (e.key === "Tab") { e.preventDefault(); $("#setupClose").focus(); }
+    });
+    window.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeModal();
     });
     $("#copyCode").addEventListener("click", function () {
       var code = $("#unlockCode").textContent;
-      if (navigator.clipboard) navigator.clipboard.writeText(code);
-      toast("CODE " + code + " COPIED ▸ ARMED AT CHECKOUT");
-      AudioEngine.coin();
+      function ok() { toast("CODE " + code + " COPIED ▸ ARMED AT CHECKOUT"); AudioEngine.coin(); }
+      function fail() { toast("COPY BLOCKED — CODE IS " + code + ", JOT IT DOWN, OPERATIVE"); }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(ok, fail);
+      } else {
+        var ta = document.createElement("textarea");
+        ta.value = code; ta.style.position = "fixed"; ta.style.opacity = "0";
+        document.body.appendChild(ta); ta.select();
+        var done = false;
+        try { done = document.execCommand("copy"); } catch (e) {}
+        document.body.removeChild(ta);
+        done ? ok() : fail();
+      }
     });
     var mail = CFG.contactEmail;
     if (mail) { var cl = $("#contactLink"); cl.href = "mailto:" + mail; cl.textContent = mail; }
@@ -392,7 +453,7 @@ var Shop = (function () {
       if (!state.unlocks.range) {
         us.innerHTML = "Score <b>" + range.minScore.toLocaleString() +
           "</b> in one round → code <b class='code-mask'>██████████</b> unlocks — <b>" +
-          range.pct + "% OFF</b> your pre-order. It auto-applies at checkout.";
+          range.pct + "% OFF</b> your pre-order. It pre-fills at checkout.";
       }
     }
     $("#footYear").textContent = "© " + new Date().getFullYear();
@@ -428,17 +489,18 @@ var Shop = (function () {
       flash.classList.add("fire");
       AudioEngine.shot();
       if (!REDUCED) {
-        document.body.style.transform = "translate(2px,-2px)";
-        setTimeout(function () { document.body.style.transform = ""; }, 60);
+        gun.classList.remove("kick");
+        void gun.offsetWidth;
+        gun.classList.add("kick");
       }
     });
   }
 
-  /* bullet holes on dead-space clicks */
+  /* bullet holes on dead-space clicks ("click", not pointerdown,
+     so touch scroll gestures don't fire gunshots) */
   var layer = $("#bulletLayer");
-  document.addEventListener("pointerdown", function (e) {
+  document.addEventListener("click", function (e) {
     if (document.body.classList.contains("booting")) return;
-    if (e.button !== 0) return;
     if (e.target.closest("a,button,canvas,summary,input,select,textarea,label,.buy-box,.hero-stage,#topbar,#setupModal,.hotspot")) return;
     var h = document.createElement("i");
     h.className = "bullet-hole";
@@ -458,7 +520,7 @@ var Shop = (function () {
     ["ACTION + START", "Arcade-grade microswitch buttons. The orange pair covers START/SELECT — the same satisfying click as the cabinet."],
     ["AMMO LEDS", "Four-segment magazine indicator. When it hits one bar, you already know what to do: reload."],
     ["HAIR TRIGGER", "Tuned to arcade pull-weight with a solenoid recoil block behind it. Every shot kicks. Every shot rumbles."],
-    ["GRIP CELL + USB-C", "Two swappable 14500 li-ion cells in the grip, USB-C charged. A full session is never cut short."]
+    ["GRIP CELL + USB-C", "Two 14500 li-ion cells in the grip of every pistol, recharged over USB-C between sessions."]
   ];
   var hotTitle = $("#hotTitle"), hotBody = $("#hotBody"), hotKick = $(".hot-kicker");
   $$(".hotspot").forEach(function (b) {
@@ -777,7 +839,8 @@ var Shop = (function () {
     if (e.type === "civ") {
       st.score = Math.max(0, st.score - 500);
       st.streak = 0;
-      st.redFlash = 0.5; st.freeze = 0.25;
+      if (!REDUCED) st.redFlash = 0.5;
+      st.freeze = 0.25;
       popScore(e.x, e.y - 20, "-500 CIVILIAN!", "#ff3b5c");
       AudioEngine.alarm();
       e.dead = 0.0001; e.deadT = 0;
@@ -801,17 +864,18 @@ var Shop = (function () {
     if (st.reloading > 0) return;
     if (st.ammo <= 0) { AudioEngine.empty(); return; }
     st.ammo--; st.shots++;
-    st.kick = 1; st.flash = 0.09;
-    if (!REDUCED) st.shake = 5;
+    st.kick = 1;
+    if (!REDUCED) { st.flash = 0.09; st.shake = 5; }
     AudioEngine.shot();
     casing();
 
-    // hit test topmost entity (later lanes = closer = tested first)
-    var order = st.ents.slice().sort(function (a, b) {
-      var la = a.lane ? a.lane.y : 0, lbn = b.lane ? b.lane.y : 0;
-      return lbn - la;
-    });
-    var pad = 6;
+    // hit test topmost entity: closer lanes first, newest first within a lane
+    // (draw order paints newest on top, so ties must test newest first)
+    var order = st.ents.map(function (e, i) { return { e: e, i: i }; }).sort(function (a, b) {
+      var la = a.e.lane ? a.e.lane.y : 0, lbn = b.e.lane ? b.e.lane.y : 0;
+      return (lbn - la) || (b.i - a.i);
+    }).map(function (w) { return w.e; });
+    var pad = TOUCH ? 14 : 6;
     for (var i = 0; i < order.length; i++) {
       var e = order[i];
       if (e.dead) continue;
@@ -833,9 +897,12 @@ var Shop = (function () {
 
   /* ---------- round flow ---------- */
   function startRound() {
+    if (st.entry) saveEntry();          // don't discard a qualifying score
     st.mode = "count"; st.countT = 0;
     st.score = 0; st.ammo = MAG; st.shots = 0; st.hits = 0; st.streak = 0;
+    st.reloading = 0;
     st.t = 0; st.ents = []; st.pops = []; st.entry = null; st.unlockJust = false;
+    setLive("Round starting. 40 seconds on the clock.");
     AudioEngine.beep(false);
     var btn = $("#startGameBtn");
     btn.textContent = "ROUND IN PROGRESS…";
@@ -846,6 +913,9 @@ var Shop = (function () {
     st.newBest = st.score > st.best;
     if (st.newBest) { st.best = st.score; store.set("best", st.best); }
     st.rank = st.score >= 4000 ? "S" : st.score >= 3000 ? "A" : st.score >= 2200 ? "B" : st.score >= 1400 ? "C" : "D";
+    var acc = st.shots ? Math.round(st.hits / st.shots * 100) : 0;
+    setLive("Round complete. Score " + st.score + ", accuracy " + acc + " percent, rank " + st.rank + "." +
+      (st.newBest ? " New high score." : ""));
     AudioEngine.over();
     var range = (CFG.discounts || {}).range;
     if (range && st.score >= range.minScore) {
@@ -853,7 +923,7 @@ var Shop = (function () {
       if (st.unlockJust) {
         setTimeout(function () {
           AudioEngine.fanfare();
-          toast("★ CODE UNLOCKED: " + range.code + " — " + range.pct + "% OFF, AUTO-APPLIES AT CHECKOUT ★", 6000);
+          toast("★ CODE UNLOCKED: " + range.code + " — " + range.pct + "% OFF, PRE-FILLS AT CHECKOUT ★", 6000);
         }, 900);
       }
     }
@@ -868,8 +938,9 @@ var Shop = (function () {
   function buildEntry() {
     var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var grid = [];
-    var cols = 9, cw = 64, ch = 44;
-    var gx = (W - cols * cw) / 2, gy = 330;
+    // bigger cells on touch screens — the canvas renders ~3x smaller there
+    var cols = 9, cw = TOUCH ? 100 : 64, ch = TOUCH ? 56 : 44;
+    var gx = (W - cols * cw) / 2, gy = TOUCH ? 300 : 330;
     for (var i = 0; i < letters.length; i++) {
       grid.push({
         ch: letters[i],
@@ -890,7 +961,12 @@ var Shop = (function () {
     store.set("lb", lb);
     renderLb();
     st.entry = null;
+    st.overT = 0;                       // re-arm the accidental-click guard
     AudioEngine.coin();
+  }
+  function setLive(msg) {
+    var el = $("#gameLive");
+    if (el) el.textContent = msg;
   }
 
   /* ---------- input ---------- */
@@ -947,6 +1023,28 @@ var Shop = (function () {
   document.addEventListener("visibilitychange", function () {
     if (document.hidden && st.mode === "play") st.paused = true;
   });
+  window.addEventListener("blur", function () {
+    if (st.mode === "play") st.paused = true;
+  });
+
+  /* keyboard play: arrows aim, Space/Enter fires (canvas is tabbable) */
+  canvas.addEventListener("keydown", function (e) {
+    var step = e.shiftKey ? 8 : 28;
+    var handled = true;
+    if (e.key === "ArrowLeft") st.mx = clamp(st.mx - step, 0, W);
+    else if (e.key === "ArrowRight") st.mx = clamp(st.mx + step, 0, W);
+    else if (e.key === "ArrowUp") st.my = clamp(st.my - step, 0, H);
+    else if (e.key === "ArrowDown") st.my = clamp(st.my + step, 0, H);
+    else if (e.key === " " || e.key === "Enter") {
+      if (st.paused) st.paused = false;
+      else if (st.mode === "idle") { AudioEngine.coin(); startRound(); }
+      else if (st.mode === "play") fire();
+      else if (st.mode === "over" && !st.entry && st.overT > 1) startRound();
+      else handled = (st.mode === "over" && st.entry && e.key === "Enter");  // Enter saves via global handler
+    }
+    else handled = false;
+    if (handled) { st.mouseIn = true; e.preventDefault(); }
+  });
 
   /* ---------- update ---------- */
   function update(dt) {
@@ -974,7 +1072,11 @@ var Shop = (function () {
       var prev = st.countT;
       st.countT += dt;
       if (Math.floor(prev) !== Math.floor(st.countT) && st.countT < 3) AudioEngine.beep(false);
-      if (st.countT >= 3) { st.mode = "play"; AudioEngine.beep(true); }
+      if (st.countT >= 3) {
+        st.mode = "play";
+        if (document.hidden) st.paused = true;   // tab hidden through the countdown
+        AudioEngine.beep(true);
+      }
       return;
     }
     if (st.mode !== "play") {
@@ -1144,7 +1246,7 @@ var Shop = (function () {
       text("RELOADING…", W / 2, H - 64, 14, "#ffd23c", "center", "rgba(255,210,60,.6)");
     } else if (st.ammo === 0) {
       if (Math.floor(st.t * 4) % 2 === 0)
-        text("RELOAD! [R]", W / 2, H - 64, 18, "#ff3b5c", "center", "rgba(255,59,92,.9)");
+        text(TOUCH ? "TAP RELOAD BELOW!" : "RELOAD! [R]", W / 2, H - 64, 18, "#ff3b5c", "center", "rgba(255,59,92,.9)");
     }
   }
   function drawCrosshair() {
@@ -1282,6 +1384,11 @@ var Shop = (function () {
         ctx.globalAlpha = 1;
       });
       drawHud();
+      if (st.t < 0.45) {
+        ctx.globalAlpha = 1 - st.t / 0.45;
+        text("GO!", W / 2, H / 2 - 60, 72, "#3cff8f", "center", "rgba(60,255,143,.9)");
+        ctx.globalAlpha = 1;
+      }
       if (st.paused) {
         ctx.fillStyle = "rgba(2,4,10,.7)"; ctx.fillRect(0, 0, W, H);
         text("PAUSED — CLICK TO RESUME", W / 2, H / 2 - 10, 14, "#6fd3ff", "center");
