@@ -746,3 +746,86 @@ body.godmode #hero, body.godmode .cab-marquee, body.godmode .logo-cross{
   .marquee-track span:last-child{ display:none }
   body::after{ animation:none }
 }
+
+/* ================= PREMIUM PASS v2 (glow-up) ================= */
+
+/* hero: cinematic light + depth */
+.hero-glow{
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(47,157,255,.30), transparent 62%),
+    radial-gradient(ellipse at 50% 82%, rgba(255,122,26,.13), transparent 58%);
+  filter:blur(14px);
+}
+#hero h1{
+  text-shadow:0 1px 0 rgba(255,255,255,.08), 0 0 26px rgba(47,157,255,.35),
+    0 12px 40px rgba(0,0,0,.6);
+}
+.hero-badges li{
+  background:linear-gradient(180deg, rgba(21,27,44,.92), rgba(11,14,23,.85));
+  border-color:rgba(47,157,255,.25);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05), 0 8px 22px rgba(0,0,0,.35);
+  backdrop-filter:blur(6px);
+}
+#topbar{ backdrop-filter:blur(10px) saturate(1.2) }
+
+/* section headers: gradient signature underline */
+.sec-head h2::after{
+  content:""; display:block; width:64px; height:3px; margin:14px auto 0;
+  background:linear-gradient(90deg, var(--orange), var(--blue));
+  box-shadow:0 0 12px rgba(255,122,26,.45); border-radius:2px;
+}
+
+/* arsenal: backlit arcade-cabinet marquee cards */
+.gcard{
+  background:linear-gradient(180deg, #0d1120, #0a0d18);
+  border-color:rgba(47,157,255,.16);
+}
+.gcard::before{
+  content:""; position:absolute; inset:0 0 auto 0; height:70px;
+  background:radial-gradient(60% 100% at 50% 0%, rgba(47,157,255,.14), transparent);
+  pointer-events:none;
+}
+.gcard h3{
+  font-size:13px; padding:10px 12px; margin:0 0 16px; text-align:center;
+  background:linear-gradient(180deg, rgba(47,157,255,.16), rgba(47,157,255,.04));
+  border:1px solid rgba(47,157,255,.35); border-radius:8px; color:#eaf4ff;
+  text-shadow:0 0 12px rgba(47,157,255,.8), 0 0 30px rgba(47,157,255,.4);
+  box-shadow:0 0 18px rgba(47,157,255,.18), inset 0 0 14px rgba(47,157,255,.12);
+}
+.gcard:nth-child(even) h3{
+  background:linear-gradient(180deg, rgba(255,122,26,.16), rgba(255,122,26,.04));
+  border-color:rgba(255,122,26,.4);
+  text-shadow:0 0 12px rgba(255,122,26,.8), 0 0 30px rgba(255,122,26,.4);
+  box-shadow:0 0 18px rgba(255,122,26,.18), inset 0 0 14px rgba(255,122,26,.12);
+}
+.gcard::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(115deg, transparent 32%, rgba(255,255,255,.07) 46%, transparent 60%);
+  transform:translateX(-130%);
+}
+.g-ico{ font-size:40px }
+
+/* era ticker: bigger, faded edges */
+#eraMarquee{
+  -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track.era span{ font-size:13px; padding:20px 0 }
+
+/* co-op render: ambient screen light */
+.coop-img img{
+  box-shadow:0 26px 60px rgba(0,0,0,.5), 0 0 70px rgba(47,157,255,.14);
+}
+
+/* motion-safe animation layer */
+@media (prefers-reduced-motion: no-preference){
+  .hero-glow{ animation:heroBreathe 6s ease-in-out infinite alternate }
+  #heroGun img{ animation:gunFloat 7s ease-in-out infinite }
+  .gcard:hover::after{ animation:cardShine .8s ease forwards }
+}
+@keyframes heroBreathe{ from{ opacity:.7 } to{ opacity:1 } }
+@keyframes gunFloat{
+  0%,100%{ transform:translateY(0) rotate(0) }
+  50%{ transform:translateY(-12px) rotate(-.8deg) }
+}
+@keyframes cardShine{ to{ transform:translateX(130%) } }
