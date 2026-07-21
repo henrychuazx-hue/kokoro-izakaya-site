@@ -23,9 +23,15 @@ window.RT_CONFIG = {
      illegal in most markets).                                */
   currency: "$",
   pricing: {
-    single: { label: "SOLO OPERATIVE",  sub: "1× RetroTrigger pistol",      price: 259, msrp: 329 },
-    double: { label: "2-PLAYER SET",    sub: "2× pistols · co-op ready",    price: 469, msrp: 599 },
+    single: { label: "SOLO OPERATIVE",  sub: "1× RetroTrigger pistol",      price: 229, msrp: 259 },
+    double: { label: "2-PLAYER SET",    sub: "2× pistols · co-op ready",    price: 399, msrp: 469 },
   },
+
+  /* ---------- DEPOSIT MODEL ----------
+     Pre-orders are reserved with a refundable deposit; the
+     balance is invoiced before the batch ships. Create the
+     Stripe Payment Links as $49 products accordingly.        */
+  deposit: { amount: 49, refundable: true },
 
   /* ---------- PRE-ORDER BATCH ---------- */
   preorder: {
@@ -61,7 +67,7 @@ window.RT_CONFIG = {
      gameplay and pre-fills them via ?prefilled_promo_code.   */
   discounts: {
     range:  { code: "DEADEYE10", pct: 10, minScore: 2500 },   // earned in THE RANGE
-    konami: { code: "GODMODE15", pct: 15 },                   // ↑↑↓↓←→←→BA easter egg
+    konami: { code: "GODMODE15", pct: 15 },                   // ↑↑↓↓←→←→BA easter egg — create in Stripe restricted to the 2-Player Set price
   },
 
   contactEmail: "henrychua94@gmail.com",

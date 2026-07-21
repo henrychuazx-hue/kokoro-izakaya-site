@@ -65,21 +65,25 @@ Until payment links are pasted in, the buy button shows a friendly
 
 ### Stripe setup (≈15 minutes)
 
-1. **Create the product** — Stripe Dashboard → Product catalog → *Add product*:
-   "RetroTrigger™ Pistol", price **$259** (one-time). Add a second price or product
-   for the 2-Player Set at **$469**.
+> **Deposit model (current):** customers pay a **$49 fully-refundable deposit** to
+> reserve; you invoice the balance ($180 solo / $350 2P at the current $229/$399
+> pricing, minus any code) via Stripe *Invoices* before the batch ships.
+
+1. **Create the deposit product** — Stripe Dashboard → Product catalog → *Add product*:
+   "RetroTrigger™ Batch 01 Reservation — deposit", price **$49** (one-time).
 2. **Create 4 Payment Links** — *Payment Links → New* — one per variant
-   (Black/Solo, Blue/Solo, Black/2P, Blue/2P — use the product above; put the
-   colorway in the link's line-item name so it lands on the order):
-   - ✅ Collect customers' **shipping addresses** (set the countries you'll serve)
+   (Black/Solo, Blue/Solo, Black/2P, Blue/2P — same $49 deposit product; put the
+   colorway + loadout in the link's line-item name so it lands on the order):
+   - ✅ Collect customers' **shipping addresses** (Batch 01: United States only)
    - ✅ **Allow promotion codes**
-   - ✅ Adjustable quantity (optional)
-   - Set a **confirmation message** like: "Order locked into Batch 01 — tracking
-     number lands in your inbox within 5 days of batch close."
+   - Set a **confirmation message** like: "Reservation locked into Batch 01 —
+     balance invoice + tracking follow by email before dispatch. Cancel any time
+     before dispatch for a full deposit refund."
 3. **Create the promotion codes** — *Product catalog → Coupons*: a 10% coupon with
-   promotion code `DEADEYE10`, and a 15% coupon with code `GODMODE15`
-   (must match `js/config.js` exactly — the site auto-fills them via the
-   `?prefilled_promo_code=` parameter on the payment link).
+   promotion code `DEADEYE10` (sitewide), and a 15% coupon with code `GODMODE15`
+   **restricted to the 2-Player Set** (apply the codes on the *balance invoices*,
+   since the deposit is flat — must match `js/config.js` exactly; the site
+   auto-fills codes via the `?prefilled_promo_code=` parameter).
 4. **Paste the 4 link URLs** into `stripe.paymentLinks` in `js/config.js`. Done.
 
 Test with Stripe **test mode** links first (card `4242 4242 4242 4242`), then swap

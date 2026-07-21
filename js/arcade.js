@@ -213,7 +213,7 @@ function toast(html, ms) {
     "MEMORY TEST ........ 64K OK",
     "IR BEACONS ......... 4/4 LOCKED",
     "RECOIL SOLENOID .... ARMED",
-    "GAME LIBRARY ....... 600+ TITLES MOUNTED",
+    "HOST LINK .......... PC / BATOCERA / ANDROID",
     "PAYMENT RAIL ....... STRIPE // SECURE",
     "CRT PHOSPHOR ....... WARM",
     "",
@@ -520,7 +520,7 @@ var Shop = (function () {
     ["ACTION + START", "Arcade-grade microswitch buttons. The orange pair covers START/SELECT — the same satisfying click as the cabinet."],
     ["AMMO LEDS", "Four-segment magazine indicator. When it hits one bar, you already know what to do: reload."],
     ["HAIR TRIGGER", "Tuned to arcade pull-weight with a solenoid recoil block behind it. Every shot kicks. Every shot rumbles."],
-    ["GRIP CELL + USB-C", "Two 14500 li-ion cells in the grip of every pistol, recharged over USB-C between sessions."]
+    ["GRIP CELLS + CHARGER", "Two removable 18650 li-ion cells in the grip of every pistol — spares swap in seconds, charging cable included."]
   ];
   var hotTitle = $("#hotTitle"), hotBody = $("#hotBody"), hotKick = $(".hot-kicker");
   $$(".hotspot").forEach(function (b) {
@@ -541,9 +541,9 @@ var Shop = (function () {
     "TRACKING  4x IR BEACON ARRAY ........ [OK]",
     "LATENCY   <1 FRAME @ 2.4GHZ RF ...... [OK]",
     "SCREENS   LED/OLED/QLED/PROJ 100\" ... [OK]",
-    "LIBRARY   600+ GAMES PRE-LOADED ..... [OK]",
+    "HOSTS     PC / BATOCERA / ANDROID ... [OK]",
     "RECOIL    SOLENOID KICK + RUMBLE .... [OK]",
-    "POWER     2x 14500 LI-ION / USB-C ... [OK]",
+    "POWER     2x 18650 LI-ION CELLS ..... [OK]",
     "PLAYERS   1-4 SIMULTANEOUS .......... [OK]",
     "SETUP     60 SEC / NO CONSOLE ....... [OK]",
     "",
@@ -586,7 +586,7 @@ var Shop = (function () {
       document.body.classList.add("godmode");
       AudioEngine.fanfare();
       if (d && Shop.unlock("konami")) {
-        toast("⭑ GOD MODE ⭑ SECRET CODE " + d.code + " ARMED — " + d.pct + "% OFF AT CHECKOUT");
+        toast("⭑ GOD MODE ⭑ SECRET CODE " + d.code + " ARMED — " + d.pct + "% OFF THE 2-PLAYER SET");
       } else if (d) {
         toast("⭑ GOD MODE ⭑ " + d.code + " ALREADY ARMED");
       }
