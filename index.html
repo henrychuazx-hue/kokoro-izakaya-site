@@ -21,7 +21,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Chakra+Petch:wght@400;600;700&family=VT323&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" />
 
-<!-- Keep the price below in sync with pricing.single.price in js/config.js -->
+<!-- Keep the price below in sync with tiers.deadeye.price in js/config.js -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -90,7 +90,7 @@
       <p class="hero-sub">The arcade you grew up in — <b>the era of Time Crisis, The House of the Dead and Point Blank</b> — reborn for your living room. A near-zero-lag light gun with <b>real recoil</b> that works on <b>any modern TV up to 100"</b>. Pairs with your PC, Batocera box or Android device in 60 seconds — and unlocks the biggest light-gun library there is: yours.</p>
       <div class="hero-ctas">
         <a id="playBtn" class="btn-arcade" href="#range">▶ PLAY THE RANGE</a>
-        <a id="heroBuyBtn" class="btn-ghost" href="#preorder">RESERVE — <span data-price="single">$229</span></a>
+        <a id="heroBuyBtn" class="btn-ghost" href="#preorder">RESERVE — <span data-price="deadeye">$229</span></a>
       </div>
       <ul class="hero-badges">
         <li><b>&lt;1</b><span>frame lag · 2.4GHz</span></li>
@@ -246,7 +246,7 @@
         <li>Independent recoil &amp; rumble per gun</li>
         <li>Expandable to 4 players</li>
       </ul>
-      <a class="btn-arcade" href="#preorder" data-select-bundle="double">GET THE 2-PLAYER SET — <span data-price="double">$399</span></a>
+      <a class="btn-arcade" href="#preorder" data-select-tier="godmode">GET THE GODMODE SET — <span data-price="godmode">$399</span></a>
     </div>
   </div>
 </section>
@@ -308,24 +308,38 @@
 
     <div class="buy-box panel">
       <div id="promoBanner" hidden>
-        <span>CODE ARMED:</span> <b id="promoCode">—</b> <em id="promoPct">−10%</em> — pre-fills at checkout
+        <span>CODE ARMED:</span> <b id="promoCode">—</b> <em id="promoPct">−10%</em> <i id="promoWhere">— pre-fills at checkout</i>
       </div>
 
-      <div class="opt-row" role="group" aria-label="Colorway">
-        <p class="opt-label">COLORWAY</p>
-        <button class="vbtn active" type="button" data-color="black" aria-pressed="true"><span class="swatch sw-black"></span>MIDNIGHT BLACK</button>
-        <button class="vbtn" type="button" data-color="blue" aria-pressed="false"><span class="swatch sw-blue"></span>ARCADE BLUE</button>
+      <div class="opt-row" role="group" aria-label="Edition">
+        <p class="opt-label">EDITION</p>
+        <button class="vbtn active" type="button" data-edition="nighthawk" aria-pressed="true"><span class="swatch sw-black"></span>NIGHTHAWK</button>
+        <button class="vbtn" type="button" data-edition="afterglow" aria-pressed="false"><span class="swatch sw-blue"></span>AFTERGLOW</button>
       </div>
 
-      <div class="opt-row" role="group" aria-label="Bundle">
+      <div class="opt-row" role="group" aria-label="Grip fit">
+        <p class="opt-label">GRIP FIT <a class="fit-help" href="#faq">which fit?</a></p>
+        <button class="fbtn active" type="button" data-fit="standard" aria-pressed="true">STANDARD</button>
+        <button class="fbtn" type="button" data-fit="compact" aria-pressed="false">COMPACT</button>
+      </div>
+
+      <div class="opt-row" role="group" aria-label="Loadout">
         <p class="opt-label">LOADOUT</p>
-        <button class="bbtn active" type="button" data-bundle="single" aria-pressed="true">
-          <b class="b-label">SOLO OPERATIVE</b><span class="b-sub">1× pistol</span><span class="b-price" data-price="single">$229</span>
+        <button class="bbtn" type="button" data-tier="marksman" aria-pressed="false">
+          <b class="b-label">MARKSMAN</b><span class="b-sub">1× pistol · no recoil</span><span class="b-price" data-price="marksman">$199</span>
         </button>
-        <button class="bbtn" type="button" data-bundle="double" aria-pressed="false">
-          <b class="b-label">2-PLAYER SET</b><span class="b-sub">2× pistols</span><span class="b-price" data-price="double">$399</span>
+        <button class="bbtn active" type="button" data-tier="deadeye" aria-pressed="true">
+          <b class="b-label">DEADEYE</b><span class="b-sub">1× pistol · recoil</span><span class="b-price" data-price="deadeye">$229</span>
+        </button>
+        <button class="bbtn" type="button" data-tier="elite" aria-pressed="false">
+          <b class="b-label">DEADEYE ELITE</b><span class="b-sub">1× pistol · kitted</span><span class="b-price" data-price="elite">$299</span>
+        </button>
+        <button class="bbtn" type="button" data-tier="godmode" aria-pressed="false">
+          <b class="b-label">GODMODE SET</b><span class="b-sub">2× pistols · recoil pair</span><span class="b-price" data-price="godmode">$399</span>
         </button>
       </div>
+
+      <p id="variantNote" hidden></p>
 
       <div class="price-row">
         <span id="priceNow">$229</span>
@@ -333,6 +347,8 @@
         <i class="price-note">post-launch price</i>
         <span id="saveTag">SAVE $30</span>
       </div>
+      <p class="tier-line"><b id="tierSku">RT-1R DEADEYE</b><span id="tierDetail"></span></p>
+      <p id="balanceLine" class="balance-line"></p>
 
       <div class="cd-row" aria-label="Time left to join this batch">
         <p class="opt-label"><span class="cfg-batch">BATCH 01</span> CLOSES IN</p>
@@ -378,6 +394,14 @@
     <details>
       <summary>Do I need a console or PC?</summary>
       <p>You need a host — and you probably already own one: any Windows PC, a Batocera or Raspberry&nbsp;Pi build, or an Android box/TV. Plug the USB receiver into the host, clip the IR positioning light to your screen, calibrate once, shoot. The pistols speak standard USB light-gun protocols the emulator and PC gaming community supports. <b>No games are included with the pistols.</b></p>
+    </details>
+    <details>
+      <summary>Which grip fit should I choose?</summary>
+      <p><b>Standard</b> is the full frame — if you're comfortable with a full-size pistol grip or a large gaming mouse, take it. <b>Compact</b> shortens the trigger reach and slims the grip by roughly 8–10%; it suits smaller hands, and plenty of people simply prefer the tighter hold for long sessions. It's a sizing choice, not a gendered one, and it costs the same. Not sure? Measure from the base of your palm to the tip of your middle finger: under ~18cm, start with Compact.</p>
+    </details>
+    <details>
+      <summary>What's the difference between the loadouts?</summary>
+      <p><b>DEADEYE</b> is the standard pistol with 12V solenoid recoil — the kick you remember from the cabinet. <b>DEADEYE ELITE</b> is the same pistol with the hard case, IR bar stand, a spare pair of cells and a numbered calibration card. <b>GODMODE SET</b> is two recoil pistols on one receiver for couch co-op, and you can mix editions and fits across the pair. Every loadout has identical tracking hardware — you're choosing recoil, extras and player count, not accuracy.</p>
     </details>
     <details>
       <summary>How does the $49 deposit work?</summary>

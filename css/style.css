@@ -829,3 +829,67 @@ body.godmode #hero, body.godmode .cab-marquee, body.godmode .logo-cross{
   50%{ transform:translateY(-12px) rotate(-.8deg) }
 }
 @keyframes cardShine{ to{ transform:translateX(130%) } }
+
+/* ================= LADDER PASS: tiers, editions, fits ================= */
+
+/* grip-fit selector — quieter than edition, it is a sizing choice */
+.fbtn{
+  display:inline-flex; align-items:center; gap:8px;
+  background:transparent; border:1px solid var(--line); border-radius:8px;
+  color:var(--dim); font-family:var(--px); font-size:8.5px; letter-spacing:1.5px;
+  padding:11px 16px; transition:border-color .15s, color .15s, box-shadow .15s;
+}
+.fbtn.active{ border-color:var(--blue); color:var(--ink); box-shadow:var(--glow-blue) }
+.fit-help{
+  float:right; font-family:var(--body); font-size:11px; letter-spacing:0;
+  color:var(--blue2); text-transform:none; border-bottom:1px dotted currentColor;
+}
+
+/* four tiers: two per row on desktop, one on narrow screens */
+.bbtn{ flex:1 1 calc(50% - 10px) }
+.bbtn[hidden]{ display:none }
+.bbtn .b-price{ font-variant-numeric:tabular-nums }
+
+/* honest disclosure block — pending edition / compact-fit reality */
+#variantNote{
+  display:flex; flex-direction:column; gap:8px;
+  border-left:3px solid var(--blue); border-radius:0 8px 8px 0;
+  background:rgba(47,157,255,.07); padding:12px 16px; margin:0 0 20px;
+  font-size:13px; line-height:1.55; color:var(--ink);
+}
+#variantNote[hidden]{ display:none }
+
+/* which SKU you are actually buying */
+.tier-line{ margin:-10px 0 14px; font-size:13.5px; color:var(--dim); line-height:1.55 }
+.tier-line b{
+  display:block; font-family:var(--px); font-size:9.5px; letter-spacing:1.5px;
+  color:var(--blue2); margin-bottom:6px;
+}
+.balance-line{
+  font-size:13px; color:var(--dim); margin:0 0 18px;
+  padding-bottom:16px; border-bottom:1px solid var(--line);
+}
+.balance-line b{ color:var(--ink); font-variant-numeric:tabular-nums }
+
+/* a code you own that does not apply to this selection */
+#promoWhere{ font-style:normal; color:var(--dim) }
+#promoBanner.promo-idle{
+  border-style:dotted; border-color:var(--line); background:rgba(255,255,255,.03);
+}
+#promoBanner.promo-idle b{ color:var(--dim); text-shadow:none }
+#promoBanner.promo-idle em{ color:var(--dim) }
+
+/* pre-visualised colorway is labelled, never passed off as a photo */
+#buyImg{ transition:opacity .18s ease }
+#buyImg.previz{ position:relative }
+.buy-visual{ position:relative }
+.buy-visual:has(#buyImg.previz)::after{
+  content:"PRE-VIZ — FINISH PENDING FACTORY PRINT";
+  position:absolute; top:10px; left:10px; z-index:2;
+  font-family:var(--px); font-size:7.5px; letter-spacing:1.2px; color:var(--blue2);
+  border:1px solid rgba(47,157,255,.45); border-radius:4px;
+  padding:6px 9px; background:rgba(7,10,18,.85);
+}
+@media(max-width:520px){
+  .bbtn{ flex:1 1 100% }
+}

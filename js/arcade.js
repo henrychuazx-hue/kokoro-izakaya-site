@@ -251,15 +251,37 @@ function toast(html, ms) {
    ============================================================ */
 var Shop = (function () {
   var cur = CFG.currency || "$";
+  var TIERS = CFG.tiers || {};
+  var EDITIONS = CFG.editions || {};
+  var FITS = CFG.fits || {};
   var state = {
-    color: "black",
-    bundle: "single",
+    edition: "nighthawk",
+    fit: "standard",
+    tier: "deadeye",
     unlocks: store.get("unlocks", {})   // {range:1, konami:1}
   };
 
   function fmt(n) { return cur + n; }
 
+  /* a code applies only if its tier restriction allows the
+     current selection — GODMODE15 is the set's code, so it
+     must not silently promise money off a solo pistol. */
+  function codeAllowed(d) {
+    if (!d) return false;
+    if (!d.tiers) return true;
+    return d.tiers.indexOf(state.tier) >= 0;
+  }
+
   function activePromo() {
+    var d = CFG.discounts || {};
+    if (state.unlocks.konami && codeAllowed(d.konami)) return d.konami;
+    if (state.unlocks.range && codeAllowed(d.range)) return d.range;
+    return null;
+  }
+
+  /* the code the player has earned, whether or not it applies
+     to what is currently selected (used for honest messaging) */
+  function earnedPromo() {
     var d = CFG.discounts || {};
     if (state.unlocks.konami && d.konami) return d.konami;
     if (state.unlocks.range && d.range) return d.range;
@@ -267,26 +289,67 @@ var Shop = (function () {
   }
 
   function paintPrices() {
-    var p = CFG.pricing || {};
     $$("[data-price]").forEach(function (el) {
-      var k = el.getAttribute("data-price");
-      if (p[k]) el.textContent = fmt(p[k].price);
+      var t = TIERS[el.getAttribute("data-price")];
+      if (t) el.textContent = fmt(t.price);
     });
-    var sel = p[state.bundle];
-    if (sel) {
-      $("#priceNow").textContent = fmt(sel.price);
-      $("#priceMsrp").textContent = fmt(sel.msrp);
-      $("#saveTag").textContent = "SAVE " + fmt(sel.msrp - sel.price);
+    var sel = TIERS[state.tier];
+    if (!sel) return;
+    $("#priceNow").textContent = fmt(sel.price);
+    var msrpEl = $("#priceMsrp"), noteEl = $(".price-note"), saveEl = $("#saveTag");
+    if (sel.msrp && sel.msrp > sel.price) {
+      msrpEl.hidden = false; saveEl.hidden = false;
+      if (noteEl) noteEl.hidden = false;
+      msrpEl.textContent = fmt(sel.msrp);
+      saveEl.textContent = "SAVE " + fmt(sel.msrp - sel.price);
+    } else {
+      msrpEl.hidden = true; saveEl.hidden = true;
+      if (noteEl) noteEl.hidden = true;
     }
+    var skuEl = $("#tierSku"), detailEl = $("#tierDetail");
+    if (skuEl) skuEl.textContent = sel.sku;
+    if (detailEl) detailEl.textContent = sel.detail || "";
+    var depEl = $("#balanceLine");
+    if (depEl) {
+      var dep = (CFG.deposit || {}).amount || 0;
+      depEl.innerHTML = "Reserve for <b>" + fmt(dep) + "</b> today · balance <b>" +
+        fmt(sel.price - dep) + "</b> invoiced when the batch passes factory QC";
+    }
+  }
+
+  function paintVariantNotes() {
+    var ed = EDITIONS[state.edition] || {};
+    var fit = FITS[state.fit] || {};
+    var box = $("#variantNote");
+    if (!box) return;
+    var msgs = [];
+    if (ed.pending && ed.pendingNote) msgs.push(ed.pendingNote);
+    if (fit.note) msgs.push(fit.note);
+    if (msgs.length) {
+      box.hidden = false;
+      box.innerHTML = msgs.map(function (m) { return "<span>" + m + "</span>"; }).join("");
+    } else box.hidden = true;
   }
 
   function paintPromo() {
     var promo = activePromo();
+    var earned = earnedPromo();
     var banner = $("#promoBanner");
     if (promo) {
       banner.hidden = false;
+      banner.classList.remove("promo-idle");
       $("#promoCode").textContent = promo.code;
       $("#promoPct").textContent = "−" + promo.pct + "%";
+      $("#promoWhere").textContent = promo.armedOnly
+        ? "— reserved for you, live once Batch 01 is confirmed"
+        : "— pre-fills at checkout";
+    } else if (earned) {
+      /* earned, but not valid on this selection — say so plainly */
+      banner.hidden = false;
+      banner.classList.add("promo-idle");
+      $("#promoCode").textContent = earned.code;
+      $("#promoPct").textContent = "−" + earned.pct + "%";
+      $("#promoWhere").textContent = "— applies to the GODMODE SET";
     } else banner.hidden = true;
 
     // range-specific unlock panel + chip
@@ -347,49 +410,73 @@ var Shop = (function () {
     img.onload = img.onerror = function () { img.style.opacity = 1; };
     $$(".vbtn").forEach(function (b) {
       b.addEventListener("click", function () {
-        state.color = b.getAttribute("data-color");
+        state.edition = b.getAttribute("data-edition");
         $$(".vbtn").forEach(function (x) {
           var on = x === b;
           x.classList.toggle("active", on);
           x.setAttribute("aria-pressed", String(on));
         });
+        var ed = EDITIONS[state.edition] || {};
         img.style.opacity = 0;
-        setTimeout(function () {
-          img.src = "assets/gun-" + state.color + ".webp";
-        }, 150);
+        setTimeout(function () { if (ed.img) img.src = ed.img; }, 150);
+        img.classList.toggle("previz", !!ed.pending);
+        paintVariantNotes();
+        AudioEngine.uiBlip();
+      });
+    });
+    $$(".fbtn").forEach(function (b) {
+      b.addEventListener("click", function () {
+        state.fit = b.getAttribute("data-fit");
+        $$(".fbtn").forEach(function (x) {
+          var on = x === b;
+          x.classList.toggle("active", on);
+          x.setAttribute("aria-pressed", String(on));
+        });
+        paintVariantNotes();
         AudioEngine.uiBlip();
       });
     });
     $$(".bbtn").forEach(function (b) {
-      b.addEventListener("click", function () { selectBundle(b.getAttribute("data-bundle")); });
+      b.addEventListener("click", function () { selectTier(b.getAttribute("data-tier")); });
     });
-    $$("[data-select-bundle]").forEach(function (a) {
-      a.addEventListener("click", function () { selectBundle(a.getAttribute("data-select-bundle")); });
+    $$("[data-select-tier]").forEach(function (a) {
+      a.addEventListener("click", function () { selectTier(a.getAttribute("data-select-tier")); });
     });
   }
-  function selectBundle(k) {
-    state.bundle = k;
+  function selectTier(k) {
+    if (!TIERS[k]) return;
+    state.tier = k;
     $$(".bbtn").forEach(function (x) {
-      var on = x.getAttribute("data-bundle") === k;
+      var on = x.getAttribute("data-tier") === k;
       x.classList.toggle("active", on);
       x.setAttribute("aria-pressed", String(on));
     });
     paintPrices();
+    paintPromo();
     AudioEngine.uiBlip();
   }
 
+  function variantLabel() {
+    var ed = EDITIONS[state.edition] || {}, fit = FITS[state.fit] || {}, t = TIERS[state.tier] || {};
+    return [t.sku || state.tier, ed.label || state.edition, fit.label || state.fit].join(" · ");
+  }
+
   function checkout() {
-    var key = state.color + "-" + state.bundle;
     var links = (CFG.stripe || {}).paymentLinks || {};
-    var url = links[key];
+    var url = links[state.tier];
     AudioEngine.coin();
     if (!url) {
-      $("#setupVariant").textContent = key.toUpperCase().replace("-", " / ");
+      $("#setupVariant").textContent = variantLabel();
       openModal();
       return;
     }
+    var q = [];
+    /* edition + fit ride along so they land on the Stripe order */
+    q.push("client_reference_id=" + encodeURIComponent(
+      [state.tier, state.edition, state.fit].join("-").toUpperCase()));
     var promo = activePromo();
-    if (promo) url += (url.indexOf("?") >= 0 ? "&" : "?") + "prefilled_promo_code=" + encodeURIComponent(promo.code);
+    if (promo && !promo.armedOnly) q.push("prefilled_promo_code=" + encodeURIComponent(promo.code));
+    url += (url.indexOf("?") >= 0 ? "&" : "?") + q.join("&");
     setTimeout(function () { window.location.href = url; }, 250);
   }
 
@@ -414,7 +501,12 @@ var Shop = (function () {
   }
 
   function init() {
-    paintPrices(); paintPromo(); paintBatch();
+    /* a tier flagged hidden in config never renders a button */
+    $$(".bbtn").forEach(function (b) {
+      var t = TIERS[b.getAttribute("data-tier")];
+      if (!t || t.hidden) b.hidden = true;
+    });
+    paintPrices(); paintPromo(); paintBatch(); paintVariantNotes();
     tickCountdown(); setInterval(tickCountdown, 1000);
     bindOptions();
     $("#buyBtn").addEventListener("click", checkout);

@@ -70,21 +70,40 @@ Until payment links are pasted in, the buy button shows a friendly
 > pricing, minus any code) via Stripe *Invoices* before the batch ships.
 
 1. **Create the deposit product** — Stripe Dashboard → Product catalog → *Add product*:
-   "RetroTrigger™ Batch 01 Reservation — deposit", price **$49** (one-time).
-2. **Create 4 Payment Links** — *Payment Links → New* — one per variant
-   (Black/Solo, Blue/Solo, Black/2P, Blue/2P — same $49 deposit product; put the
-   colorway + loadout in the link's line-item name so it lands on the order):
-   - ✅ Collect customers' **shipping addresses** (Batch 01: United States only)
-   - ✅ **Allow promotion codes**
-   - Set a **confirmation message** like: "Reservation locked into Batch 01 —
-     balance invoice + tracking follow by email before dispatch. Cancel any time
-     before dispatch for a full deposit refund."
+   "RETROTRIGGER Batch 01 Reservation — deposit", price **$49** (one-time).
+2. **Create 4 Payment Links** — *Payment Links → New* — **one per tier**, all using the
+   same $49 deposit product. Put the tier name in the link's line-item name:
+   | Link | Tier | Balance invoiced later |
+   |---|---|---|
+   | `marksman` | RT-1 MARKSMAN — $199 | $150 |
+   | `deadeye`  | RT-1R DEADEYE — $229 | $180 |
+   | `elite`    | RT-1R DEADEYE ELITE — $299 | $250 |
+   | `godmode`  | RT-2 GODMODE SET — $399 | $350 |
+   In each link: ✅ collect **shipping address** (Batch 01: United States only) ·
+   ✅ **allow promotion codes** · confirmation message along the lines of
+   "Reservation locked into Batch 01 — we confirm your edition and invoice the
+   balance before dispatch. Cancel any time before dispatch for a full refund."
+   You do **not** need separate links per edition or grip fit: the site appends the
+   customer's choice as `client_reference_id` (e.g. `GODMODE-AFTERGLOW-COMPACT`),
+   which appears on the Stripe payment so you know exactly what to order.
 3. **Create the promotion codes** — *Product catalog → Coupons*: a 10% coupon with
-   promotion code `DEADEYE10` (sitewide), and a 15% coupon with code `GODMODE15`
-   **restricted to the 2-Player Set** (apply the codes on the *balance invoices*,
-   since the deposit is flat — must match `js/config.js` exactly; the site
-   auto-fills codes via the `?prefilled_promo_code=` parameter).
+   promotion code `DEADEYE10`, and a 15% coupon with `GODMODE15`. The site already
+   restricts GODMODE15 to the GODMODE SET — mirror that in Stripe by limiting the
+   coupon to the set's product. Apply codes on the **balance invoice** (the deposit
+   is flat). Until your factory PO is placed you can set `armedOnly: true` on a code
+   in `js/config.js` — the site then shows it as reserved rather than live, so you
+   never owe a discount on an order you cannot fulfil.
 4. **Paste the 4 link URLs** into `stripe.paymentLinks` in `js/config.js`. Done.
+
+### The ladder (edit in `js/config.js` → `tiers`)
+
+MARKSMAN ships with `hidden: true` — it exists so the recoil upgrade has something
+to be measured against. Flip it to `false` only if you decide to actually sell the
+non-recoil unit. Set `msrp: null` on any tier that has no genuine price history:
+the strike-through and SAVE badge hide themselves rather than inventing a
+reference price. Editions and grip fits live in `editions` / `fits` — an edition
+with `pending: true` renders a pre-viz label and an honest disclosure instead of
+quietly implying the finish is confirmed.
 
 Test with Stripe **test mode** links first (card `4242 4242 4242 4242`), then swap
 in live-mode links.
