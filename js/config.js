@@ -40,7 +40,7 @@ window.RT_CONFIG = {
       sub: "1× pistol · solenoid recoil",
       price: 229, msrp: 259,
       guns: 1, recoil: true, hidden: false,
-      detail: "The one most people want. 12V solenoid recoil on every shot, Gun4IR-compatible out of the box.",
+      detail: "The one most people want. 12V solenoid recoil on every shot, and recent Batocera builds detect this gun class and configure themselves.",
     },
     elite: {
       sku: "RT-1R DEADEYE ELITE",
