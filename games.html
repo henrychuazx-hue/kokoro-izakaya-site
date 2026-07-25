@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#05060a" />
+<title>What You Can Play · RETROTRIGGER™</title>
+<meta name="description" content="The House of the Dead: Remake, Operation Wolf Returns and the whole PC light-gun ecosystem — what RetroTrigger plays, where to buy it, and how the community's compatibility lists work." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='38' fill='none' stroke='%23ff7a1a' stroke-width='10'/%3E%3Cpath d='M50 2v26M50 72v26M2 50h26M72 50h26' stroke='%232f9dff' stroke-width='10'/%3E%3Ccircle cx='50' cy='50' r='8' fill='%23ff7a1a'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Chakra+Petch:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<style>
+  body{ cursor:auto }
+  .doc{ max-width:1000px; margin:0 auto; padding:56px 20px 100px }
+  .back{ display:inline-block; margin-bottom:26px }
+  .doc h1{ font-family:var(--px); font-size:clamp(16px,3.4vw,26px); margin:14px 0 10px; color:var(--blue2); text-shadow:var(--glow-blue) }
+  .doc .sub{ color:var(--dim); max-width:66ch; line-height:1.7 }
+  .doc h2{ font-family:var(--px); font-size:13px; color:var(--orange); margin:56px 0 10px; letter-spacing:1px }
+  .doc h3{ font-family:var(--body); font-weight:700; font-size:16px; color:var(--ink); margin:0 0 6px }
+  .doc p, .doc li{ color:var(--dim); line-height:1.7; margin-bottom:12px }
+  .doc b{ color:var(--ink) }
+  .doc ul{ padding-left:22px }
+  .lead-in{ color:var(--dim); max-width:66ch; margin-bottom:22px; line-height:1.7 }
+
+  /* the honest banner up top */
+  .truth{
+    border:1px solid var(--line); border-left:3px solid var(--orange); border-radius:0 10px 10px 0;
+    background:rgba(255,122,26,.07); padding:18px 22px; margin:26px 0 8px;
+  }
+  .truth p{ color:var(--ink); margin:0 }
+
+  /* buy-and-play cards */
+  .titles{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin:22px 0 10px }
+  .tcard{
+    border:1px solid var(--line); border-radius:12px; padding:22px;
+    background:linear-gradient(180deg,var(--panel2),var(--panel)); display:flex; flex-direction:column;
+  }
+  .tcard .tag{ font-family:var(--px); font-size:8px; letter-spacing:1.4px; color:var(--green); margin-bottom:12px }
+  .tcard .price{ font-family:var(--px); font-size:14px; color:var(--orange2); margin:10px 0 4px }
+  .tcard p{ font-size:14px; flex:1 }
+  .tcard .where{ font-size:12.5px; color:var(--blue2); margin:0 }
+  .tcard.licensed .tag{ color:var(--gold) }
+
+  /* genre gallery — original artwork */
+  .genres{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:24px 0 10px }
+  .gtile{ border:1px solid var(--line); border-radius:12px; overflow:hidden; background:var(--panel) }
+  .gtile img{ width:100%; display:block; border-bottom:1px solid var(--line) }
+  .gtile .cap{ padding:16px 20px }
+  .gtile h3{ font-family:var(--px); font-size:10px; letter-spacing:1.2px; color:var(--blue2); margin-bottom:8px }
+  .gtile p{ font-size:13.5px; margin:0 }
+
+  .own{ display:grid; grid-template-columns:1.1fr .9fr; gap:26px; align-items:center; margin:22px 0 }
+  .own img{ width:100%; border:1px solid var(--line); border-radius:12px; display:block }
+
+  table{ border-collapse:collapse; width:100%; font-size:14px; margin:18px 0 }
+  .scroll{ overflow-x:auto }
+  th{ font-family:var(--px); font-size:8px; letter-spacing:1.2px; color:var(--dim); text-align:left; padding:12px 14px; border-bottom:1px solid var(--line) }
+  td{ padding:12px 14px; border-bottom:1px solid var(--line); color:var(--dim); vertical-align:top }
+  td b{ color:var(--ink) }
+
+  .callout{
+    border:1px solid var(--line); border-left:3px solid var(--blue); border-radius:0 10px 10px 0;
+    background:rgba(47,157,255,.07); padding:18px 22px; margin:26px 0;
+  }
+  .callout p:last-child{ margin-bottom:0 }
+  .fineprint{ font-size:12.5px; color:var(--dim); border-top:1px solid var(--line); padding-top:20px; margin-top:44px; line-height:1.7 }
+  @media(max-width:760px){
+    .genres, .own{ grid-template-columns:1fr }
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+  <a class="back" href="index.html">◂ Back to the arcade</a>
+  <h1>WHAT YOU CAN PLAY</h1>
+  <p class="sub">RetroTrigger is a controller, not a console. That's the point: instead of being
+  locked to whatever a manufacturer loaded onto a stick, you point it at the light-gun library
+  that's actually alive on PC — and some of the games you remember from the cabinet are sitting
+  right there, officially, for the price of a takeaway.</p>
+
+  <div class="truth">
+    <p><b>No games ship with the pistol.</b> Anyone selling you a drive of "600 pre-loaded classics"
+    is selling you someone else's copyrighted work — and the liability that comes with it. We sell
+    the hardware and tell you exactly where to legally get the good stuff.</p>
+  </div>
+
+  <h2>BUY IT AND SHOOT IT TONIGHT</h2>
+  <p class="lead-in">Officially licensed, legitimately sold, works with a light gun. These are real
+  storefront prices at the time of writing — check the store for current pricing and sales.</p>
+  <div class="titles">
+    <div class="tcard licensed">
+      <span class="tag">★ OFFICIALLY LICENSED BY SEGA</span>
+      <h3>The House of the Dead: Remake</h3>
+      <span class="price">$24.99</span>
+      <p>Yes — <i>that</i> House of the Dead, rebuilt and sold legally. Local 2-player co-op, which
+      makes it the natural first purchase for the GODMODE SET.</p>
+      <p class="where"><a href="https://store.steampowered.com/app/1694600/THE_HOUSE_OF_THE_DEAD_Remake/" target="_blank" rel="noopener">Steam →</a></p>
+    </div>
+    <div class="tcard licensed">
+      <span class="tag">★ OFFICIALLY LICENSED BY SEGA</span>
+      <h3>The House of the Dead 2: Remake</h3>
+      <span class="price">SEE STORE</span>
+      <p>The sequel got the same treatment. Steam runs a 1+2 bundle that has been discounted heavily
+      — worth checking before you buy either one on its own.</p>
+      <p class="where"><a href="https://store.steampowered.com/bundle/71540/THE_HOUSE_OF_THE_DEAD_Remake_12/" target="_blank" rel="noopener">Steam bundle →</a></p>
+    </div>
+    <div class="tcard">
+      <span class="tag">LICENSED · MICROIDS</span>
+      <h3>Operation Wolf Returns: First Mission</h3>
+      <span class="price">$24.99</span>
+      <p>The Taito arcade shooter, brought back by a licensed publisher. Plays flat on a monitor or
+      TV — no VR headset required.</p>
+      <p class="where"><a href="https://store.steampowered.com/app/1852650/Operation_Wolf_Returns_First_Mission/" target="_blank" rel="noopener">Steam →</a></p>
+    </div>
+  </div>
+  <p style="font-size:13.5px">Two officially licensed arcade rail shooters cost about <b>$50 total</b>
+  — roughly a third of what a loaded grey-market drive costs, and nobody can take them away from you.</p>
+
+  <h2>THE GENRES YOU'RE BUYING INTO</h2>
+  <p class="lead-in">Light-gun games have always fallen into four moods. These are our own
+  illustrations of them — drawn in-house, same pixel language as the range on our front page.</p>
+  <div class="genres">
+    <div class="gtile">
+      <img src="assets/genre-zombie.webp" alt="Original pixel artwork: a moonlit ruined street with shambling pixel zombies and an orange crosshair locked on one of them" width="640" height="360" loading="lazy" />
+      <div class="cap">
+        <h3>ZOMBIE HORROR</h3>
+        <p>Slow shamblers, sudden lunges, and the reload you fumble at exactly the wrong moment. The
+        genre the light gun was born for.</p>
+      </div>
+    </div>
+    <div class="gtile">
+      <img src="assets/genre-gallery.webp" alt="Original pixel artwork: dawn over water with pixel ducks in flight, tin cans on a rail, and a blue crosshair tracking a duck" width="640" height="360" loading="lazy" />
+      <div class="cap">
+        <h3>GALLERY CLASSICS</h3>
+        <p>Ducks, cans, clay pigeons, carnival rows. No story, no cover system — just trigger
+        discipline and a score to beat.</p>
+      </div>
+    </div>
+    <div class="gtile">
+      <img src="assets/genre-western.webp" alt="Original pixel artwork: a sunset western street with saloon silhouettes and two gunslingers, crosshair on one of them" width="640" height="360" loading="lazy" />
+      <div class="cap">
+        <h3>WILD WEST</h3>
+        <p>Quick-draw duels where the whole game is decided in the half second after the prompt
+        appears.</p>
+      </div>
+    </div>
+    <div class="gtile">
+      <img src="assets/genre-scifi.webp" alt="Original pixel artwork: a neon hangar with a perspective grid, alien drones and an orange tracer running to the crosshair" width="640" height="360" loading="lazy" />
+      <div class="cap">
+        <h3>SCI-FI BLASTERS</h3>
+        <p>Wave after wave, targets swapping faster than you can re-aim. Where the pistol's low
+        latency stops being a spec and starts being the difference.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>YOUR OWN LIBRARY, YOUR OWN DISCS</h2>
+  <div class="own">
+    <img src="assets/range-screenshot.webp" alt="Screenshot of THE RANGE, RetroTrigger's own browser shooting gallery, showing pixel zombies on a night street with the crosshair and ammo HUD" width="900" height="507" loading="lazy" />
+    <div>
+      <p>Emulators themselves are legal software — that was settled in the US courts decades ago
+      (<i>Sony v. Connectix</i>, <i>Sony v. Bleem</i>). What matters is where the game files come
+      from. If you own the disc or cartridge, you're in a defensible place. If you download a
+      stranger's copy, you're not, and no seller can make that risk go away by bundling it for you.</p>
+      <p>The pistol behaves as a standard mouse-class pointer, so any emulator or PC game that
+      accepts mouse aiming can use it. That's the whole trick — and why the library keeps growing
+      without us shipping a single byte.</p>
+      <p><b>And it comes with one game we actually made:</b> THE RANGE, the shooting gallery on our
+      front page. Free, playable in your browser right now, no hardware needed — and if you score
+      2,500 it hands you a discount code.</p>
+      <p><a class="btn-arcade btn-sm" href="index.html#range">▶ PLAY THE RANGE</a></p>
+    </div>
+  </div>
+
+  <h2>WHAT ELSE IS OUT THERE</h2>
+  <p class="lead-in">The PC light-gun scene is bigger than any pre-loaded drive, because it keeps
+  being added to. Places worth your time:</p>
+  <div class="scroll"><table>
+    <tr><th>Where</th><th>What you'll find</th></tr>
+    <tr>
+      <td><b>Steam, tagged "light gun" / "rail shooter"</b></td>
+      <td>Modern and remastered rail shooters, plus indies built specifically for mouse-aim play. Filter by "Local Co-Op" if you bought the two-gun set.</td>
+    </tr>
+    <tr>
+      <td><b>Official retro compilations</b></td>
+      <td>Publisher-released arcade collections put licensed classics on PC legitimately. When a compilation includes a shooting-gallery title, your pistol handles it like any other mouse-aim game.</td>
+    </tr>
+    <tr>
+      <td><b>itch.io &amp; homebrew</b></td>
+      <td>Independent and freeware light-gun games, some built by the same people who build the guns. Free to download, legal to keep.</td>
+    </tr>
+    <tr>
+      <td><b>The Gun4IR / OpenFIRE / Sinden communities</b></td>
+      <td>The real authority on what works. These communities maintain per-game compatibility notes and settings — the fastest way to get a specific game feeling right, and they'll answer questions from anyone running compatible hardware.</td>
+    </tr>
+  </table></div>
+
+  <div class="callout">
+    <p><b>Straight talk about "600 games."</b> The drives you'll see advertised alongside guns like
+    this are 1TB SSDs full of other people's console and arcade releases. Here's the part nobody
+    mentions: in the current memory market, a bare 1TB SSD costs about as much as those loaded
+    drives sell for. You're not paying for games — you're paying market rate for a hard drive, and
+    getting a legal problem thrown in. Buy an empty drive, put your own library on it, and you've
+    spent the same money with none of the exposure.</p>
+  </div>
+
+  <p class="fineprint">Game titles, prices and trademarks on this page belong to their respective
+  owners and are named here only to describe what RetroTrigger hardware is compatible with. We are
+  not affiliated with, endorsed by, or partnered with any publisher named above. <b>No game software
+  is included with, bundled with, or supplied by RetroTrigger.</b> Prices were accurate when this
+  page was written — always check the storefront. Compatibility depends on the individual game and
+  your host setup; see the <a href="setup.html">setup guide</a> for what we can and can't promise.</p>
+
+  <p style="margin-top:36px"><a class="btn-arcade btn-sm" href="index.html#preorder">◂ RESERVE YOUR PISTOL</a></p>
+</div>
+</body>
+</html>

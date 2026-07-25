@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#05060a" />
+<title>60-Second Setup · RETROTRIGGER™</title>
+<meta name="description" content="Plug in the receiver, clip the IR bar to your screen, calibrate once. The complete RetroTrigger setup guide for Windows PC, Batocera/Raspberry Pi and Android — plus the calibration troubleshooting tree." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='38' fill='none' stroke='%23ff7a1a' stroke-width='10'/%3E%3Cpath d='M50 2v26M50 72v26M2 50h26M72 50h26' stroke='%232f9dff' stroke-width='10'/%3E%3Ccircle cx='50' cy='50' r='8' fill='%23ff7a1a'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Chakra+Petch:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<style>
+  body{ cursor:auto }
+  .doc{ max-width:900px; margin:0 auto; padding:56px 20px 100px }
+  .back{ display:inline-block; margin-bottom:26px }
+  .doc h1{ font-family:var(--px); font-size:clamp(16px,3.4vw,26px); margin:14px 0 8px; color:var(--blue2); text-shadow:var(--glow-blue) }
+  .doc .sub{ color:var(--dim); max-width:64ch; margin-bottom:8px }
+  .doc h2{ font-family:var(--px); font-size:13px; color:var(--orange); margin:52px 0 8px; letter-spacing:1px }
+  .doc h3{ font-family:var(--body); font-weight:700; font-size:16px; color:var(--ink); margin:26px 0 8px }
+  .doc p, .doc li{ color:var(--dim); margin-bottom:12px; line-height:1.7 }
+  .doc b{ color:var(--ink) }
+  .doc ul, .doc ol{ padding-left:22px }
+
+  /* three big steps */
+  .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:26px 0 10px; counter-reset:s }
+  .step{ border:1px solid var(--line); border-radius:12px; padding:22px; background:linear-gradient(180deg,var(--panel2),var(--panel)) }
+  .step::before{
+    counter-increment:s; content:"STEP 0" counter(s);
+    display:block; font-family:var(--px); font-size:9px; color:var(--orange); letter-spacing:1.5px; margin-bottom:12px;
+  }
+  .step h3{ margin:0 0 8px; font-family:var(--px); font-size:10.5px; letter-spacing:1px; color:var(--blue2) }
+  .step p{ margin:0; font-size:14px }
+  .timer{ font-family:var(--px); font-size:8.5px; color:var(--dim); letter-spacing:1px; margin-top:14px; display:block }
+
+  /* host picker */
+  .hosts{ display:flex; gap:10px; flex-wrap:wrap; margin:18px 0 6px }
+  .hbtn{
+    font-family:var(--px); font-size:9px; letter-spacing:1.4px; padding:12px 18px;
+    border:1px solid var(--line); border-radius:8px; background:transparent; color:var(--dim);
+    transition:border-color .15s,color .15s,box-shadow .15s;
+  }
+  .hbtn.active{ border-color:var(--blue); color:var(--ink); box-shadow:var(--glow-blue) }
+  .hostpane{ border:1px solid var(--line); border-radius:12px; padding:24px; background:var(--panel); margin-top:4px }
+  .hostpane[hidden]{ display:none }
+  .hostpane ol{ margin:0 }
+  .hostpane li{ margin-bottom:14px }
+  kbd{
+    font-family:var(--mono,monospace); font-size:12px; background:#070a12; color:var(--ink);
+    border:1px solid var(--line); border-radius:4px; padding:2px 7px;
+  }
+
+  /* troubleshooting */
+  .tree details{
+    border:1px solid var(--line); border-left:3px solid var(--orange); border-radius:0 10px 10px 0;
+    padding:16px 20px; margin-bottom:12px; background:var(--panel);
+  }
+  .tree summary{ cursor:pointer; color:var(--ink); font-weight:700; font-size:15px }
+  .tree summary::marker{ color:var(--orange) }
+  .tree p:last-child, .tree li:last-child{ margin-bottom:0 }
+
+  .callout{
+    border:1px solid var(--line); border-left:3px solid var(--blue); border-radius:0 10px 10px 0;
+    background:rgba(47,157,255,.07); padding:16px 20px; margin:24px 0;
+  }
+  .callout p:last-child{ margin-bottom:0 }
+  .callout p{ color:var(--ink) }
+
+  .kit{ display:grid; grid-template-columns:1fr 1fr; gap:8px 24px; margin:16px 0 }
+  .kit li{ margin:0 }
+  @media(max-width:760px){
+    .steps{ grid-template-columns:1fr }
+    .kit{ grid-template-columns:1fr }
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+  <a class="back" href="index.html">◂ Back to the arcade</a>
+  <h1>60-SECOND SETUP</h1>
+  <p class="sub">Three steps, one calibration, then you're shooting. No drivers to hunt down, no
+  soldering, no CRT required. If you can plug in a USB stick you can do this.</p>
+
+  <h2>WHAT'S IN THE BOX</h2>
+  <ul class="kit">
+    <li>RetroTrigger™ pistol (per player)</li>
+    <li>USB receiver — plug &amp; play</li>
+    <li>IR positioning light set</li>
+    <li>2× 18650 li-ion cells per pistol</li>
+    <li>Charging cable per pistol</li>
+    <li>Quick-start &amp; calibration card</li>
+  </ul>
+  <p><b>You supply the host and the games.</b> The pistol is a controller — it needs something to
+  play on (a Windows PC, a Batocera/Raspberry&nbsp;Pi box, or an Android TV device) and games you
+  own. See <a href="games.html">what you can play</a>.</p>
+
+  <h2>THE THREE STEPS</h2>
+  <div class="steps">
+    <div class="step">
+      <h3>MOUNT THE IR BAR</h3>
+      <p>Clip the positioning light to the top or bottom of your screen, centred, facing you. It
+      draws power over USB — any port or phone charger works. This is what the pistol tracks; the
+      screen itself does nothing.</p>
+      <span class="timer">≈ 20 SECONDS</span>
+    </div>
+    <div class="step">
+      <h3>PAIR THE RECEIVER</h3>
+      <p>Insert the cells into the pistol grip, flick the switch at the rear, and plug the USB
+      receiver into your host. The blue bars on the slide show charge. Pairing is automatic — each
+      pistol ships matched to its own receiver.</p>
+      <span class="timer">≈ 20 SECONDS</span>
+    </div>
+    <div class="step">
+      <h3>CALIBRATE ONCE</h3>
+      <p>Hold the trigger and aim at each corner of the screen as prompted. The pistol stores the
+      geometry, so you only redo this if you move the bar or change screens.</p>
+      <span class="timer">≈ 20 SECONDS</span>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><b>Sitting distance matters more than screen size.</b> Aim for roughly 1.5× to 2.5× your
+    screen's width away from it — about 2–3m for a 55", 2.5–4m for a 75". Too close and the IR
+    points spread past the pistol's field of view; too far and precision drops.</p>
+  </div>
+
+  <h2>SET UP YOUR HOST</h2>
+  <div class="hosts" role="group" aria-label="Choose your host">
+    <button class="hbtn active" type="button" data-host="pc" aria-pressed="true">WINDOWS PC</button>
+    <button class="hbtn" type="button" data-host="batocera" aria-pressed="false">BATOCERA / PI</button>
+    <button class="hbtn" type="button" data-host="android" aria-pressed="false">ANDROID</button>
+  </div>
+
+  <div class="hostpane" id="host-pc">
+    <h3>Windows PC — the path most people take</h3>
+    <ol>
+      <li>Plug the receiver in. Windows detects the pistol as a standard pointing device — no driver
+      download, no installer.</li>
+      <li>Run the corner calibration (hold trigger, aim at each prompted corner).</li>
+      <li>Open a game that accepts mouse aiming and set <b>aim = mouse</b>. Most PC rail shooters
+      and arcade emulators do this natively.</li>
+      <li>For emulators, bind the trigger to your usual fire button and the reload gesture (aim
+      off-screen and pull) to the reload input. The light-gun community's compatibility lists are
+      the fastest way to get per-game settings right — we link them on the
+      <a href="games.html">games page</a>.</li>
+    </ol>
+    <p><b>Two players:</b> plug both receivers in. Each pistol drives its own pointer, so P1 and P2
+    are independent — no split-screen, no extra software.</p>
+  </div>
+
+  <div class="hostpane" id="host-batocera" hidden>
+    <h3>Batocera or Raspberry Pi — the cabinet builder's route</h3>
+    <ol>
+      <li>Flash Batocera to a USB drive or SD card and boot your box. (A Pi 4/5, an old mini-PC or
+      any spare laptop all work.)</li>
+      <li>Plug in the receiver before boot so it's detected on startup.</li>
+      <li>In Batocera, the pistol appears as a mouse-class device — enable light-gun mode for the
+      emulator cores you use, then run calibration.</li>
+      <li>Point Batocera at the games you legally own. Batocera ships <b>no games</b>, and neither
+      do we.</li>
+    </ol>
+    <p><b>Why builders like this:</b> the whole thing lives on a stick. Unplug it from the TV, take
+    it to a friend's house, plug in, calibrate once, play.</p>
+  </div>
+
+  <div class="hostpane" id="host-android" hidden>
+    <h3>Android TV box, tablet or phone</h3>
+    <ol>
+      <li>Connect the receiver via USB-OTG (a USB-C adapter for most modern devices).</li>
+      <li>Android treats the pistol as a mouse — you'll see a pointer appear.</li>
+      <li>Run calibration, then use an emulator front-end that supports mouse aiming.</li>
+      <li>Android is the most variable host: pointer handling differs between devices and Android
+      versions. If you only have an Android box and precision matters to you, tell us before you
+      order and we'll be straight with you about what to expect.</li>
+    </ol>
+  </div>
+
+  <h2>IF SOMETHING'S OFF</h2>
+  <div class="tree">
+    <details>
+      <summary>My aim is offset — I hit above/below where I point</summary>
+      <p>Re-run calibration. Nine times out of ten the IR bar moved, or it was calibrated at a
+      different sitting distance than you're playing at. Calibrate from the seat you actually play
+      in, not standing next to the TV.</p>
+    </details>
+    <details>
+      <summary>Tracking drops out near the screen edges</summary>
+      <p>You're likely too close, so the outer IR points fall outside the pistol's field of view.
+      Back up half a metre and recalibrate. Also check the bar is centred — an off-centre bar
+      makes one side worse than the other.</p>
+    </details>
+    <details>
+      <summary>The pointer jitters or jumps around</summary>
+      <p>Infrared interference. The usual culprits: sunlight on the screen wall, incandescent or
+      halogen bulbs in the pistol's view, a plasma TV, or a second IR device (some soundbars and
+      remotes). Close the curtains and try again in the dark to confirm — then remove the offender.</p>
+    </details>
+    <details>
+      <summary>Recoil feels weak, or stops after a while</summary>
+      <p>Check cell charge first — the solenoid is the first thing to fade on low voltage. Recoil
+      pulls hard current, so tired or mismatched 18650s show up here before anything else. Fit a
+      freshly charged matched pair.</p>
+    </details>
+    <details>
+      <summary>Nothing happens when I plug in the receiver</summary>
+      <p>Try a different USB port directly on the host (skip hubs and front-panel ports). Confirm
+      the pistol's rear switch is on and the charge bars light. If you have two kits, swap
+      receivers to identify whether it's the pistol or the receiver — then email us with what you
+      found and we'll sort it.</p>
+    </details>
+    <details>
+      <summary>A game ignores the pistol entirely</summary>
+      <p>The game probably doesn't read raw mouse position for aiming — common in console-style
+      games that expect a stick. Check the community compatibility list linked on the
+      <a href="games.html">games page</a> before assuming the hardware is at fault.</p>
+    </details>
+  </div>
+
+  <h2>BATTERY &amp; CARE</h2>
+  <ul>
+    <li>Charge with the supplied cable; a full charge takes a few hours and lasts a long session.</li>
+    <li>The cells are removable 18650s, so a spare pair means you never stop playing to charge.
+      Use quality protected cells from a reputable brand — cheap unbranded cells are the one part
+      of this hobby genuinely worth spending on.</li>
+    <li>Don't store the pistol with fully depleted cells, and don't leave it in a hot car. Standard
+      lithium sense.</li>
+    <li>Wipe the muzzle lens occasionally — a smudge there reads as poor tracking.</li>
+  </ul>
+
+  <div class="callout">
+    <p>Stuck on something not covered here? Mail <a href="mailto:henrychua94@gmail.com">henrychua94@gmail.com</a>
+    with your host, your screen size and what you're seeing. Real answers from a human, not a
+    macro.</p>
+  </div>
+
+  <p style="margin-top:44px"><a class="btn-arcade btn-sm" href="index.html#preorder">◂ RESERVE YOUR PISTOL</a></p>
+</div>
+
+<script>
+(function () {
+  var btns = document.querySelectorAll(".hbtn");
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener("click", function () {
+      var host = b.getAttribute("data-host");
+      Array.prototype.forEach.call(btns, function (x) {
+        var on = x === b;
+        x.classList.toggle("active", on);
+        x.setAttribute("aria-pressed", String(on));
+      });
+      ["pc", "batocera", "android"].forEach(function (h) {
+        document.getElementById("host-" + h).hidden = (h !== host);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
