@@ -893,3 +893,24 @@ body.godmode #hero, body.godmode .cab-marquee, body.godmode .logo-cross{
 @media(max-width:520px){
   .bbtn{ flex:1 1 100% }
 }
+
+/* ================= BOOT: ATMOSPHERE, NOT A DOOR =================
+   The CRT boot sequence used to block the page behind an inert
+   full-screen modal, so every first-time visitor had to click past a
+   BIOS screen before reading a single word of the offer. It now plays
+   as a translucent overlay that ignores the pointer and retires
+   itself, while the hero underneath stays readable and scrollable.
+   INSERT COIN and SKIP still work for anyone who wants the ritual. */
+#boot.boot-passive{
+  background:rgba(2,3,8,.93);
+  pointer-events:none;                 /* clicks fall through to the page */
+  backdrop-filter:blur(2px);
+}
+#boot.boot-passive #bootCoin,
+#boot.boot-passive #bootSkip{
+  pointer-events:auto;                 /* …except the two real controls */
+}
+#boot.boot-passive #bootLog{ opacity:.92 }
+/* let the page behind scroll away from the overlay if the visitor is
+   already moving — the overlay fades rather than fighting them */
+body.booting{ overflow:auto }

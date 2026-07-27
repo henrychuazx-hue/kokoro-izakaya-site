@@ -180,11 +180,12 @@ function toast(html, ms) {
    ============================================================ */
 (function boot() {
   var el = $("#boot"), log = $("#bootLog"), coin = $("#bootCoin"), skip = $("#bootSkip");
-  var done = false;
+  var done = false, autoTimer = null;
   var pageChrome = $$("header, main, footer");
 
   function finish(playSound) {
     if (done) return; done = true;
+    if (autoTimer) clearTimeout(autoTimer);
     try { sessionStorage.setItem("rt.booted", "1"); } catch (e) {}
     document.body.classList.remove("booting");
     document.body.classList.add("crt-on");
@@ -203,8 +204,15 @@ function toast(html, ms) {
   try { skipBoot = skipBoot || sessionStorage.getItem("rt.booted") === "1"; } catch (e) {}
   if (skipBoot) { el.style.transition = "none"; finish(false); return; }
 
-  pageChrome.forEach(function (n) { n.inert = true; });
-  if (skip) skip.focus({ preventScroll: true });
+  /* The boot sequence is atmosphere, not a door. The page underneath stays
+     readable, focusable and scrollable the whole time, and the overlay
+     retires itself — a first-time visitor from an ad never has to click
+     past a BIOS screen to find out what we sell. Clicking INSERT COIN
+     still gets you the coin drop and the CRT wipe. */
+  el.classList.add("boot-passive");
+  /* absolute failsafe only — the real dismiss fires ~1.2s after the BIOS
+     text finishes, so the INSERT COIN moment always gets to happen */
+  autoTimer = setTimeout(function () { finish(false); }, 6500);
 
   var lines = [
     "RETROTRIGGER ARCADE BIOS v2.6.0",
@@ -224,7 +232,10 @@ function toast(html, ms) {
     if (done) return;
     if (li >= lines.length) {
       coin.hidden = false;
-      coin.focus({ preventScroll: true });
+      /* deliberately NOT focused: stealing focus from someone already
+         reading or scrolling the page is the blocking behaviour we removed */
+      if (autoTimer) clearTimeout(autoTimer);
+      autoTimer = setTimeout(function () { finish(false); }, 2200);
       return;
     }
     var line = lines[li];
