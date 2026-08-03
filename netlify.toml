@@ -1,0 +1,19 @@
+# Netlify config — static site, no build step.
+# Import this repo in Netlify and everything below is picked up automatically.
+
+[build]
+  publish = "."
+
+# Cache the (heavy) product imagery for a week
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# Sensible security headers for a storefront
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

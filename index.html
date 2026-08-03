@@ -3,47 +3,467 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="theme-color" content="#0b0f14" />
-<title>Genki 元気</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AB%80%3C/text%3E%3C/svg%3E" />
-<meta name="description" content="Genki 元気 — a private, offline-first health tracker for meals, hydration, fitness, sleep and mood. Log a day, snap a food photo, and let Claude help you understand it." />
+<meta name="theme-color" content="#05060a" />
+<title>RETROTRIGGER™ — The Living-Room Light Gun · Pre-Order Batch 01</title>
+<meta name="description" content="The arcade light gun rebuilt for modern TVs. IR tracking on any screen up to 100&quot;, zero-lag 2.4GHz wireless, real recoil. Pairs with your PC, Batocera box or Android device. Reserve Batch 01 with a refundable $49 deposit." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='38' fill='none' stroke='%23ff7a1a' stroke-width='10'/%3E%3Cpath d='M50 2v26M50 72v26M2 50h26M72 50h26' stroke='%232f9dff' stroke-width='10'/%3E%3Ccircle cx='50' cy='50' r='8' fill='%23ff7a1a'/%3E%3C/svg%3E" />
+
+<meta property="og:type" content="product" />
+<meta property="og:title" content="RETROTRIGGER™ — The Living-Room Light Gun" />
+<meta property="og:description" content="Arcade light-gun energy on your own TV. Near-zero-lag IR tracking, real recoil, works with the light-gun library you already love. Reserve Batch 01 — play the range, earn a discount." />
+<meta property="og:url" content="https://retrotrigger-store.netlify.app/" />
+<meta property="og:image" content="https://retrotrigger-store.netlify.app/assets/og-card.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://retrotrigger-store.netlify.app/" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/app.css" />
-</head>
-<body>
-  <div class="app">
-    <aside class="sidebar">
-      <div class="brand">
-        <div class="seal">気</div>
-        <div class="brand-tx">
-          <span class="brand-name">Genki</span>
-          <span class="brand-sub">Health</span>
-        </div>
-      </div>
-      <nav class="nav-list" id="navList"><!-- built by app.js --></nav>
-      <div class="side-foot">Private &amp; offline · stored only in this browser<br />&copy; <span id="year">2026</span> Genki 元気</div>
-    </aside>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Chakra+Petch:wght@400;600;700&family=VT323&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
 
-    <main class="main">
-      <div id="view"><!-- rendered by app.js --></div>
-    </main>
+<!-- Keep the price below in sync with tiers.deadeye.price in js/config.js -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "RetroTrigger™ Pistol",
+  "description": "Wireless IR light gun for modern TVs and projectors up to 100 inches. Zero-lag 2.4GHz, recoil + rumble. Works as a plug-and-play USB light-gun controller with Windows PCs, Batocera/Raspberry Pi builds and Android devices.",
+  "image": "https://retrotrigger-store.netlify.app/assets/gun-black.webp",
+  "brand": { "@type": "Brand", "name": "RetroTrigger" },
+  "offers": {
+    "@type": "Offer",
+    "price": "229.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/PreOrder"
+  }
+}
+</script>
+</head>
+<body class="booting">
+
+<a class="skip-link" href="#preorder">Skip to pre-order</a>
+
+<!-- ======================= BOOT / ATTRACT ======================= -->
+<div id="boot" role="dialog" aria-modal="true" aria-label="Arcade boot sequence">
+  <button id="bootSkip" type="button">SKIP INTRO ▸</button>
+  <pre id="bootLog" aria-live="off"></pre>
+  <button id="bootCoin" type="button" hidden>
+    <span class="coin-slot"></span>
+    INSERT COIN<span class="blink">▮</span>
+  </button>
+</div>
+
+<!-- ======================= TOP BAR ======================= -->
+<header id="topbar">
+  <a class="logo" href="#top" aria-label="RetroTrigger home">
+    <span class="logo-cross" aria-hidden="true"></span>
+    <span class="logo-tx">RETRO<em>TRIGGER</em></span>
+  </a>
+  <nav id="stageNav" aria-label="Stages">
+    <a href="#range">The Range</a>
+    <a href="#hardware">Hardware</a>
+    <a href="#tech">Tech</a>
+    <a href="games.html">Games</a>
+    <a href="setup.html">Setup</a>
+    <a href="#specs">Specs</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <div class="topbar-right">
+    <button id="soundToggle" type="button" aria-pressed="false" title="Toggle sound">
+      <span class="snd-on">🔊</span><span class="snd-off">🔇</span>
+    </button>
+    <span id="scoreChip" hidden></span>
+    <a class="btn-arcade btn-sm" href="#preorder">PRE-ORDER</a>
+  </div>
+</header>
+
+<noscript><style>#boot{display:none}</style></noscript>
+
+<main id="top" tabindex="-1">
+
+<!-- ======================= HERO ======================= -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="stage-tag">◤ ATTRACT MODE — PRESS ANY TRIGGER ◥</p>
+      <h1 id="heroTitle" class="glitch" data-text="RETROTRIGGER™">RETROTRIGGER™</h1>
+      <p class="hero-sub">The arcade you grew up in — <b>the era of Time Crisis, The House of the Dead and Point Blank</b> — reborn for your living room. A near-zero-lag light gun with <b>real recoil</b> that works on <b>any modern TV up to 100"</b>. Pairs with your PC, Batocera box or Android device in 60 seconds — and unlocks the biggest light-gun library there is: yours.</p>
+      <div class="hero-ctas">
+        <a id="heroBuyBtn" class="btn-arcade" href="#preorder">RESERVE — <span data-price="deadeye">$229</span></a>
+        <a id="playBtn" class="btn-ghost" href="#range">▶ PLAY THE RANGE — EARN 10% OFF</a>
+      </div>
+      <ul class="hero-badges">
+        <li><b>&lt;1</b><span>frame lag · 2.4GHz</span></li>
+        <li><b>3 HOSTS</b><span>pc · pi · android</span></li>
+        <li><b>100"</b><span>max screen</span></li>
+        <li><b>4P</b><span>multiplayer</span></li>
+      </ul>
+    </div>
+    <div class="hero-stage" aria-hidden="true">
+      <div class="hero-glow"></div>
+      <div id="heroGun">
+        <img id="heroGunImg" src="assets/gun-black.webp" alt="" width="1200" height="971" fetchpriority="high" />
+        <div id="muzzleFlash"></div>
+      </div>
+      <p class="hero-hint">⟵ drag your crosshair · click to dry-fire</p>
+    </div>
+  </div>
+  <div id="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>REAL RECOIL ★ NEAR-ZERO LAG ★ WORKS WITH PC · BATOCERA · ANDROID ★ ANY TV OR PROJECTOR ≤ 100" ★ 4-PLAYER CO-OP ★ 60-SECOND SETUP ★ $49 REFUNDABLE DEPOSIT ★ BATCH 01 OPEN ★</span><span>REAL RECOIL ★ NEAR-ZERO LAG ★ WORKS WITH PC · BATOCERA · ANDROID ★ ANY TV OR PROJECTOR ≤ 100" ★ 4-PLAYER CO-OP ★ 60-SECOND SETUP ★ $49 REFUNDABLE DEPOSIT ★ BATCH 01 OPEN ★</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= THE RANGE (GAME) ======================= -->
+<section id="range">
+  <header class="sec-head">
+    <p class="stage-tag">◤ STAGE 00 · PLAYABLE DEMO ◥</p>
+    <h2>THE RANGE</h2>
+    <p class="sec-sub">Your mouse is the gun. Clear the gallery, don't shoot the civilians, and score <b id="unlockScoreLine">2,500+</b> to unlock a live discount code for checkout.</p>
+  </header>
+
+  <div class="cab">
+    <div class="cab-marquee"><span>★ THE RANGE ★</span></div>
+    <div class="cab-screen">
+      <canvas id="gameCanvas" width="960" height="540" tabindex="0" aria-label="The Range — light gun shooting gallery minigame. Click or tap targets to score; keyboard players use arrow keys to aim and Space or Enter to fire."></canvas>
+      <span id="gameLive" class="visually-hidden" aria-live="polite"></span>
+    </div>
+    <div class="cab-panel">
+      <button id="startGameBtn" class="btn-arcade btn-sm" type="button">INSERT COIN ▸ START</button>
+      <button id="reloadBtn" class="btn-ghost btn-sm" type="button">RELOAD [R]</button>
+      <span class="cab-hint">Click / SPACE fire · arrows aim · R reload · zombies +100 · ducks +150 · bottles +250 · civilians −500</span>
+    </div>
   </div>
 
-  <nav class="tabbar" id="tabList"><!-- built by app.js --></nav>
+  <div class="range-under">
+    <div class="panel" id="lbPanel" hidden>
+      <h3>◆ YOUR BEST RUNS</h3>
+      <ol id="lbList"></ol>
+    </div>
+    <div class="panel" id="unlockPanel">
+      <h3>◆ BOUNTY BOARD</h3>
+      <p id="unlockStatus">Score <b>2,500</b> in one round → code <b class="code-mask">██████████</b> unlocks — <b>10% OFF</b> your pre-order. It pre-fills at checkout.</p>
+      <div id="unlockReveal" hidden>
+        <span class="code-pill" id="unlockCode">??????????</span>
+        <button id="copyCode" class="btn-ghost btn-sm" type="button">COPY</button>
+        <a class="btn-arcade btn-sm" href="#preorder">USE IT ▸</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <div id="toastWrap" class="toast-wrap"></div>
-  <div id="modalRoot"></div>
+<!-- ======================= STAGE 1 · HARDWARE ======================= -->
+<section id="hardware">
+  <header class="sec-head">
+    <p class="stage-tag">◤ STAGE 01 ◥</p>
+    <h2>KNOW YOUR WEAPON</h2>
+    <p class="sec-sub">Tap the beacons. Every part of the shell earns its place.</p>
+  </header>
+  <div class="gunmap-wrap">
+    <div class="gunmap">
+      <img src="assets/gun-black.webp" alt="RetroTrigger pistol — black colorway with blue light rail and orange action buttons" width="1200" height="971" loading="lazy" />
+      <!-- hotspots (percent coords over image) -->
+      <button class="hotspot" style="--x:11%;--y:19%"  data-hs="0" aria-label="IR muzzle lens"></button>
+      <button class="hotspot" style="--x:44%;--y:26%"  data-hs="1" aria-label="Light rail"></button>
+      <button class="hotspot" style="--x:24%;--y:38%"  data-hs="2" aria-label="D-pad"></button>
+      <button class="hotspot" style="--x:42%;--y:41%"  data-hs="3" aria-label="Action buttons"></button>
+      <button class="hotspot" style="--x:61%;--y:36%"  data-hs="4" aria-label="Ammo LEDs"></button>
+      <button class="hotspot" style="--x:63%;--y:50%"  data-hs="5" aria-label="Trigger"></button>
+      <button class="hotspot" style="--x:70%;--y:86%"  data-hs="6" aria-label="Battery grip + charging"></button>
+    </div>
+    <aside id="hotCard" class="panel">
+      <p class="hot-kicker">SELECT A BEACON</p>
+      <h3 id="hotTitle">7 modules. 1 shell.</h3>
+      <p id="hotBody">Click the pulsing markers on the pistol to inspect each module — from the IR muzzle array to the solenoid recoil block in the grip.</p>
+    </aside>
+  </div>
+</section>
 
-  <!-- Script load order is a contract (SPEC §"Script load order") -->
-  <script src="js/app.js"></script>
-  <script src="js/food-db.js"></script>
-  <script src="js/exercise-db.js"></script>
-  <script src="js/diet.js"></script>
-  <script src="js/fitness.js"></script>
-  <script src="js/sleep.js"></script>
-  <script src="js/mood.js"></script>
-  <script src="js/records.js"></script>
+<!-- ======================= STAGE 2 · TECH ======================= -->
+<section id="tech">
+  <header class="sec-head">
+    <p class="stage-tag">◤ STAGE 02 ◥</p>
+    <h2>ZERO-LAG FIRE CONTROL</h2>
+    <p class="sec-sub">Old light guns needed CRT scanline timing. RetroTrigger triangulates against four IR beacons clipped to your screen — so it works on <b>LED, OLED, QLED and projectors up to 100"</b>.</p>
+  </header>
+  <div class="tech-grid">
+    <div class="tv-diagram" aria-hidden="true">
+      <div class="tv">
+        <span class="sensor s1"></span><span class="sensor s2"></span>
+        <span class="sensor s3"></span><span class="sensor s4"></span>
+        <div class="tv-screen">
+          <span class="tv-target"></span>
+        </div>
+      </div>
+      <div class="beam"></div>
+      <div class="tv-gun">▲</div>
+    </div>
+    <ul class="tech-stats">
+      <li><b>&lt;1</b><span>frame of latency<br/>2.4GHz RF link</span></li>
+      <li><b>4×</b><span>IR beacons<br/>clip on in seconds</span></li>
+      <li><b>30s</b><span>calibration<br/>once, then never again</span></li>
+      <li><b>KICK</b><span>solenoid recoil + rumble<br/>synced to every shot</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================= STAGE 3 · GAMES ======================= -->
+<section id="arsenal">
+  <header class="sec-head">
+    <p class="stage-tag">◤ STAGE 03 ◥</p>
+    <h2>YOUR LIBRARY. UNLOCKED.</h2>
+    <p class="sec-sub">The pistol is the key. Pair it with any PC, Batocera/Raspberry&nbsp;Pi build or Android box and the entire light-gun world opens — community classics, homebrew and original titles, in every genre the arcade ever loved.</p>
+  </header>
+  <div id="eraMarquee" aria-hidden="true">
+    <div class="marquee-track era">
+      <span>FOR THE GENERATION RAISED ON ▸ TIME CRISIS · THE HOUSE OF THE DEAD · VIRTUA COP · POINT BLANK · DUCK SEASON · RESIDENT EVIL: SURVIVOR · AREA 51 · LETHAL ENFORCERS ◂ </span><span>FOR THE GENERATION RAISED ON ▸ TIME CRISIS · THE HOUSE OF THE DEAD · VIRTUA COP · POINT BLANK · DUCK SEASON · RESIDENT EVIL: SURVIVOR · AREA 51 · LETHAL ENFORCERS ◂ </span>
+    </div>
+  </div>
+  <div class="genre-grid">
+    <article class="gcard"><span class="g-ico">🧟</span><h3>ZOMBIE HORROR</h3><p>Mansions, labs and midnight carnivals. Reload fast — they don't stop.</p><b>140+ titles</b></article>
+    <article class="gcard"><span class="g-ico">🚓</span><h3>CRIME &amp; RAIL</h3><p>Duck behind cover, pop out, return fire. The pedal is now a button.</p><b>120+ titles</b></article>
+    <article class="gcard"><span class="g-ico">🦆</span><h3>GALLERY CLASSICS</h3><p>Ducks, cans, clay pigeons and carnival rows. Pure trigger discipline.</p><b>150+ titles</b></article>
+    <article class="gcard"><span class="g-ico">👽</span><h3>SCI-FI BLASTERS</h3><p>Area-clearing alien panic with light-speed target swaps.</p><b>90+ titles</b></article>
+    <article class="gcard"><span class="g-ico">🤠</span><h3>WILD WEST</h3><p>Quick-draw duels and saloon standoffs. Fastest trigger wins.</p><b>60+ titles</b></article>
+    <article class="gcard"><span class="g-ico">🎉</span><h3>PARTY MODES</h3><p>4 pistols, 1 screen. Score attack, versus and co-op campaigns.</p><b>40+ titles</b></article>
+  </div>
+  <p class="fineprint">The pistols ship as controllers — <b>no games are included</b>. Genre counts describe the community light-gun ecosystem (PC / Batocera / MAME-compatible titles you source yourself). Classic titles named above describe the era only — they are <b>not included</b> and their owners are not affiliated with this store. See footer.</p>
+</section>
+
+<!-- ======================= STAGE 4 · CO-OP ======================= -->
+<section id="coop">
+  <div class="coop-grid">
+    <div class="coop-img">
+      <img src="assets/coop.webp" alt="Black and blue RetroTrigger pistols aimed at a TV showing a two-player pixel zombie shoot-out with separate P1 and P2 crosshairs and scores" width="1024" height="1024" loading="lazy" />
+    </div>
+    <div class="coop-copy">
+      <p class="stage-tag">◤ STAGE 04 ◥</p>
+      <h2>2P START</h2>
+      <p>Every arcade memory worth keeping was co-op. The 2-Player Set pairs two independent pistols to one receiver — no split-screen, no extra setup, both guns live on the same rail.</p>
+      <ul class="ticklist">
+        <li>Two pistols, one USB receiver</li>
+        <li>Independent recoil &amp; rumble per gun</li>
+        <li>Expandable to 4 players</li>
+      </ul>
+      <a class="btn-arcade" href="#preorder" data-select-tier="godmode">GET THE GODMODE SET — <span data-price="godmode">$399</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= SPECS TERMINAL ======================= -->
+<section id="specs">
+  <header class="sec-head">
+    <p class="stage-tag">◤ SYSTEM CHECK ◥</p>
+    <h2>SPEC SHEET</h2>
+  </header>
+  <div class="term" role="img" aria-label="Specification terminal: 4 IR beacon tracking, under 1 frame latency over 2.4GHz, works on LED OLED QLED and projectors up to 100 inches, hosts include Windows PC Batocera Raspberry Pi and Android, solenoid recoil and rumble, two 18650 li-ion cells with included charging cable, up to 4 players, 60 second setup.">
+    <div class="term-bar"><i></i><i></i><i></i><span>retrotrigger://diagnostics</span></div>
+    <pre id="termOut" aria-hidden="true"></pre>
+  </div>
+</section>
+
+<!-- ======================= MISSION (SUPPLY LINE) ======================= -->
+<section id="mission">
+  <header class="sec-head">
+    <p class="stage-tag">◤ OPERATION: LIVING ROOM ◥</p>
+    <h2>FROM FACTORY TO FRONT DOOR</h2>
+    <p class="sec-sub">Pre-orders are built in numbered batches with our manufacturing partner. Here's the whole run — no mystery, no vaporware.</p>
+  </header>
+  <ol class="steps">
+    <li class="step"><b>01</b><h3>COIN INSERTED</h3><p>Order placed via Stripe. Instant email confirmation. Card charged once, securely.</p></li>
+    <li class="step"><b>02</b><h3>BATCH LOCK</h3><p>Your unit is allocated in <span class="cfg-batch">Batch 01</span> at the factory when the batch closes.</p></li>
+    <li class="step"><b>03</b><h3>TEST-FIRED QC</h3><p>Every pistol is calibrated and recoil-tested before it's sealed in the crate.</p></li>
+    <li class="step"><b>04</b><h3>DISPATCH</h3><p>Tracking number lands in your inbox within 5 days of batch close. Insured transit.</p></li>
+    <li class="step boss"><b>05</b><h3>FINAL STAGE: YOUR TV</h3><p>Delivered in 2–4 weeks. Clip 4 sensors, calibrate 30s, and it's 1996 again.</p></li>
+  </ol>
+</section>
+
+<!-- ======================= PRE-ORDER (FINAL BOSS) ======================= -->
+<section id="preorder">
+  <header class="sec-head">
+    <p class="stage-tag boss-tag">◤ FINAL BOSS ◥</p>
+    <h2>PRE-ORDER <span class="cfg-batch">BATCH 01</span></h2>
+  </header>
+
+  <div class="buy-grid">
+    <div class="buy-visual">
+      <img id="buyImg" src="assets/gun-black.webp" alt="RetroTrigger pistol in selected colorway" width="1200" height="971" loading="lazy" />
+      <div class="crate panel">
+        <h3>◆ IN THE CRATE</h3>
+        <div class="crate-flex">
+          <img src="assets/real-kit.webp" alt="Actual production photo of the 2-player kit: two pistols, IR positioning light bar, two USB receivers, charging cables and four 18650 batteries" width="900" height="759" loading="lazy" />
+          <ul class="ticklist">
+            <li>RetroTrigger™ pistol (per player)</li>
+            <li>USB receiver — plug &amp; play</li>
+            <li>IR positioning light set</li>
+            <li>2× 18650 li-ion cells (per pistol)</li>
+            <li>Charging cable (per pistol)</li>
+            <li>Quick-start &amp; calibration guide</li>
+          </ul>
+        </div>
+        <p class="fineprint">Actual production-unit photo — what ships is what you see. Renders elsewhere on this page are stylized.</p>
+      </div>
+    </div>
+
+    <div class="buy-box panel">
+      <div id="promoBanner" hidden>
+        <span>CODE ARMED:</span> <b id="promoCode">—</b> <em id="promoPct">−10%</em> <i id="promoWhere">— pre-fills at checkout</i>
+      </div>
+
+      <div class="opt-row" role="group" aria-label="Edition">
+        <p class="opt-label">EDITION</p>
+        <button class="vbtn active" type="button" data-edition="nighthawk" aria-pressed="true"><span class="swatch sw-black"></span>NIGHTHAWK</button>
+        <button class="vbtn" type="button" data-edition="afterglow" aria-pressed="false"><span class="swatch sw-blue"></span>AFTERGLOW</button>
+      </div>
+
+      <div class="opt-row" role="group" aria-label="Grip fit">
+        <p class="opt-label">GRIP FIT <a class="fit-help" href="#faq">which fit?</a></p>
+        <button class="fbtn active" type="button" data-fit="standard" aria-pressed="true">STANDARD</button>
+        <button class="fbtn" type="button" data-fit="compact" aria-pressed="false">COMPACT</button>
+      </div>
+
+      <div class="opt-row" role="group" aria-label="Loadout">
+        <p class="opt-label">LOADOUT</p>
+        <button class="bbtn" type="button" data-tier="marksman" aria-pressed="false">
+          <b class="b-label">MARKSMAN</b><span class="b-sub">1× pistol · no recoil</span><span class="b-price" data-price="marksman">$199</span>
+        </button>
+        <button class="bbtn active" type="button" data-tier="deadeye" aria-pressed="true">
+          <b class="b-label">DEADEYE</b><span class="b-sub">1× pistol · recoil</span><span class="b-price" data-price="deadeye">$229</span>
+        </button>
+        <button class="bbtn" type="button" data-tier="elite" aria-pressed="false">
+          <b class="b-label">DEADEYE ELITE</b><span class="b-sub">1× pistol · kitted</span><span class="b-price" data-price="elite">$299</span>
+        </button>
+        <button class="bbtn" type="button" data-tier="godmode" aria-pressed="false">
+          <b class="b-label">GODMODE SET</b><span class="b-sub">2× pistols · recoil pair</span><span class="b-price" data-price="godmode">$399</span>
+        </button>
+      </div>
+
+      <p id="variantNote" hidden></p>
+
+      <div class="price-row">
+        <span id="priceNow">$229</span>
+        <span id="priceMsrp" title="Planned post-launch price">$259</span>
+        <i class="price-note">post-launch price</i>
+        <span id="saveTag">SAVE $30</span>
+      </div>
+      <p class="tier-line"><b id="tierSku">RT-1R DEADEYE</b><span id="tierDetail"></span></p>
+      <p id="balanceLine" class="balance-line"></p>
+
+      <div class="cd-row" aria-label="Time left to join this batch">
+        <p class="opt-label"><span class="cfg-batch">BATCH 01</span> CLOSES IN</p>
+        <div class="cd">
+          <span><b id="cdD">--</b><i>DAYS</i></span>
+          <span><b id="cdH">--</b><i>HRS</i></span>
+          <span><b id="cdM">--</b><i>MIN</i></span>
+          <span><b id="cdS">--</b><i>SEC</i></span>
+        </div>
+      </div>
+
+      <div class="batch-row">
+        <div id="batchBar" hidden><div id="batchFill"></div></div>
+        <p id="batchLine"></p>
+      </div>
+
+      <button id="buyBtn" class="btn-arcade btn-xl" type="button">
+        <span class="coin-slot"></span> INSERT COIN — RESERVE FOR $49
+      </button>
+      <p class="secure-line">🔒 <b>$49 fully-refundable deposit</b> by <b>Stripe</b> · Apple Pay / Google Pay / cards<br/>Balance invoiced before your batch ships · cancel any time before dispatch for an instant refund<br/><b>Batch 01 ships to US addresses</b> — more regions next batch</p>
+
+      <ul class="guarantees">
+        <li><b>30-DAY</b><span>returns</span></li>
+        <li><b>12-MO</b><span>warranty</span></li>
+        <li><b>INSURED</b><span>shipping</span></li>
+        <li><b>TRACKED</b><span>to your door</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FAQ ======================= -->
+<section id="faq">
+  <header class="sec-head">
+    <p class="stage-tag">◤ CONTINUE? 9…8…7 ◥</p>
+    <h2>FAQ</h2>
+  </header>
+  <div class="faq-list">
+    <details>
+      <summary>Does it really work on a modern flat-screen TV?</summary>
+      <p>Yes — that's the whole point. Classic light guns needed CRT timing tricks; RetroTrigger uses four clip-on IR beacons and triangulates the muzzle position instead. LED, OLED, QLED and projectors up to 100" all work. Calibration takes about 30 seconds, once.</p>
+    </details>
+    <details>
+      <summary>Do I need a console or PC?</summary>
+      <p>You need a host — and you probably already own one: any Windows PC, a Batocera or Raspberry&nbsp;Pi build, or an Android box/TV. Plug the USB receiver into the host, clip the IR positioning light to your screen, calibrate once, shoot. The pistols speak standard USB light-gun protocols the emulator and PC gaming community supports. <b>No games are included with the pistols.</b></p>
+    </details>
+    <details>
+      <summary>Which grip fit should I choose?</summary>
+      <p><b>Standard</b> is the full frame — if you're comfortable with a full-size pistol grip or a large gaming mouse, take it. <b>Compact</b> shortens the trigger reach and slims the grip by roughly 8–10%; it suits smaller hands, and plenty of people simply prefer the tighter hold for long sessions. It's a sizing choice, not a gendered one, and it costs the same. Not sure? Measure from the base of your palm to the tip of your middle finger: under ~18cm, start with Compact.</p>
+    </details>
+    <details>
+      <summary>What's the difference between the loadouts?</summary>
+      <p><b>DEADEYE</b> is the standard pistol with 12V solenoid recoil — the kick you remember from the cabinet. <b>DEADEYE ELITE</b> is the same pistol with the hard case, IR bar stand, a spare pair of cells and a numbered calibration card. <b>GODMODE SET</b> is two recoil pistols on one receiver for couch co-op, and you can mix editions and fits across the pair. Every loadout has identical tracking hardware — you're choosing recoil, extras and player count, not accuracy.</p>
+    </details>
+    <details>
+      <summary>How does the $49 deposit work?</summary>
+      <p>Your deposit reserves a unit in the batch and locks your price. We invoice the balance by email before the batch ships — pay it then, or cancel any time before dispatch and the deposit is refunded in full, instantly, no questions.</p>
+    </details>
+    <details>
+      <summary>When will my pre-order ship?</summary>
+      <p>Units ship in numbered batches. When your batch closes, production is locked, every pistol is QC test-fired, and tracking numbers go out within 5 days of batch close. Typical door-to-door is 2–4 weeks after that — the current window is shown above the pre-order button.</p>
+    </details>
+    <details>
+      <summary>Where do you ship, and what does it cost?</summary>
+      <p>Shipping regions and any shipping cost are shown at the Stripe checkout before you pay — no surprises after the fact. Every crate ships insured with door-to-door tracking.</p>
+    </details>
+    <details>
+      <summary>What's the recoil actually like?</summary>
+      <p>A solenoid kick plus rumble, synced per shot — closer to an arcade cabinet gun than a rumbling gamepad. Strong enough to be the reason the neighbors knock.</p>
+    </details>
+    <details>
+      <summary>What if it arrives damaged or I change my mind?</summary>
+      <p>30-day no-drama returns and a 12-month warranty on every unit. Shipping is insured and tracked; if a courier folds your crate in half, we replace it — you never fight the courier, we do.</p>
+    </details>
+    <details>
+      <summary>Is my payment safe?</summary>
+      <p>Checkout runs entirely on Stripe, a PCI-DSS Level 1 payment processor trusted by millions of businesses. We never see or store your card details. You're charged once at order, and every order gets an instant email receipt.</p>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <p class="logo-tx">RETRO<em>TRIGGER</em></p>
+      <p class="foot-dim">Batch-built light guns for the living-room arcade.<br/>Questions → <a id="contactLink" href="mailto:henrychua94@gmail.com">henrychua94@gmail.com</a></p>
+      <p class="foot-policies">
+        <a href="setup.html">Setup Guide</a>
+        <a href="games.html">What You Can Play</a>
+        <a href="policies.html#returns">Returns &amp; Refunds</a>
+        <a href="policies.html#shipping">Shipping</a>
+        <a href="policies.html#terms">Terms</a>
+        <a href="policies.html#privacy">Privacy</a>
+      </p>
+    </div>
+    <p class="foot-legal">Time Crisis®, The House of the Dead®, Virtua Cop®, Point Blank®, Resident Evil® and other titles referenced are trademarks of their respective owners (Bandai Namco, SEGA, Capcom and others), used only to describe a gaming era. This store is not affiliated with, endorsed or sponsored by those companies. RetroTrigger™ hardware is supplied by our manufacturing partner; sold and supported by this store.<br/><span id="footYear">© 2026</span> · All systems operational · <span class="konami-hint" title="↑↑↓↓←→←→BA">Operatives: the old code still works.</span></p>
+  </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="bulletLayer" aria-hidden="true"></div>
+
+<!-- Stripe setup modal (shown if payment link not configured yet) -->
+<div id="setupModal" role="dialog" aria-modal="true" aria-labelledby="setupTitle" hidden>
+  <div class="modal-card panel">
+    <h3 id="setupTitle">◆ CHECKOUT OFFLINE — SETUP REQUIRED</h3>
+    <p>This storefront is live, but the Stripe payment link for <b id="setupVariant">this loadout</b> hasn't been connected yet.</p>
+    <p class="foot-dim">Owner: create a Payment Link in Stripe (Products → Payment Links) and paste it into <code>js/config.js</code> under <code>stripe.paymentLinks</code>. Full walkthrough in README.md.</p>
+    <button id="setupClose" class="btn-arcade btn-sm" type="button">ROGER THAT</button>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/arcade.js"></script>
 </body>
 </html>
