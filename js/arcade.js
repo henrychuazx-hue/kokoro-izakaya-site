@@ -862,9 +862,14 @@ var Shop = (function () {
   ];
   var lb = store.get("lb", []);
 
+  /* This board is per-browser, not global. Announcing "NO SCORES LOGGED"
+     to a first-time visitor on an unknown brand is negative social proof
+     for a fact about their own browser — so the panel stays hidden until
+     they have a run of their own to look at. */
   function renderLb() {
-    var ol = $("#lbList");
-    if (!lb.length) { ol.innerHTML = '<li class="lb-empty">NO SCORES LOGGED — BE FIRST</li>'; return; }
+    var ol = $("#lbList"), panel = $("#lbPanel");
+    if (panel) panel.hidden = !lb.length;
+    if (!lb.length) { ol.innerHTML = ""; return; }
     ol.innerHTML = lb.map(function (e) {
       return "<li>" + e.n + " <b>" + e.s.toLocaleString() + "</b></li>";
     }).join("");
