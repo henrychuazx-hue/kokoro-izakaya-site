@@ -65,6 +65,18 @@ This Claude account has Gmail, Google Drive, Google Calendar, Notion, Asana, Sho
 
 Your verdict goes on screen after you run it. The run sheet has the tests.
 
+## Ep 1 continuity: why Blotato Generate scored 92 CRITICAL
+
+Your Ep 1 test plan logged SkillSpector at 92/100 CRITICAL for Blotato's Generate skill. Re-run here on the same repo (commit 5d6f76f, 18 Aug 2026): 92/100, DO NOT INSTALL, 41 issues.
+
+| Finding | Count | What the flagged line does |
+|---|---|---|
+| Credential Access (HIGH) | 17 | Reads its own `.env` for `KIE_API_KEY` |
+| External Script Fetching (HIGH) | 5 | `curl` to `api.kie.ai` with that key in the header |
+| External Transmission (MEDIUM) | 19 | The same API calls |
+
+Every `KIE_API_KEY` use goes to `api.kie.ai` [Certain, from grep across all scripts]. A skill that calls a paid API has to read a key and send it to that API, so the score is pattern matching on its job [Likely benign; I checked the hosts and key handling, not every line]. Last week's skill scored 92 for doing its job. This week's fake scored 0 and would leak your inbox. That contrast is the series' through-line: the score counts patterns, and you still read what the skill does.
+
 ## What I could not do from here
 
 1. **Control your desktop or screen record.** This session runs in a cloud container. Everything below is built for you to record on your Mac.
@@ -75,7 +87,9 @@ Your verdict goes on screen after you run it. The run sheet has the tests.
 
 | File | Use |
 |---|---|
-| `run-sheet.md` | Shot list, script, test gates, ChatCut edit brief |
+| `script-ep3-kallaway.md` | The 55-60s script in your Ep 1 beat format. Start here |
+| `shot-list.html` | Click-in-order shot list, same style as Ep 1 |
+| `run-sheet.md` | Setup, terminal commands, test gates, ChatCut edit brief, long fallback script |
 | `safety-check-prompt.md` | Paste-ready prompt. Your Step 0 for every tool on the channel |
 | `overlays/*.png` | Five 1080 x 1920 cards for ChatCut. Text kept clear of the Reels UI strip |
 | `overlays/source/` | HTML for the cards, if a line needs changing |

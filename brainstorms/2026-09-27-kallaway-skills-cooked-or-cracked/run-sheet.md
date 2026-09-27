@@ -1,5 +1,7 @@
 # Run sheet: Cooked or Cracked, Kallaway's Growth System
 
+**Use `script-ep3-kallaway.md` for the voiceover.** It follows your Ep 1 beat format at 55-60s. The long script below is a fallback for a YouTube cut. Click-through order is in `shot-list.html`.
+
 Record on your Mac in this order. Clip names (S01 to S19) match the ChatCut brief at the bottom. Target: 2:15 full cut, 60 second cut marked.
 
 ## Before you hit record (off camera, 10 minutes)
